@@ -1,0 +1,31 @@
+
+EDA Summary Report
+==================
+Generated: 2026-03-14 23:31
+
+Datasets:
+- 150 districts across 15 states
+- 328,650 daily air quality records (2018-2023)
+- 10,800 monthly health records (2018-2023)
+- 3,000 quarterly water quality records (2019-2023)
+
+Key Findings:
+1. POLLUTION HOTSPOTS: Delhi districts have highest PM2.5 (100-150 µg/m³ annual avg),
+   followed by Indo-Gangetic Plain states (UP, Bihar, Haryana at 70-100 µg/m³).
+   Southern states (Kerala, Tamil Nadu) have much lower levels (25-40 µg/m³).
+
+2. SEASONALITY: Strong seasonal pattern — winter months (Nov-Feb) show 2-3x higher
+   pollution than monsoon months (Jul-Sep). Health outcomes follow similar pattern.
+
+3. CORRELATION: PM2.5 shows significant positive correlation with respiratory disease
+   incidence (r ≈ 0.3-0.5, p < 0.001). Cardiovascular cases also correlate with pollution.
+   Diarrhoea shows inverse seasonality (monsoon peak = low pollution period).
+
+4. MISSING DATA: ~3% missing in air quality, ~2% in health data.
+   Imputed using forward-fill (time-series) and median (cross-sectional).
+
+5. OUTLIERS: Log-normal distributions in health data produce natural right-skew.
+   Environmental data has seasonal extremes that are genuine, not errors.
+
+Figures Generated: 9 visualizations covering distributions, correlations,
+                   trends, and seasonality patterns.
