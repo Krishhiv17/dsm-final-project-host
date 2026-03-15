@@ -1,0 +1,22 @@
+{
+  "generated_at": "2026-03-14T23:27:34.245434",
+  "datasets": {
+    "districts": {
+      "file": "districts.csv",
+      "rows": 150
+    },
+    "air_quality": {
+      "file": "air_quality_daily.csv",
+      "rows": 328650
+    },
+    "health_hmis": {
+      "file": "health_hmis_monthly.csv",
+      "rows": 10800
+    },
+    "water_quality": {
+      "file": "water_quality.csv",
+      "rows": 3000
+    }
+  },
+  "real_downloads": {}
+}
