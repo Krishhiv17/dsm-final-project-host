@@ -1,0 +1,151 @@
+district_id,district_name,state,population,area_sq_km,density_per_sq_km,literacy_rate,urban_percentage
+1,Central Delhi,Delhi,1085304,11113,97.7,53.9,56.7
+2,East Delhi,Delhi,941398,2761,341.0,67.6,49.2
+3,New Delhi,Delhi,501029,3136,159.8,59.3,63.1
+4,North Delhi,Delhi,348270,8108,43.0,41.2,33.3
+5,South Delhi,Delhi,324400,4736,68.5,57.5,61.6
+6,West Delhi,Delhi,131702,11885,11.1,55.5,22.9
+7,North East Delhi,Delhi,471886,9309,50.7,55.9,32.8
+8,North West Delhi,Delhi,1556502,1916,812.4,50.2,62.2
+9,South West Delhi,Delhi,721582,998,723.0,46.5,37.2
+10,Shahdara,Delhi,995976,10106,98.6,56.7,5.0
+11,Mumbai,Maharashtra,252067,14558,17.3,66.6,72.6
+12,Pune,Maharashtra,1476830,13867,106.5,64.1,36.4
+13,Nagpur,Maharashtra,223503,12516,17.9,59.2,8.8
+14,Thane,Maharashtra,360600,8369,43.1,67.6,20.4
+15,Nashik,Maharashtra,424413,580,731.7,69.9,32.0
+16,Aurangabad,Maharashtra,1483921,11070,134.0,58.3,21.3
+17,Solapur,Maharashtra,950754,5298,179.5,72.8,22.9
+18,Kolhapur,Maharashtra,525283,5215,100.7,71.5,41.3
+19,Amravati,Maharashtra,688583,2234,308.2,73.0,36.7
+20,Nanded,Maharashtra,1378458,8638,159.6,64.7,43.8
+21,Lucknow,Uttar Pradesh,89698,868,103.3,61.6,23.0
+22,Kanpur Nagar,Uttar Pradesh,1679477,7874,213.3,53.2,29.3
+23,Agra,Uttar Pradesh,2379296,3817,623.3,50.9,22.5
+24,Varanasi,Uttar Pradesh,518401,2837,182.7,62.3,28.9
+25,Allahabad,Uttar Pradesh,477439,13442,35.5,59.1,41.5
+26,Ghaziabad,Uttar Pradesh,839400,13493,62.2,49.4,21.1
+27,Noida,Uttar Pradesh,533019,12361,43.1,43.3,5.0
+28,Meerut,Uttar Pradesh,961658,3720,258.5,52.3,15.4
+29,Bareilly,Uttar Pradesh,641119,8022,79.9,58.2,13.7
+30,Gorakhpur,Uttar Pradesh,2242646,14590,153.7,39.6,24.7
+31,Patna,Bihar,765423,1246,614.3,74.7,30.7
+32,Gaya,Bihar,592897,3973,149.2,54.7,11.0
+33,Muzaffarpur,Bihar,1819838,3945,461.3,61.0,15.4
+34,Bhagalpur,Bihar,2207149,9668,228.3,59.7,51.3
+35,Darbhanga,Bihar,330238,1091,302.7,50.5,45.5
+36,Purnia,Bihar,1467207,740,1982.7,42.6,25.8
+37,Begusarai,Bihar,311812,10518,29.6,58.8,32.4
+38,Munger,Bihar,641298,2494,257.1,48.7,21.1
+39,Saran,Bihar,1398364,12349,113.2,45.2,41.4
+40,Vaishali,Bihar,5561231,4006,1388.2,57.1,34.4
+41,Kolkata,West Bengal,271153,11026,24.6,44.4,77.4
+42,Howrah,West Bengal,1931208,1720,1122.8,57.3,16.4
+43,North 24 Parganas,West Bengal,3244979,9953,326.0,58.8,33.8
+44,South 24 Parganas,West Bengal,339898,3940,86.3,64.3,15.2
+45,Hooghly,West Bengal,1576473,10035,157.1,58.3,14.6
+46,Bardhaman,West Bengal,819696,5831,140.6,47.9,15.2
+47,Nadia,West Bengal,685784,13434,51.0,57.7,39.5
+48,Murshidabad,West Bengal,1121713,7788,144.0,52.9,57.6
+49,Malda,West Bengal,1203246,4571,263.2,48.1,25.5
+50,Darjeeling,West Bengal,653555,3068,213.0,53.2,33.6
+51,Chennai,Tamil Nadu,1065111,14472,73.6,74.4,64.6
+52,Coimbatore,Tamil Nadu,1358157,6083,223.3,71.4,35.3
+53,Madurai,Tamil Nadu,865683,14074,61.5,65.0,32.6
+54,Tiruchirappalli,Tamil Nadu,2988702,1909,1565.6,75.5,11.3
+55,Salem,Tamil Nadu,971143,10606,91.6,79.5,13.5
+56,Tirunelveli,Tamil Nadu,2203601,4757,463.2,79.1,31.2
+57,Erode,Tamil Nadu,1101339,12075,91.2,99.0,41.0
+58,Vellore,Tamil Nadu,1608097,12038,133.6,72.5,34.1
+59,Thoothukudi,Tamil Nadu,393068,8885,44.2,73.1,24.5
+60,Thanjavur,Tamil Nadu,475570,8368,56.8,80.5,5.6
+61,Jaipur,Rajasthan,500045,2342,213.5,63.7,58.7
+62,Jodhpur,Rajasthan,808423,3629,222.8,49.2,27.6
+63,Udaipur,Rajasthan,756499,8339,90.7,49.8,41.4
+64,Kota,Rajasthan,1415527,14649,96.6,38.8,27.2
+65,Ajmer,Rajasthan,429583,6865,62.6,61.8,15.7
+66,Bikaner,Rajasthan,2755312,3012,914.8,51.2,17.2
+67,Bhilwara,Rajasthan,2994726,10072,297.3,58.2,29.5
+68,Alwar,Rajasthan,2733465,9369,291.8,42.8,19.2
+69,Sikar,Rajasthan,2009766,708,2838.7,49.3,22.2
+70,Pali,Rajasthan,3261195,1918,1700.3,35.0,12.7
+71,Bengaluru Urban,Karnataka,595969,6278,94.9,65.0,88.5
+72,Mysuru,Karnataka,2102444,1156,1818.7,86.5,7.8
+73,Mangaluru,Karnataka,1849694,10051,184.0,75.1,22.6
+74,Hubballi-Dharwad,Karnataka,765831,8993,85.2,75.9,32.9
+75,Belagavi,Karnataka,2594264,7144,363.1,65.1,33.2
+76,Kalaburagi,Karnataka,772029,6098,126.6,77.2,17.5
+77,Ballari,Karnataka,617541,12750,48.4,71.1,17.5
+78,Davangere,Karnataka,548865,10602,51.8,82.2,28.7
+79,Shivamogga,Karnataka,1397631,4589,304.6,80.0,31.6
+80,Tumakuru,Karnataka,413287,12199,33.9,74.8,26.4
+81,Ahmedabad,Gujarat,2027130,5441,372.6,60.3,88.6
+82,Surat,Gujarat,513181,11440,44.9,75.4,40.3
+83,Vadodara,Gujarat,1258665,6143,204.9,62.5,21.7
+84,Rajkot,Gujarat,446647,14275,31.3,65.8,32.1
+85,Bhavnagar,Gujarat,379050,4751,79.8,81.7,39.5
+86,Jamnagar,Gujarat,280035,11409,24.5,70.0,32.5
+87,Junagadh,Gujarat,722304,1334,541.5,57.8,5.0
+88,Gandhinagar,Gujarat,3006674,13371,224.9,58.4,21.1
+89,Anand,Gujarat,1014945,9464,107.2,60.5,19.8
+90,Kutch,Gujarat,858599,12416,69.2,61.2,27.8
+91,Bhopal,Madhya Pradesh,229012,12285,18.6,43.7,17.0
+92,Indore,Madhya Pradesh,2165342,1710,1266.3,57.5,42.7
+93,Jabalpur,Madhya Pradesh,1448628,2112,685.9,53.7,21.4
+94,Gwalior,Madhya Pradesh,726758,7295,99.6,57.6,15.1
+95,Ujjain,Madhya Pradesh,1105134,14451,76.5,67.3,7.7
+96,Sagar,Madhya Pradesh,371272,13094,28.4,56.8,25.2
+97,Dewas,Madhya Pradesh,788699,14554,54.2,48.8,52.3
+98,Satna,Madhya Pradesh,1009515,10588,95.3,72.2,15.8
+99,Rewa,Madhya Pradesh,1465719,1158,1265.7,56.5,23.7
+100,Ratlam,Madhya Pradesh,1592868,9491,167.8,48.3,17.8
+101,Visakhapatnam,Andhra Pradesh,133370,8963,14.9,50.8,5.0
+102,Vijayawada,Andhra Pradesh,974793,12300,79.3,47.8,30.9
+103,Guntur,Andhra Pradesh,253676,14024,18.1,69.7,24.1
+104,Nellore,Andhra Pradesh,581998,12253,47.5,41.3,41.2
+105,Kurnool,Andhra Pradesh,665549,6514,102.2,64.9,23.7
+106,Kakinada,Andhra Pradesh,697747,13038,53.5,55.0,25.6
+107,Tirupati,Andhra Pradesh,508869,7032,72.4,60.0,8.6
+108,Rajahmundry,Andhra Pradesh,1119500,10239,109.3,42.7,40.3
+109,Kadapa,Andhra Pradesh,951553,8044,118.3,49.0,26.4
+110,Anantapur,Andhra Pradesh,2523128,12856,196.3,71.5,46.1
+111,Hyderabad,Telangana,597690,2443,244.7,62.8,87.9
+112,Warangal,Telangana,1472187,3587,410.4,63.5,5.0
+113,Nizamabad,Telangana,283054,13610,20.8,38.7,27.4
+114,Karimnagar,Telangana,128451,11862,10.8,68.0,8.4
+115,Khammam,Telangana,186706,7157,26.1,54.6,24.9
+116,Mahbubnagar,Telangana,1007009,5266,191.2,44.6,33.0
+117,Nalgonda,Telangana,978013,3137,311.8,47.5,34.0
+118,Adilabad,Telangana,578067,7372,78.4,47.1,31.0
+119,Medak,Telangana,477249,3066,155.7,48.7,7.8
+120,Rangareddy,Telangana,625792,5781,108.2,70.7,25.4
+121,Thiruvananthapuram,Kerala,416740,13166,31.7,76.7,35.2
+122,Kochi,Kerala,444057,11349,39.1,70.8,18.1
+123,Kozhikode,Kerala,585346,9464,61.8,56.6,17.5
+124,Thrissur,Kerala,126284,11338,11.1,79.6,28.7
+125,Kollam,Kerala,8564228,2053,4171.6,84.0,43.3
+126,Kannur,Kerala,102191,4015,25.5,68.9,7.9
+127,Alappuzha,Kerala,434843,2236,194.5,66.3,27.6
+128,Palakkad,Kerala,1511255,10346,146.1,74.9,42.8
+129,Malappuram,Kerala,775989,9009,86.1,68.1,19.7
+130,Kottayam,Kerala,2586019,2349,1100.9,68.0,8.4
+131,Ludhiana,Punjab,1530250,5663,270.2,80.3,25.3
+132,Amritsar,Punjab,807656,3939,205.0,59.8,19.2
+133,Jalandhar,Punjab,454105,3013,150.7,58.1,5.0
+134,Patiala,Punjab,1261376,14744,85.6,63.1,14.1
+135,Bathinda,Punjab,459816,2977,154.5,71.0,31.3
+136,Mohali,Punjab,861131,8573,100.4,51.6,31.5
+137,Hoshiarpur,Punjab,429295,5193,82.7,69.6,28.4
+138,Pathankot,Punjab,81408,4014,20.3,67.1,14.1
+139,Moga,Punjab,1215752,2738,444.0,51.7,58.4
+140,Firozpur,Punjab,201027,1251,160.7,58.1,20.4
+141,Gurugram,Haryana,1631538,4192,389.2,50.4,38.3
+142,Faridabad,Haryana,1352290,9136,148.0,35.2,15.4
+143,Panipat,Haryana,1157366,12543,92.3,53.4,27.0
+144,Ambala,Haryana,783491,3127,250.6,55.7,23.1
+145,Karnal,Haryana,1856541,2526,735.0,57.0,17.9
+146,Hisar,Haryana,1167835,2873,406.5,58.2,19.9
+147,Rohtak,Haryana,919715,5703,161.3,71.6,21.8
+148,Sonipat,Haryana,1556723,12340,126.2,38.7,12.9
+149,Yamunanagar,Haryana,163303,11340,14.4,52.2,6.0
+150,Bhiwani,Haryana,738844,13543,54.6,61.6,5.0
