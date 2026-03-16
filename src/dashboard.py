@@ -248,7 +248,7 @@ def render_correlations(merged):
     """Render correlation analysis with interactive controls."""
     st.header("🔗 Pollution-Health Correlations")
 
-    col1, col2 = st.columns([1, 1])
+    col1, col2, col3 = st.columns([1, 1, 1])
 
     with col1:
         x_axis = st.selectbox("X-Axis (Pollution)", ["pm25", "pm10", "no2", "so2"])
@@ -256,18 +256,35 @@ def render_correlations(merged):
         y_axis = st.selectbox("Y-Axis (Health)", ["respiratory_cases",
                                                     "cardiovascular_cases",
                                                     "diarrhoea_cases"])
+    with col3:
+        z_axis = st.selectbox("Z-Axis (For 3D)", ["None", "urban_percentage", "literacy_rate", "pm25", "pm10", "no2", "so2", "respiratory_cases", "cardiovascular_cases", "diarrhoea_cases", "population"], index=1)
 
     sample = merged.sample(min(3000, len(merged)), random_state=42)
 
-    fig = px.scatter(sample, x=x_axis, y=y_axis, color="state",
-                     hover_data=["state"],
-                     trendline="ols",
-                     title=f"Correlation: {x_axis.upper()} vs {y_axis.replace('_', ' ').title()}",
-                     labels={x_axis: f"{x_axis.upper()} (µg/m³)",
-                             y_axis: y_axis.replace("_", " ").title()},
-                     opacity=0.5)
-    fig.update_layout(height=550, template="plotly_white")
-    st.plotly_chart(fig, use_container_width=True)
+    tab1, tab2 = st.tabs(["2D Scatter", "3D Scatter"])
+
+    with tab1:
+        fig = px.scatter(sample, x=x_axis, y=y_axis, color="state",
+                         hover_data=["state"],
+                         trendline="ols",
+                         title=f"Correlation: {x_axis.upper()} vs {y_axis.replace('_', ' ').title()}",
+                         labels={x_axis: f"{x_axis.upper()} (µg/m³)",
+                                 y_axis: y_axis.replace("_", " ").title()},
+                         opacity=0.5)
+        fig.update_layout(height=550, template="plotly_white")
+        st.plotly_chart(fig, use_container_width=True)
+
+    with tab2:
+        z_val = z_axis if z_axis != "None" else "pm10"
+        fig3d = px.scatter_3d(sample, x=x_axis, y=y_axis, z=z_val, color="state",
+                              hover_data=["state"],
+                              title=f"3D Correlation: {x_axis.upper()} vs {y_axis.replace('_', ' ').title()} vs {z_val.replace('_', ' ').title()}",
+                              labels={x_axis: f"{x_axis.upper()} (µg/m³)",
+                                      y_axis: y_axis.replace("_", " ").title(),
+                                      z_val: z_val.replace("_", " ").title()},
+                              opacity=0.7)
+        fig3d.update_layout(height=600, margin=dict(l=0, r=0, b=0, t=40))
+        st.plotly_chart(fig3d, use_container_width=True)
 
     from scipy import stats
     r, p = stats.pearsonr(merged[x_axis].dropna(), merged[y_axis].dropna())
@@ -296,18 +313,35 @@ def render_clusters(clusters, districts):
     col1, col2 = st.columns([2, 1])
 
     with col1:
-        fig = px.scatter(clusters, x="pm25", y="respiratory_cases",
-                         color="risk_label", size="cardiovascular_cases",
-                         hover_data=["district_name", "state"],
-                         title="District Clusters — PM2.5 vs Respiratory Cases",
-                         color_discrete_map={
-                             "Critical — High Pollution": "#e74c3c",
-                             "Critical — High Disease Burden": "#c0392b",
-                             "At Risk": "#f39c12",
-                             "Moderate": "#2ecc71",
-                         })
-        fig.update_layout(height=500, template="plotly_white")
-        st.plotly_chart(fig, use_container_width=True)
+        tab1, tab2 = st.tabs(["2D View", "3D View"])
+        
+        with tab1:
+            fig = px.scatter(clusters, x="pm25", y="respiratory_cases",
+                             color="risk_label", size="cardiovascular_cases",
+                             hover_data=["district_name", "state"],
+                             title="District Clusters — PM2.5 vs Respiratory",
+                             color_discrete_map={
+                                 "Critical — High Pollution": "#e74c3c",
+                                 "Critical — High Disease Burden": "#c0392b",
+                                 "At Risk": "#f39c12",
+                                 "Moderate": "#2ecc71",
+                             })
+            fig.update_layout(height=500, template="plotly_white")
+            st.plotly_chart(fig, use_container_width=True)
+            
+        with tab2:
+            fig3d = px.scatter_3d(clusters, x="pm25", y="respiratory_cases", z="cardiovascular_cases",
+                                  color="risk_label",
+                                  hover_data=["district_name", "state"],
+                                  title="3D Clusters — PM2.5 vs Respiratory vs Cardiovascular",
+                                  color_discrete_map={
+                                      "Critical — High Pollution": "#e74c3c",
+                                      "Critical — High Disease Burden": "#c0392b",
+                                      "At Risk": "#f39c12",
+                                      "Moderate": "#2ecc71",
+                                  })
+            fig3d.update_layout(height=550, margin=dict(l=0, r=0, b=0, t=40))
+            st.plotly_chart(fig3d, use_container_width=True)
 
     with col2:
         st.subheader("Cluster Summary")
