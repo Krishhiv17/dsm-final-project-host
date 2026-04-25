@@ -4,4 +4,4 @@ __pycache__/
 *.pyo
 .DS_Store
 /web/node_modules
-/web/.next/cache
+/web/.next/
