@@ -1,0 +1,5 @@
+feature,std_coeff,r2
+pm25,16.39752,0.6769
+spatial_lag_pm25,16.91436,0.6769
+urban_percentage,-1.60108,0.6769
+literacy_rate,-0.09591,0.6769
