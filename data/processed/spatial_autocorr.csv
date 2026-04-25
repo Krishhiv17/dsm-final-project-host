@@ -1,0 +1,5 @@
+variable,morans_I,z_score,p_value_mc,expected_I,interpretation
+PM2.5,0.66888,21.4757,0.001,-0.00671,clustered
+Respiratory Cases,0.15746,5.5178,0.001,-0.00671,clustered
+Resp Rate/100k,0.8358,26.2413,0.001,-0.00671,clustered
+AQI,0.69461,22.222,0.001,-0.00671,clustered
