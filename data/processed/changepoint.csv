@@ -1,0 +1,6 @@
+index,year_month,pm25_at_cp,cusum_value,slope_before,slope_after,direction,prominence
+9,2018-10,56.8,-56.62,-20.1459,21.9273,decreasing → increasing,56.62
+21,2019-10,56.79,-57.28,-20.074,22.1992,decreasing → increasing,57.28
+33,2020-10,56.99,-56.08,-20.068,21.9625,decreasing → increasing,56.08
+45,2021-10,56.57,-56.67,-20.0963,22.1875,decreasing → increasing,56.67
+57,2022-10,56.89,-55.8,-20.1013,21.9044,decreasing → increasing,55.8
