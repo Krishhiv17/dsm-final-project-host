@@ -1,0 +1,2 @@
+path_a,path_b,path_c_total,path_c_direct,indirect_effect,ci_lower,ci_upper,prop_mediated_pct,significant
+0.10198,-0.305054,0.940461,0.971571,-0.03111,-0.035171,-0.027313,-3.31,True
