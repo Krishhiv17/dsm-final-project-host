@@ -1,0 +1,1241 @@
+district_a,district_b,name_a,name_b,state_a,state_b,community_a,community_b,jaccard,adamic_adar,combined_score,same_community
+131,142,Ludhiana,Faridabad,Punjab,Haryana,5,0,0.67568,7.18013,1.9999999983807362,False
+28,69,Meerut,Sikar,Uttar Pradesh,Rajasthan,0,1,0.63889,6.62665,1.8684661916583807,False
+23,145,Agra,Karnal,Uttar Pradesh,Haryana,0,5,0.57895,6.37295,1.7444219374494458,False
+29,150,Bareilly,Bhiwani,Uttar Pradesh,Haryana,0,5,0.57895,6.36351,1.7431071980229054,False
+23,146,Agra,Hisar,Uttar Pradesh,Haryana,0,5,0.5641,6.35926,1.7205374274253007,False
+68,149,Alwar,Yamunanagar,Rajasthan,Haryana,0,5,0.55,6.34681,1.6979356091185354,False
+28,61,Meerut,Jaipur,Uttar Pradesh,Rajasthan,0,1,0.56757,6.05949,1.6839230540951968,False
+29,61,Bareilly,Jaipur,Uttar Pradesh,Rajasthan,0,1,0.58824,5.83077,1.6826598818201985,False
+68,135,Alwar,Bathinda,Rajasthan,Punjab,0,5,0.53659,6.33016,1.675770036648406,False
+29,69,Bareilly,Sikar,Uttar Pradesh,Rajasthan,0,1,0.57143,5.78054,1.6507855460172771,False
+29,146,Bareilly,Hisar,Uttar Pradesh,Haryana,0,5,0.53846,6.05658,1.6404352447460937,False
+68,134,Alwar,Patiala,Rajasthan,Punjab,0,5,0.525,6.03614,1.6176678271536336,False
+68,136,Alwar,Mohali,Rajasthan,Punjab,0,5,0.525,6.03614,1.6176678271536336,False
+68,144,Alwar,Ambala,Rajasthan,Haryana,0,5,0.525,6.03614,1.6176678271536336,False
+61,135,Jaipur,Bathinda,Rajasthan,Punjab,1,5,0.5,6.2305,1.6077372117761979,False
+29,144,Bareilly,Ambala,Uttar Pradesh,Haryana,0,5,0.54054,5.75961,1.6021536496691737,False
+29,136,Bareilly,Mohali,Uttar Pradesh,Punjab,0,5,0.54054,5.75961,1.6021536496691737,False
+29,134,Bareilly,Patiala,Uttar Pradesh,Punjab,0,5,0.54054,5.75961,1.6021536496691737,False
+69,134,Sikar,Patiala,Rajasthan,Punjab,1,5,0.5122,6.02275,1.5968590796808235,False
+69,136,Sikar,Mohali,Rajasthan,Punjab,1,5,0.5122,6.02275,1.5968590796808235,False
+69,144,Sikar,Ambala,Rajasthan,Haryana,1,5,0.5122,6.02275,1.5968590796808235,False
+61,145,Jaipur,Karnal,Rajasthan,Haryana,1,5,0.5,6.04658,1.5821220766777546,False
+69,149,Sikar,Yamunanagar,Rajasthan,Haryana,1,5,0.5,6.02275,1.5788031952652064,False
+23,149,Agra,Yamunanagar,Uttar Pradesh,Haryana,0,5,0.51282,5.78197,1.5642424620354234,False
+29,135,Bareilly,Bathinda,Uttar Pradesh,Punjab,0,5,0.51282,5.75961,1.5611283122920505,False
+23,135,Agra,Bathinda,Uttar Pradesh,Punjab,0,5,0.5,5.76531,1.542948691243114,False
+68,131,Alwar,Ludhiana,Rajasthan,Punjab,0,5,0.5,5.74494,1.5401116952559712,False
+29,131,Bareilly,Ludhiana,Uttar Pradesh,Punjab,0,5,0.51351,5.4684,1.5215917442715514,False
+69,131,Sikar,Ludhiana,Rajasthan,Punjab,1,5,0.4878,5.73154,1.5201895493662398,False
+23,136,Agra,Mohali,Uttar Pradesh,Punjab,0,5,0.48718,5.4713,1.4830274861339647,False
+23,134,Agra,Patiala,Uttar Pradesh,Punjab,0,5,0.48718,5.4713,1.4830274861339647,False
+23,144,Agra,Ambala,Uttar Pradesh,Haryana,0,5,0.48718,5.4713,1.4830274861339647,False
+54,123,Tiruchirappalli,Kozhikode,Tamil Nadu,Kerala,4,4,0.57143,4.19555,1.4300388464757292,True
+61,136,Jaipur,Mohali,Rajasthan,Punjab,1,5,0.45238,5.45559,1.4293358331651471,False
+61,144,Jaipur,Ambala,Rajasthan,Haryana,1,5,0.45238,5.45559,1.4293358331651471,False
+61,134,Jaipur,Patiala,Rajasthan,Punjab,1,5,0.45238,5.45559,1.4293358331651471,False
+61,149,Jaipur,Yamunanagar,Rajasthan,Haryana,1,5,0.44186,5.45559,1.4137663328329921,False
+23,131,Agra,Ludhiana,Uttar Pradesh,Punjab,0,5,0.46154,5.18009,1.404522767567302,False
+69,94,Sikar,Gwalior,Rajasthan,Madhya Pradesh,1,0,0.47059,4.75588,1.35883557884627,False
+61,131,Jaipur,Ludhiana,Rajasthan,Punjab,1,5,0.42857,5.16438,1.3535394972608272,False
+54,125,Tiruchirappalli,Kollam,Tamil Nadu,Kerala,4,4,0.55556,3.60889,1.324845355307481,True
+8,94,North West Delhi,Gwalior,Delhi,Madhya Pradesh,0,0,0.44444,4.67668,1.3091033856432803,True
+4,94,North Delhi,Gwalior,Delhi,Madhya Pradesh,0,0,0.44444,4.67668,1.3091033856432803,True
+55,126,Salem,Kannur,Tamil Nadu,Kerala,4,4,0.52381,3.80523,1.305200564904208,True
+94,148,Gwalior,Sonipat,Madhya Pradesh,Haryana,0,0,0.43243,4.67668,1.2913286994275786,True
+94,147,Gwalior,Rohtak,Madhya Pradesh,Haryana,0,0,0.42105,4.67668,1.2744864072431752,True
+105,114,Kurnool,Karimnagar,Andhra Pradesh,Telangana,3,3,0.5,3.78408,1.2670163613655119,True
+28,94,Meerut,Gwalior,Uttar Pradesh,Madhya Pradesh,0,0,0.44118,4.37971,1.2629186411582134,True
+94,143,Gwalior,Panipat,Madhya Pradesh,Haryana,0,5,0.41026,4.67668,1.2585173094690352,False
+54,121,Tiruchirappalli,Thiruvananthapuram,Tamil Nadu,Kerala,4,4,0.52941,3.25594,1.2369871114672641,True
+54,126,Tiruchirappalli,Kannur,Tamil Nadu,Kerala,4,4,0.47619,3.48192,1.1896949834357027,True
+44,49,South 24 Parganas,Malda,West Bengal,West Bengal,2,2,0.5,3.11348,1.173619723713185,True
+102,120,Vijayawada,Rangareddy,Andhra Pradesh,Telangana,3,3,0.47368,3.37103,1.1705361971512491,True
+28,139,Meerut,Moga,Uttar Pradesh,Punjab,0,5,0.41176,4.00044,1.1665551565074535,False
+94,150,Gwalior,Bhiwani,Madhya Pradesh,Haryana,0,5,0.375,4.36601,1.1630648247087048,False
+55,127,Salem,Alappuzha,Tamil Nadu,Kerala,4,4,0.45455,3.50135,1.1603740675933365,True
+82,86,Surat,Jamnagar,Gujarat,Gujarat,1,1,0.54545,2.522,1.1585079545535961,True
+76,112,Kalaburagi,Warangal,Karnataka,Telangana,3,3,0.45,3.36534,1.1346975567383648,True
+72,127,Mysuru,Alappuzha,Karnataka,Kerala,4,4,0.43478,3.50995,1.1323124047981792,True
+56,57,Tirunelveli,Erode,Tamil Nadu,Tamil Nadu,4,4,0.45,3.24605,1.1180836514214156,True
+57,59,Erode,Thoothukudi,Tamil Nadu,Tamil Nadu,4,4,0.45,3.24605,1.1180836514214156,True
+9,139,South West Delhi,Moga,Delhi,Punjab,0,5,0.37838,4.00044,1.1171530727539047,False
+7,139,North East Delhi,Moga,Delhi,Punjab,0,5,0.37838,4.00044,1.1171530727539047,False
+10,139,Shahdara,Moga,Delhi,Punjab,0,5,0.37838,4.00044,1.1171530727539047,False
+5,139,South Delhi,Moga,Delhi,Punjab,0,5,0.37838,4.00044,1.1171530727539047,False
+6,139,West Delhi,Moga,Delhi,Punjab,0,5,0.37838,4.00044,1.1171530727539047,False
+3,139,New Delhi,Moga,Delhi,Punjab,0,5,0.37838,4.00044,1.1171530727539047,False
+2,139,East Delhi,Moga,Delhi,Punjab,0,5,0.37838,4.00044,1.1171530727539047,False
+26,139,Ghaziabad,Moga,Uttar Pradesh,Punjab,0,5,0.37838,4.00044,1.1171530727539047,False
+1,139,Central Delhi,Moga,Delhi,Punjab,0,5,0.37838,4.00044,1.1171530727539047,False
+27,139,Noida,Moga,Uttar Pradesh,Punjab,0,5,0.37838,4.00044,1.1171530727539047,False
+139,141,Moga,Gurugram,Punjab,Haryana,5,0,0.37838,4.00044,1.1171530727539047,False
+56,129,Tirunelveli,Malappuram,Tamil Nadu,Kerala,4,4,0.45,3.21418,1.1136450131243985,True
+59,129,Thoothukudi,Malappuram,Tamil Nadu,Kerala,4,4,0.45,3.21418,1.1136450131243985,True
+103,119,Guntur,Medak,Andhra Pradesh,Telangana,3,3,0.47059,2.96291,1.1091228299475333,True
+57,125,Erode,Kollam,Tamil Nadu,Kerala,4,4,0.45,3.15699,1.1056799762807712,True
+53,72,Madurai,Mysuru,Tamil Nadu,Karnataka,4,4,0.41667,3.49363,1.1032368370270906,True
+94,145,Gwalior,Karnal,Madhya Pradesh,Haryana,0,5,0.35,4.07278,1.0852259681250385,False
+94,146,Gwalior,Hisar,Madhya Pradesh,Haryana,0,5,0.34146,4.05908,1.070678805586691,False
+140,148,Firozpur,Sonipat,Punjab,Haryana,5,0,0.36111,3.82994,1.0678475482126832,False
+40,50,Vaishali,Darjeeling,Bihar,West Bengal,2,2,0.5,2.30124,1.0604964237329788,True
+4,133,North Delhi,Jalandhar,Delhi,Punjab,0,5,0.36111,3.76298,1.0585218117718844,False
+8,133,North West Delhi,Jalandhar,Delhi,Punjab,0,5,0.36111,3.76298,1.0585218117718844,False
+89,90,Anand,Kutch,Gujarat,Gujarat,1,1,0.46154,2.64603,1.0515960100229298,True
+53,126,Madurai,Kannur,Tamil Nadu,Kerala,4,4,0.40909,3.14927,1.0440583744211382,True
+20,115,Nanded,Khammam,Maharashtra,Telangana,3,3,0.42105,3.01239,1.0426953394257112,True
+139,142,Moga,Faridabad,Punjab,Haryana,5,0,0.35135,3.70923,1.0365911673562822,False
+83,86,Vadodara,Jamnagar,Gujarat,Gujarat,1,1,0.46154,2.522,1.0343219495278237,True
+60,122,Thanjavur,Kochi,Tamil Nadu,Kerala,4,4,0.42105,2.89439,1.0262610965939567,True
+60,130,Thanjavur,Kottayam,Tamil Nadu,Kerala,4,4,0.42105,2.89439,1.0262610965939567,True
+60,124,Thanjavur,Thrissur,Tamil Nadu,Kerala,4,4,0.42105,2.89439,1.0262610965939567,True
+121,129,Thiruvananthapuram,Malappuram,Kerala,Kerala,4,4,0.42105,2.85351,1.020567606365464,True
+121,123,Thiruvananthapuram,Kozhikode,Kerala,Kerala,4,4,0.42105,2.85351,1.020567606365464,True
+125,126,Kollam,Kannur,Kerala,Kerala,4,4,0.42105,2.79632,1.0126025695218366,True
+132,143,Amritsar,Panipat,Punjab,Haryana,5,5,0.33333,3.72342,1.011898025417241,True
+76,115,Kalaburagi,Khammam,Karnataka,Telangana,3,3,0.4,2.98642,1.007924612700713,True
+94,149,Gwalior,Yamunanagar,Madhya Pradesh,Haryana,0,5,0.325,3.7758,1.0068648368751087,False
+28,133,Meerut,Jalandhar,Uttar Pradesh,Punjab,0,5,0.35294,3.42336,0.9991303099338256,False
+137,147,Hoshiarpur,Rohtak,Punjab,Haryana,5,0,0.33333,3.62577,0.9982979931077425,False
+137,150,Hoshiarpur,Bhiwani,Punjab,Haryana,5,5,0.32432,3.62577,0.9849632784696516,True
+4,140,North Delhi,Firozpur,Delhi,Punjab,0,5,0.33333,3.47698,0.9775755270828548,False
+8,140,North West Delhi,Firozpur,Delhi,Punjab,0,5,0.33333,3.47698,0.9775755270828548,False
+138,145,Pathankot,Karnal,Punjab,Haryana,5,5,0.32353,3.54845,0.9730254787020847,True
+102,119,Vijayawada,Medak,Andhra Pradesh,Telangana,3,3,0.41176,2.60224,0.9718233062755959,True
+82,90,Surat,Kutch,Gujarat,Gujarat,1,1,0.45455,2.13213,0.9696783559823623,True
+55,59,Salem,Thoothukudi,Tamil Nadu,Tamil Nadu,4,4,0.38095,2.87678,0.9644608746737868,True
+55,56,Salem,Tirunelveli,Tamil Nadu,Tamil Nadu,4,4,0.38095,2.87678,0.9644608746737868,True
+56,123,Tirunelveli,Kozhikode,Tamil Nadu,Kerala,4,4,0.38095,2.85351,0.961219986278067,True
+59,123,Thoothukudi,Kozhikode,Tamil Nadu,Kerala,4,4,0.38095,2.85351,0.961219986278067,True
+138,146,Pathankot,Hisar,Punjab,Haryana,5,5,0.31429,3.54845,0.9593503662430436,True
+9,133,South West Delhi,Jalandhar,Delhi,Punjab,0,5,0.32432,3.42336,0.956772981083419,False
+2,133,East Delhi,Jalandhar,Delhi,Punjab,0,5,0.32432,3.42336,0.956772981083419,False
+133,141,Jalandhar,Gurugram,Punjab,Haryana,5,0,0.32432,3.42336,0.956772981083419,False
+27,133,Noida,Jalandhar,Uttar Pradesh,Punjab,0,5,0.32432,3.42336,0.956772981083419,False
+5,133,South Delhi,Jalandhar,Delhi,Punjab,0,5,0.32432,3.42336,0.956772981083419,False
+10,133,Shahdara,Jalandhar,Delhi,Punjab,0,5,0.32432,3.42336,0.956772981083419,False
+26,133,Ghaziabad,Jalandhar,Uttar Pradesh,Punjab,0,5,0.32432,3.42336,0.956772981083419,False
+6,133,West Delhi,Jalandhar,Delhi,Punjab,0,5,0.32432,3.42336,0.956772981083419,False
+1,133,Central Delhi,Jalandhar,Delhi,Punjab,0,5,0.32432,3.42336,0.956772981083419,False
+7,133,North East Delhi,Jalandhar,Delhi,Punjab,0,5,0.32432,3.42336,0.956772981083419,False
+3,133,New Delhi,Jalandhar,Delhi,Punjab,0,5,0.32432,3.42336,0.956772981083419,False
+105,113,Kurnool,Nizamabad,Andhra Pradesh,Telangana,3,3,0.36364,2.99178,0.9548586617697167,True
+62,64,Jodhpur,Kota,Rajasthan,Rajasthan,1,1,0.42857,2.29364,0.9537222238131065,True
+55,125,Salem,Kollam,Tamil Nadu,Kerala,4,4,0.38095,2.78772,0.9520571995331424,True
+71,124,Bengaluru Urban,Thrissur,Karnataka,Kerala,4,4,0.33333,3.15001,0.9320373543820175,True
+71,122,Bengaluru Urban,Kochi,Karnataka,Kerala,4,4,0.33333,3.15001,0.9320373543820175,True
+71,130,Bengaluru Urban,Kottayam,Karnataka,Kerala,4,4,0.33333,3.15001,0.9320373543820175,True
+60,127,Thanjavur,Alappuzha,Tamil Nadu,Kerala,4,4,0.38889,2.54143,0.9295067169608162,True
+94,136,Gwalior,Mohali,Madhya Pradesh,Punjab,0,5,0.3,3.46514,0.9265984476426503,False
+94,144,Gwalior,Ambala,Madhya Pradesh,Haryana,0,5,0.3,3.46514,0.9265984476426503,False
+94,134,Gwalior,Patiala,Madhya Pradesh,Punjab,0,5,0.3,3.46514,0.9265984476426503,False
+132,147,Amritsar,Rohtak,Punjab,Haryana,5,0,0.30556,3.3445,0.918025270769685,False
+28,140,Meerut,Firozpur,Uttar Pradesh,Punjab,0,5,0.32353,3.13736,0.9157716406876273,False
+103,113,Guntur,Nizamabad,Andhra Pradesh,Telangana,3,3,0.36842,2.60996,0.9087557063306602,True
+137,148,Hoshiarpur,Sonipat,Punjab,Haryana,5,0,0.30556,3.26509,0.9069655824368914,False
+132,150,Amritsar,Bhiwani,Punjab,Haryana,5,5,0.2973,3.3445,0.9058005490259968,True
+94,135,Gwalior,Bathinda,Madhya Pradesh,Punjab,0,5,0.28571,3.46514,0.9054493830279645,False
+24,35,Varanasi,Darbhanga,Uttar Pradesh,Bihar,2,2,0.375,2.49025,0.9018216439113157,True
+30,37,Gorakhpur,Begusarai,Uttar Pradesh,Bihar,2,2,0.375,2.45839,0.897384398346742,True
+32,50,Gaya,Darjeeling,Bihar,West Bengal,2,2,0.41667,1.92232,0.8843953954680717,True
+33,50,Muzaffarpur,Darjeeling,Bihar,West Bengal,2,2,0.41667,1.92232,0.8843953954680717,True
+31,50,Patna,Darjeeling,Bihar,West Bengal,2,2,0.41667,1.92232,0.8843953954680717,True
+1,140,Central Delhi,Firozpur,Delhi,Punjab,0,5,0.2973,3.13736,0.8769514891940506,False
+26,140,Ghaziabad,Firozpur,Uttar Pradesh,Punjab,0,5,0.2973,3.13736,0.8769514891940506,False
+2,140,East Delhi,Firozpur,Delhi,Punjab,0,5,0.2973,3.13736,0.8769514891940506,False
+7,140,North East Delhi,Firozpur,Delhi,Punjab,0,5,0.2973,3.13736,0.8769514891940506,False
+9,140,South West Delhi,Firozpur,Delhi,Punjab,0,5,0.2973,3.13736,0.8769514891940506,False
+10,140,Shahdara,Firozpur,Delhi,Punjab,0,5,0.2973,3.13736,0.8769514891940506,False
+140,141,Firozpur,Gurugram,Punjab,Haryana,5,0,0.2973,3.13736,0.8769514891940506,False
+5,140,South Delhi,Firozpur,Delhi,Punjab,0,5,0.2973,3.13736,0.8769514891940506,False
+3,140,New Delhi,Firozpur,Delhi,Punjab,0,5,0.2973,3.13736,0.8769514891940506,False
+27,140,Noida,Firozpur,Uttar Pradesh,Punjab,0,5,0.2973,3.13736,0.8769514891940506,False
+6,140,West Delhi,Firozpur,Delhi,Punjab,0,5,0.2973,3.13736,0.8769514891940506,False
+133,142,Jalandhar,Faridabad,Punjab,Haryana,5,0,0.2973,3.13215,0.8762258755910555,False
+83,90,Vadodara,Kutch,Gujarat,Gujarat,1,1,0.38462,2.13213,0.866182618508256,True
+57,121,Erode,Thiruvananthapuram,Tamil Nadu,Kerala,4,4,0.35,2.45108,0.859366547783883,True
+57,73,Erode,Mangaluru,Tamil Nadu,Karnataka,4,4,0.35,2.42886,0.8562718962947169,True
+138,143,Pathankot,Panipat,Punjab,Haryana,5,5,0.27778,3.15858,0.8510174523738925,True
+94,131,Gwalior,Ludhiana,Madhya Pradesh,Punjab,0,5,0.275,3.17393,0.8490409230125446,False
+66,67,Bikaner,Bhilwara,Rajasthan,Rajasthan,1,1,0.38462,1.95621,0.841681669364508,True
+60,71,Thanjavur,Bengaluru Urban,Tamil Nadu,Karnataka,4,4,0.31818,2.64518,0.8393061859764845,True
+39,50,Saran,Darjeeling,Bihar,West Bengal,2,2,0.38462,1.92232,0.8369616991139304,True
+30,36,Gorakhpur,Purnia,Uttar Pradesh,Bihar,2,2,0.33333,2.45839,0.8357131931337287,True
+109,111,Kadapa,Hyderabad,Andhra Pradesh,Telangana,3,3,0.31818,2.61715,0.8354023569377211,True
+48,50,Murshidabad,Darjeeling,West Bengal,West Bengal,2,2,0.38462,1.89881,0.8336873851395697,True
+54,80,Tiruchirappalli,Tumakuru,Tamil Nadu,Karnataka,4,4,0.2963,2.80916,0.8297620198768089,True
+132,148,Amritsar,Sonipat,Punjab,Haryana,5,0,0.27778,2.98383,0.8266794529260187,False
+36,45,Purnia,Hooghly,Bihar,West Bengal,2,2,0.33333,2.35396,0.821168888227626,True
+4,137,North Delhi,Hoshiarpur,Delhi,Punjab,0,5,0.27778,2.91214,0.8166949540395061,False
+8,137,North West Delhi,Hoshiarpur,Delhi,Punjab,0,5,0.27778,2.91214,0.8166949540395061,False
+116,118,Mahbubnagar,Adilabad,Telangana,Telangana,3,3,0.33333,2.30929,0.8149475524030965,True
+118,120,Adilabad,Rangareddy,Telangana,Telangana,3,3,0.33333,2.30929,0.8149475524030965,True
+117,118,Nalgonda,Adilabad,Telangana,Telangana,3,3,0.33333,2.30929,0.8149475524030965,True
+80,122,Tumakuru,Kochi,Karnataka,Kerala,4,4,0.28571,2.78934,0.8113285245050856,True
+80,124,Tumakuru,Thrissur,Karnataka,Kerala,4,4,0.28571,2.78934,0.8113285245050856,True
+80,130,Tumakuru,Kottayam,Karnataka,Kerala,4,4,0.28571,2.78934,0.8113285245050856,True
+30,38,Gorakhpur,Munger,Uttar Pradesh,Bihar,2,2,0.31579,2.45839,0.8097541593099646,True
+30,34,Gorakhpur,Bhagalpur,Uttar Pradesh,Bihar,2,2,0.31579,2.45839,0.8097541593099646,True
+63,92,Udaipur,Indore,Rajasthan,Madhya Pradesh,1,1,0.35714,2.0189,0.8097425694010739,True
+140,142,Firozpur,Faridabad,Punjab,Haryana,5,0,0.27027,2.84615,0.7963895837964283,False
+20,105,Nanded,Kurnool,Maharashtra,Andhra Pradesh,3,3,0.29167,2.60191,0.7940452838532064,True
+32,49,Gaya,Malda,Bihar,West Bengal,2,2,0.31579,2.32475,0.7911416829367808,True
+33,49,Muzaffarpur,Malda,Bihar,West Bengal,2,2,0.31579,2.32475,0.7911416829367808,True
+31,49,Patna,Malda,Bihar,West Bengal,2,2,0.31579,2.32475,0.7911416829367808,True
+52,73,Coimbatore,Mangaluru,Tamil Nadu,Karnataka,4,4,0.30435,2.42886,0.7887103287887401,True
+72,125,Mysuru,Kollam,Karnataka,Kerala,4,4,0.30435,2.42705,0.7884582442164905,True
+73,110,Mangaluru,Anantapur,Karnataka,Andhra Pradesh,4,3,0.31579,2.29358,0.7868005359107996,False
+104,116,Nellore,Mahbubnagar,Andhra Pradesh,Telangana,3,3,0.31579,2.25412,0.7813048136892654,True
+102,113,Vijayawada,Nizamabad,Andhra Pradesh,Telangana,3,3,0.31579,2.24928,0.7806307311866748,True
+39,49,Saran,Malda,Bihar,West Bengal,2,2,0.3,2.32475,0.7677726325332896,True
+52,58,Coimbatore,Vellore,Tamil Nadu,Tamil Nadu,4,4,0.28,2.5261,0.7662154897631202,True
+108,114,Rajahmundry,Karimnagar,Andhra Pradesh,Telangana,3,3,0.33333,1.92177,0.7609763847576598,True
+121,126,Thiruvananthapuram,Kannur,Kerala,Kerala,4,4,0.31579,2.0904,0.7585029981264276,True
+138,147,Pathankot,Rohtak,Punjab,Haryana,5,0,0.25,2.77966,0.7571298978210776,False
+58,128,Vellore,Palakkad,Tamil Nadu,Kerala,4,4,0.26923,2.5261,0.7502759917994974,True
+28,137,Meerut,Hoshiarpur,Uttar Pradesh,Punjab,0,5,0.26471,2.57251,0.7500501058922396,False
+60,121,Thanjavur,Thiruvananthapuram,Tamil Nadu,Kerala,4,4,0.33333,1.8278,0.7478888779873212,True
+138,150,Pathankot,Bhiwani,Punjab,Haryana,5,5,0.24324,2.77966,0.7471251618661948,True
+8,132,North West Delhi,Amritsar,Delhi,Punjab,0,5,0.25,2.63087,0.73640743179619,False
+4,132,North Delhi,Amritsar,Delhi,Punjab,0,5,0.25,2.63087,0.73640743179619,False
+109,115,Kadapa,Khammam,Andhra Pradesh,Telangana,3,3,0.28571,2.22728,0.7330486047930859,True
+20,103,Nanded,Guntur,Maharashtra,Andhra Pradesh,3,3,0.28571,2.22009,0.7320472301663036,True
+115,118,Khammam,Adilabad,Telangana,Telangana,3,3,0.3125,1.93036,0.7313445392726365,True
+22,24,Kanpur Nagar,Varanasi,Uttar Pradesh,Uttar Pradesh,2,2,0.30769,1.96381,0.7288844748662702,True
+71,127,Bengaluru Urban,Alappuzha,Karnataka,Kerala,4,4,0.25926,2.45108,0.7250722074664167,True
+24,37,Varanasi,Begusarai,Uttar Pradesh,Bihar,2,2,0.29412,2.05596,0.7216350328958565,True
+27,137,Noida,Hoshiarpur,Uttar Pradesh,Punjab,0,5,0.24324,2.57251,0.7182747093018054,False
+137,141,Hoshiarpur,Gurugram,Punjab,Haryana,5,0,0.24324,2.57251,0.7182747093018054,False
+10,137,Shahdara,Hoshiarpur,Delhi,Punjab,0,5,0.24324,2.57251,0.7182747093018054,False
+5,137,South Delhi,Hoshiarpur,Delhi,Punjab,0,5,0.24324,2.57251,0.7182747093018054,False
+3,137,New Delhi,Hoshiarpur,Delhi,Punjab,0,5,0.24324,2.57251,0.7182747093018054,False
+1,137,Central Delhi,Hoshiarpur,Delhi,Punjab,0,5,0.24324,2.57251,0.7182747093018054,False
+26,137,Ghaziabad,Hoshiarpur,Uttar Pradesh,Punjab,0,5,0.24324,2.57251,0.7182747093018054,False
+6,137,West Delhi,Hoshiarpur,Delhi,Punjab,0,5,0.24324,2.57251,0.7182747093018054,False
+2,137,East Delhi,Hoshiarpur,Delhi,Punjab,0,5,0.24324,2.57251,0.7182747093018054,False
+9,137,South West Delhi,Hoshiarpur,Delhi,Punjab,0,5,0.24324,2.57251,0.7182747093018054,False
+7,137,North East Delhi,Hoshiarpur,Delhi,Punjab,0,5,0.24324,2.57251,0.7182747093018054,False
+51,110,Chennai,Anantapur,Tamil Nadu,Andhra Pradesh,4,3,0.29412,2.03122,0.7181894128309614,False
+30,98,Gorakhpur,Satna,Uttar Pradesh,Madhya Pradesh,2,2,0.30769,1.88421,0.7177983246170526,True
+78,123,Davangere,Kozhikode,Karnataka,Kerala,4,4,0.27273,2.24582,0.7164204537172962,True
+71,74,Bengaluru Urban,Hubballi-Dharwad,Karnataka,Karnataka,4,1,0.26087,2.36712,0.7157616106185414,False
+56,126,Tirunelveli,Kannur,Tamil Nadu,Kerala,4,4,0.28571,2.0904,0.7139848831082506,True
+59,126,Thoothukudi,Kannur,Tamil Nadu,Kerala,4,4,0.28571,2.0904,0.7139848831082506,True
+60,129,Thanjavur,Malappuram,Tamil Nadu,Kerala,4,4,0.28571,2.08953,0.7138637153856775,True
+109,112,Kadapa,Warangal,Andhra Pradesh,Telangana,3,3,0.27273,2.22728,0.71383832776729,True
+55,121,Salem,Thiruvananthapuram,Tamil Nadu,Kerala,4,4,0.28571,2.08181,0.7127885259393967,True
+55,73,Salem,Mangaluru,Tamil Nadu,Karnataka,4,4,0.28571,2.05959,0.7096938744502306,True
+76,103,Kalaburagi,Guntur,Karnataka,Andhra Pradesh,3,3,0.27273,2.19412,0.7092200269850782,True
+53,71,Madurai,Bengaluru Urban,Tamil Nadu,Karnataka,4,4,0.25,2.43477,0.7090959485817232,True
+79,129,Shivamogga,Malappuram,Karnataka,Kerala,4,4,0.27273,2.18174,0.7074958242201874,True
+108,111,Rajahmundry,Hyderabad,Andhra Pradesh,Telangana,3,3,0.29412,1.92177,0.7029459562382874,True
+60,72,Thanjavur,Mysuru,Tamil Nadu,Karnataka,4,4,0.27273,2.13128,0.7004680963109473,True
+38,42,Munger,Howrah,Bihar,West Bengal,2,2,0.27778,2.04971,0.696581529926031,True
+34,42,Bhagalpur,Howrah,Bihar,West Bengal,2,2,0.27778,2.04971,0.696581529926031,True
+34,43,Bhagalpur,North 24 Parganas,Bihar,West Bengal,2,2,0.27778,2.04971,0.696581529926031,True
+38,41,Munger,Kolkata,Bihar,West Bengal,2,2,0.27778,2.04971,0.696581529926031,True
+34,41,Bhagalpur,Kolkata,Bihar,West Bengal,2,2,0.27778,2.04971,0.696581529926031,True
+38,43,Munger,North 24 Parganas,Bihar,West Bengal,2,2,0.27778,2.04971,0.696581529926031,True
+75,110,Belagavi,Anantapur,Karnataka,Andhra Pradesh,1,3,0.27778,2.0275,0.6934882711693083,False
+76,109,Kalaburagi,Kadapa,Karnataka,Andhra Pradesh,3,3,0.26087,2.19412,0.6916673393482571,True
+77,117,Ballari,Nalgonda,Karnataka,Telangana,3,3,0.26087,2.19177,0.6913400472240654,True
+60,125,Thanjavur,Kollam,Tamil Nadu,Kerala,4,4,0.29412,1.8278,0.6898584494679487,True
+69,139,Sikar,Moga,Rajasthan,Punjab,1,5,0.225,2.55761,0.6892045107693122,False
+77,107,Ballari,Tirupati,Karnataka,Andhra Pradesh,3,4,0.29412,1.7804,0.6832568976863795,False
+73,77,Mangaluru,Ballari,Karnataka,Karnataka,4,3,0.27778,1.94761,0.6823617316792332,False
+76,118,Kalaburagi,Adilabad,Karnataka,Telangana,3,3,0.27778,1.93036,0.6799592682144215,True
+108,116,Rajahmundry,Mahbubnagar,Andhra Pradesh,Telangana,3,3,0.27778,1.92177,0.6787629110455675,True
+58,129,Vellore,Malappuram,Tamil Nadu,Kerala,4,4,0.26087,2.09181,0.6774182937201487,True
+24,36,Varanasi,Purnia,Uttar Pradesh,Bihar,2,2,0.26316,2.05596,0.6758145262149136,True
+37,46,Begusarai,Bardhaman,Bihar,West Bengal,2,2,0.27778,1.89881,0.6755651973555923,True
+37,47,Begusarai,Nadia,Bihar,West Bengal,2,2,0.27778,1.89881,0.6755651973555923,True
+110,117,Anantapur,Nalgonda,Andhra Pradesh,Telangana,3,3,0.24,2.27762,0.6724092529754765,True
+28,132,Meerut,Amritsar,Uttar Pradesh,Punjab,0,5,0.23529,2.29125,0.6673367919189396,False
+138,148,Pathankot,Sonipat,Punjab,Haryana,5,0,0.22222,2.41898,0.6657826872449681,False
+47,50,Nadia,Darjeeling,West Bengal,West Bengal,2,2,0.30769,1.49639,0.6637853749983149,True
+46,50,Bardhaman,Darjeeling,West Bengal,West Bengal,2,2,0.30769,1.49639,0.6637853749983149,True
+56,72,Tirunelveli,Mysuru,Tamil Nadu,Karnataka,4,4,0.25,2.08181,0.65993806426057,True
+59,72,Thoothukudi,Mysuru,Tamil Nadu,Karnataka,4,4,0.25,2.08181,0.65993806426057,True
+105,108,Kurnool,Rajahmundry,Andhra Pradesh,Andhra Pradesh,3,3,0.26316,1.92177,0.6571254495573445,True
+24,38,Varanasi,Munger,Uttar Pradesh,Bihar,2,2,0.25,2.05596,0.6563378508944611,True
+24,34,Varanasi,Bhagalpur,Uttar Pradesh,Bihar,2,2,0.25,2.05596,0.6563378508944611,True
+40,48,Vaishali,Murshidabad,Bihar,West Bengal,2,2,0.26316,1.89881,0.6539277358673693,True
+35,48,Darbhanga,Murshidabad,Bihar,West Bengal,2,2,0.26316,1.89881,0.6539277358673693,True
+15,87,Nashik,Junagadh,Maharashtra,Gujarat,1,1,0.28571,1.64363,0.6517617757358525,True
+15,84,Nashik,Rajkot,Maharashtra,Gujarat,1,1,0.28571,1.64363,0.6517617757358525,True
+79,128,Shivamogga,Palakkad,Karnataka,Kerala,4,4,0.23077,2.18174,0.6453954217546718,True
+14,18,Thane,Kolhapur,Maharashtra,Maharashtra,1,1,0.3,1.44483,0.645223319376362,True
+16,18,Aurangabad,Kolhapur,Maharashtra,Maharashtra,1,1,0.3,1.44483,0.645223319376362,True
+26,132,Ghaziabad,Amritsar,Uttar Pradesh,Punjab,0,5,0.21622,2.29125,0.639113372590594,False
+2,132,East Delhi,Amritsar,Delhi,Punjab,0,5,0.21622,2.29125,0.639113372590594,False
+3,132,New Delhi,Amritsar,Delhi,Punjab,0,5,0.21622,2.29125,0.639113372590594,False
+10,132,Shahdara,Amritsar,Delhi,Punjab,0,5,0.21622,2.29125,0.639113372590594,False
+132,141,Amritsar,Gurugram,Punjab,Haryana,5,0,0.21622,2.29125,0.639113372590594,False
+27,132,Noida,Amritsar,Uttar Pradesh,Punjab,0,5,0.21622,2.29125,0.639113372590594,False
+9,132,South West Delhi,Amritsar,Delhi,Punjab,0,5,0.21622,2.29125,0.639113372590594,False
+5,132,South Delhi,Amritsar,Delhi,Punjab,0,5,0.21622,2.29125,0.639113372590594,False
+1,132,Central Delhi,Amritsar,Delhi,Punjab,0,5,0.21622,2.29125,0.639113372590594,False
+6,132,West Delhi,Amritsar,Delhi,Punjab,0,5,0.21622,2.29125,0.639113372590594,False
+7,132,North East Delhi,Amritsar,Delhi,Punjab,0,5,0.21622,2.29125,0.639113372590594,False
+137,142,Hoshiarpur,Faridabad,Punjab,Haryana,5,0,0.21622,2.28131,0.6377289965418851,False
+76,78,Kalaburagi,Davangere,Karnataka,Karnataka,3,4,0.2381,2.02729,0.6347329997214661,False
+106,112,Kakinada,Warangal,Andhra Pradesh,Telangana,3,3,0.26667,1.69607,0.6308862450563102,True
+104,120,Nellore,Rangareddy,Andhra Pradesh,Telangana,3,3,0.25,1.85169,0.6278885052737619,True
+71,105,Bengaluru Urban,Kurnool,Karnataka,Andhra Pradesh,4,3,0.2,2.34984,0.6232679456466776,False
+77,119,Ballari,Medak,Karnataka,Telangana,3,3,0.25,1.81284,0.6224777397312733,True
+51,80,Chennai,Tumakuru,Tamil Nadu,Karnataka,4,4,0.2381,1.92905,0.6210507961978087,True
+78,109,Davangere,Kadapa,Karnataka,Andhra Pradesh,4,3,0.25,1.79134,0.6194833649780298,False
+71,104,Bengaluru Urban,Nellore,Karnataka,Andhra Pradesh,4,3,0.21739,2.11964,0.6169442800452063,False
+68,139,Alwar,Moga,Rajasthan,Punjab,0,5,0.2,2.27403,0.6127096409934971,False
+20,102,Nanded,Vijayawada,Maharashtra,Andhra Pradesh,3,3,0.2381,1.85941,0.6113518074621869,True
+19,100,Amravati,Ratlam,Maharashtra,Madhya Pradesh,3,1,0.23529,1.88421,0.6106470105440467,False
+80,127,Tumakuru,Alappuzha,Karnataka,Kerala,4,4,0.21429,2.0904,0.6082839597505973,True
+77,103,Ballari,Guntur,Karnataka,Andhra Pradesh,3,3,0.2381,1.8225,0.6062112320137117,True
+13,97,Nagpur,Dewas,Maharashtra,Madhya Pradesh,3,1,0.27273,1.42414,0.6019824143105498,False
+74,105,Hubballi-Dharwad,Kurnool,Karnataka,Andhra Pradesh,1,3,0.22727,1.88507,0.598897261516697,False
+109,114,Kadapa,Karimnagar,Andhra Pradesh,Telangana,3,3,0.22727,1.87432,0.5974000741400753,True
+72,74,Mysuru,Hubballi-Dharwad,Karnataka,Karnataka,4,1,0.21739,1.97725,0.5971131627840747,False
+53,80,Madurai,Tumakuru,Tamil Nadu,Karnataka,4,4,0.2069,2.07409,0.5950752831492814,True
+80,104,Tumakuru,Nellore,Karnataka,Andhra Pradesh,4,3,0.21739,1.9587,0.5945296441016251,False
+63,84,Udaipur,Rajkot,Rajasthan,Gujarat,1,1,0.25,1.59716,0.59243928639269,True
+63,87,Udaipur,Junagadh,Rajasthan,Gujarat,1,1,0.25,1.59716,0.59243928639269,True
+76,102,Kalaburagi,Vijayawada,Karnataka,Andhra Pradesh,3,3,0.22727,1.83344,0.5917065839115827,True
+19,64,Amravati,Kota,Maharashtra,Rajasthan,3,1,0.22222,1.88421,0.5913035343709225,False
+22,96,Kanpur Nagar,Sagar,Uttar Pradesh,Madhya Pradesh,2,1,0.27273,1.3286,0.588676248546602,False
+72,107,Mysuru,Tirupati,Karnataka,Andhra Pradesh,4,4,0.22727,1.8039,0.5875924522738706,True
+103,110,Guntur,Anantapur,Andhra Pradesh,Andhra Pradesh,3,3,0.21739,1.90835,0.587517236249262,True
+58,105,Vellore,Kurnool,Tamil Nadu,Andhra Pradesh,4,3,0.20833,1.99806,0.5866027248343411,False
+106,117,Kakinada,Nalgonda,Andhra Pradesh,Telangana,3,3,0.23529,1.69607,0.5844441423545017,True
+73,130,Mangaluru,Kottayam,Karnataka,Kerala,4,4,0.22727,1.74962,0.5800327005712634,True
+73,124,Mangaluru,Thrissur,Karnataka,Kerala,4,4,0.22727,1.74962,0.5800327005712634,True
+73,122,Mangaluru,Kochi,Karnataka,Kerala,4,4,0.22727,1.74962,0.5800327005712634,True
+11,75,Mumbai,Belagavi,Maharashtra,Karnataka,1,1,0.25,1.48904,0.5773810632149841,True
+70,95,Pali,Ujjain,Rajasthan,Madhya Pradesh,1,1,0.23529,1.64363,0.5771406534214746,True
+15,81,Nashik,Ahmedabad,Maharashtra,Gujarat,1,1,0.23529,1.64363,0.5771406534214746,True
+15,88,Nashik,Gandhinagar,Maharashtra,Gujarat,1,1,0.23529,1.64363,0.5771406534214746,True
+60,123,Thanjavur,Kozhikode,Tamil Nadu,Kerala,4,4,0.22727,1.72885,0.577139995286386,True
+78,129,Davangere,Malappuram,Karnataka,Kerala,4,4,0.21739,1.82879,0.576436656929818,True
+4,138,North Delhi,Pathankot,Delhi,Punjab,0,5,0.19444,2.06603,0.5755120588475826,False
+8,138,North West Delhi,Pathankot,Delhi,Punjab,0,5,0.19444,2.06603,0.5755120588475826,False
+15,18,Nashik,Kolhapur,Maharashtra,Maharashtra,1,1,0.25,1.44483,0.5712237930828497,True
+63,82,Udaipur,Surat,Rajasthan,Gujarat,1,1,0.23529,1.59716,0.5706686257571387,True
+84,100,Rajkot,Ratlam,Gujarat,Madhya Pradesh,1,1,0.23529,1.59716,0.5706686257571387,True
+87,100,Junagadh,Ratlam,Gujarat,Madhya Pradesh,1,1,0.23529,1.59716,0.5706686257571387,True
+55,109,Salem,Kadapa,Tamil Nadu,Andhra Pradesh,4,3,0.19231,2.05069,0.570223227459351,False
+78,107,Davangere,Tirupati,Karnataka,Andhra Pradesh,4,4,0.25,1.40147,0.5651849052084015,True
+57,79,Erode,Shivamogga,Tamil Nadu,Karnataka,4,4,0.21739,1.74745,0.5651081712354543,True
+34,44,Bhagalpur,South 24 Parganas,Bihar,West Bengal,2,2,0.22222,1.67079,0.5615798385645407,True
+38,44,Munger,South 24 Parganas,Bihar,West Bengal,2,2,0.22222,1.67079,0.5615798385645407,True
+72,121,Mysuru,Thiruvananthapuram,Karnataka,Kerala,4,4,0.21739,1.72114,0.5614438921769505,True
+65,100,Ajmer,Ratlam,Rajasthan,Madhya Pradesh,1,1,0.22222,1.65823,0.5598305666156692,True
+132,142,Amritsar,Faridabad,Punjab,Haryana,5,0,0.18919,2.00004,0.5585514671929717,False
+29,139,Bareilly,Moga,Uttar Pradesh,Punjab,0,5,0.18919,1.9975,0.5581977131523559,False
+110,126,Anantapur,Kannur,Andhra Pradesh,Kerala,3,4,0.2,1.85929,0.55494745563721,False
+60,80,Thanjavur,Tumakuru,Tamil Nadu,Karnataka,4,4,0.20833,1.77061,0.5549250254099125,True
+36,42,Purnia,Howrah,Bihar,West Bengal,2,2,0.22222,1.61542,0.5538682790256064,True
+36,43,Purnia,North 24 Parganas,Bihar,West Bengal,2,2,0.22222,1.61542,0.5538682790256064,True
+36,41,Purnia,Kolkata,Bihar,West Bengal,2,2,0.22222,1.61542,0.5538682790256064,True
+88,95,Gandhinagar,Ujjain,Gujarat,Madhya Pradesh,1,1,0.22222,1.61176,0.5533585389513334,True
+81,95,Ahmedabad,Ujjain,Gujarat,Madhya Pradesh,1,1,0.22222,1.61176,0.5533585389513334,True
+110,111,Anantapur,Hyderabad,Andhra Pradesh,Telangana,3,3,0.2,1.83344,0.551347242271101,True
+82,100,Surat,Ratlam,Gujarat,Madhya Pradesh,1,1,0.22222,1.59716,0.5513251495840146,True
+63,85,Udaipur,Bhavnagar,Rajasthan,Gujarat,1,1,0.22222,1.59716,0.5513251495840146,True
+58,123,Vellore,Kozhikode,Tamil Nadu,Kerala,4,4,0.20833,1.73114,0.549427910455935,True
+64,66,Kota,Bikaner,Rajasthan,Rajasthan,1,1,0.23529,1.44232,0.5491035566040127,True
+19,96,Amravati,Sagar,Maharashtra,Madhya Pradesh,3,1,0.23077,1.48292,0.5480684931471573,False
+72,77,Mysuru,Ballari,Karnataka,Karnataka,4,3,0.19231,1.88258,0.5468100023538742,False
+37,45,Begusarai,Hooghly,Bihar,West Bengal,2,2,0.22222,1.51989,0.5405635059941021,True
+104,115,Nellore,Khammam,Andhra Pradesh,Telangana,3,3,0.22222,1.50593,0.5386192515031589,True
+70,83,Pali,Vadodara,Rajasthan,Gujarat,1,1,0.21053,1.62432,0.5378067216527815,True
+55,110,Salem,Anantapur,Tamil Nadu,Andhra Pradesh,4,3,0.18519,1.88277,0.536298931726102,False
+69,133,Sikar,Jalandhar,Rajasthan,Punjab,1,5,0.175,1.98053,0.5348331806338598,False
+85,100,Bhavnagar,Ratlam,Gujarat,Madhya Pradesh,1,1,0.21053,1.59716,0.5340240603365913,True
+61,139,Jaipur,Moga,Rajasthan,Punjab,1,5,0.17073,1.99046,0.5298966044046594,False
+78,128,Davangere,Palakkad,Karnataka,Kerala,4,4,0.18519,1.82879,0.528780961996796,True
+52,79,Coimbatore,Shivamogga,Tamil Nadu,Karnataka,4,4,0.19231,1.74745,0.5279900088466285,True
+21,96,Lucknow,Sagar,Uttar Pradesh,Madhya Pradesh,2,1,0.23077,1.3286,0.5265758460810865,False
+17,77,Solapur,Ballari,Maharashtra,Karnataka,1,3,0.2,1.64514,0.5251220903624622,False
+51,54,Chennai,Tiruchirappalli,Tamil Nadu,Tamil Nadu,4,4,0.21053,1.5293,0.5245729779758891,True
+16,82,Aurangabad,Surat,Maharashtra,Gujarat,1,1,0.21429,1.48292,0.5236782492808156,True
+12,82,Pune,Surat,Maharashtra,Gujarat,1,1,0.21429,1.48292,0.5236782492808156,True
+64,83,Kota,Vadodara,Rajasthan,Gujarat,1,1,0.19048,1.73465,0.5234989286567736,True
+33,48,Muzaffarpur,Murshidabad,Bihar,West Bengal,2,2,0.21053,1.51989,0.5232624167466788,True
+32,48,Gaya,Murshidabad,Bihar,West Bengal,2,2,0.21053,1.51989,0.5232624167466788,True
+31,48,Patna,Murshidabad,Bihar,West Bengal,2,2,0.21053,1.51989,0.5232624167466788,True
+108,120,Rajahmundry,Rangareddy,Andhra Pradesh,Telangana,3,3,0.21053,1.51934,0.5231858164622935,True
+70,89,Pali,Anand,Rajasthan,Gujarat,1,1,0.2,1.62432,0.5222224214153679,True
+104,112,Nellore,Warangal,Andhra Pradesh,Telangana,3,3,0.21053,1.50593,0.5213181622557357,True
+35,47,Darbhanga,Nadia,Bihar,West Bengal,2,2,0.21053,1.49639,0.5199894955047616,True
+40,47,Vaishali,Nadia,Bihar,West Bengal,2,2,0.21053,1.49639,0.5199894955047616,True
+40,46,Vaishali,Bardhaman,Bihar,West Bengal,2,2,0.21053,1.49639,0.5199894955047616,True
+35,46,Darbhanga,Bardhaman,Bihar,West Bengal,2,2,0.21053,1.49639,0.5199894955047616,True
+12,74,Pune,Hubballi-Dharwad,Maharashtra,Karnataka,1,1,0.21429,1.45604,0.5199345844730396,True
+22,30,Kanpur Nagar,Gorakhpur,Uttar Pradesh,Uttar Pradesh,2,2,0.21429,1.44992,0.5190822322176979,True
+61,63,Jaipur,Udaipur,Rajasthan,Rajasthan,1,1,0.14286,2.18939,0.5163548949445956,True
+64,89,Kota,Anand,Rajasthan,Gujarat,1,1,0.18182,1.73465,0.5106822107027373,True
+63,69,Udaipur,Sikar,Rajasthan,Rajasthan,1,1,0.13889,2.18939,0.5104793325568907,True
+51,57,Chennai,Erode,Tamil Nadu,Tamil Nadu,4,4,0.2,1.5293,0.5089886777384753,True
+39,48,Saran,Murshidabad,Bihar,West Bengal,2,2,0.2,1.51989,0.5076781165092651,True
+74,126,Hubballi-Dharwad,Kannur,Karnataka,Kerala,1,4,0.19048,1.60798,0.5058571867966182,False
+58,78,Vellore,Davangere,Tamil Nadu,Karnataka,4,4,0.21053,1.39449,0.5057975519068312,True
+58,79,Vellore,Shivamogga,Tamil Nadu,Karnataka,4,4,0.21053,1.39449,0.5057975519068312,True
+104,111,Nellore,Hyderabad,Andhra Pradesh,Telangana,3,3,0.2,1.50593,0.5057338620183219,True
+76,79,Kalaburagi,Shivamogga,Karnataka,Karnataka,3,4,0.18182,1.67433,0.5022812486043353,False
+104,108,Nellore,Rajahmundry,Andhra Pradesh,Andhra Pradesh,3,3,0.23077,1.15297,0.5021152861781962,True
+28,138,Meerut,Pathankot,Uttar Pradesh,Punjab,0,5,0.17647,1.7264,0.5016152571235519,False
+45,50,Hooghly,Darjeeling,West Bengal,West Bengal,2,2,0.23077,1.11746,0.49716969327179283,True
+11,85,Mumbai,Bhavnagar,Maharashtra,Gujarat,1,1,0.2,1.40331,0.49144164168446897,True
+75,80,Belagavi,Tumakuru,Karnataka,Karnataka,1,4,0.17391,1.65823,0.48833222431087747,False
+67,97,Bhilwara,Dewas,Rajasthan,Madhya Pradesh,1,1,0.21429,1.2266,0.4879797312923807,True
+77,102,Ballari,Vijayawada,Karnataka,Andhra Pradesh,3,3,0.19048,1.46182,0.4855010094043364,True
+74,120,Hubballi-Dharwad,Rangareddy,Karnataka,Telangana,1,3,0.18182,1.54544,0.48433032014175187,False
+79,109,Shivamogga,Kadapa,Karnataka,Andhra Pradesh,4,3,0.19048,1.43839,0.48223783728952274,False
+58,77,Vellore,Ballari,Tamil Nadu,Karnataka,4,3,0.19048,1.42744,0.48071279526403365,False
+1,138,Central Delhi,Pathankot,Delhi,Punjab,0,5,0.16216,1.7264,0.4804365926983487,False
+27,138,Noida,Pathankot,Uttar Pradesh,Punjab,0,5,0.16216,1.7264,0.4804365926983487,False
+26,138,Ghaziabad,Pathankot,Uttar Pradesh,Punjab,0,5,0.16216,1.7264,0.4804365926983487,False
+7,138,North East Delhi,Pathankot,Delhi,Punjab,0,5,0.16216,1.7264,0.4804365926983487,False
+2,138,East Delhi,Pathankot,Delhi,Punjab,0,5,0.16216,1.7264,0.4804365926983487,False
+10,138,Shahdara,Pathankot,Delhi,Punjab,0,5,0.16216,1.7264,0.4804365926983487,False
+9,138,South West Delhi,Pathankot,Delhi,Punjab,0,5,0.16216,1.7264,0.4804365926983487,False
+6,138,West Delhi,Pathankot,Delhi,Punjab,0,5,0.16216,1.7264,0.4804365926983487,False
+138,141,Pathankot,Gurugram,Punjab,Haryana,5,0,0.16216,1.7264,0.4804365926983487,False
+3,138,New Delhi,Pathankot,Delhi,Punjab,0,5,0.16216,1.7264,0.4804365926983487,False
+5,138,South Delhi,Pathankot,Delhi,Punjab,0,5,0.16216,1.7264,0.4804365926983487,False
+73,127,Mangaluru,Alappuzha,Karnataka,Kerala,4,4,0.19048,1.40364,0.47739809204881534,True
+25,33,Allahabad,Muzaffarpur,Uttar Pradesh,Bihar,2,2,0.2,1.27102,0.4730171841911401,True
+25,32,Allahabad,Gaya,Uttar Pradesh,Bihar,2,2,0.2,1.27102,0.4730171841911401,True
+25,31,Allahabad,Patna,Uttar Pradesh,Bihar,2,2,0.2,1.27102,0.4730171841911401,True
+102,110,Vijayawada,Anantapur,Andhra Pradesh,Andhra Pradesh,3,3,0.17391,1.54767,0.4729341744169895,True
+73,75,Mangaluru,Belagavi,Karnataka,Karnataka,4,1,0.2,1.26836,0.4726467173612039,False
+77,113,Ballari,Nizamabad,Karnataka,Telangana,3,3,0.18182,1.45989,0.47241549408872985,True
+77,114,Ballari,Karimnagar,Karnataka,Telangana,3,3,0.18182,1.45989,0.47241549408872985,True
+77,115,Ballari,Khammam,Karnataka,Telangana,3,3,0.18182,1.44357,0.4701425547411516,True
+68,70,Alwar,Pali,Rajasthan,Rajasthan,0,1,0.14286,1.84945,0.4690103482647088,False
+109,119,Kadapa,Medak,Andhra Pradesh,Telangana,3,3,0.18182,1.43498,0.4689461975722976,True
+57,107,Erode,Tirupati,Tamil Nadu,Andhra Pradesh,4,4,0.18182,1.43463,0.4688974519367797,True
+63,66,Udaipur,Bikaner,Rajasthan,Rajasthan,1,1,0.1875,1.36523,0.46763823496674156,True
+67,92,Bhilwara,Indore,Rajasthan,Madhya Pradesh,1,1,0.2,1.2266,0.4668306666776948,True
+63,97,Udaipur,Dewas,Rajasthan,Madhya Pradesh,1,1,0.2,1.2266,0.4668306666776948,True
+23,139,Agra,Moga,Uttar Pradesh,Punjab,0,5,0.15385,1.70919,0.4657409788933288,False
+63,86,Udaipur,Jamnagar,Rajasthan,Gujarat,1,1,0.2,1.19473,0.4623920283806777,True
+83,97,Vadodara,Dewas,Gujarat,Madhya Pradesh,1,1,0.1875,1.31762,0.4610074358038616,True
+20,77,Nanded,Ballari,Maharashtra,Karnataka,3,3,0.17391,1.45989,0.4607087690290961,True
+106,114,Kakinada,Karimnagar,Andhra Pradesh,Telangana,3,3,0.2,1.18217,0.46064275643180624,True
+54,73,Tiruchirappalli,Mangaluru,Tamil Nadu,Karnataka,4,4,0.18182,1.36701,0.45947979515471826,True
+14,83,Thane,Vadodara,Maharashtra,Gujarat,1,1,0.1875,1.30645,0.45945175366461843,True
+110,119,Anantapur,Medak,Andhra Pradesh,Telangana,3,3,0.17391,1.44357,0.45843582968151786,True
+77,112,Ballari,Warangal,Karnataka,Telangana,3,3,0.17391,1.44357,0.45843582968151786,True
+68,133,Alwar,Jalandhar,Rajasthan,Punjab,0,5,0.15,1.69696,0.45833970359048803,False
+69,140,Sikar,Firozpur,Rajasthan,Punjab,1,5,0.15,1.69453,0.45800126960674936,False
+79,105,Shivamogga,Kurnool,Karnataka,Andhra Pradesh,4,3,0.16667,1.5158,0.4577804047126718,False
+77,126,Ballari,Kannur,Karnataka,Kerala,3,4,0.16667,1.51331,0.4574336143342729,False
+18,77,Kolhapur,Ballari,Maharashtra,Karnataka,1,3,0.1875,1.28446,0.4563891350216499,False
+53,58,Madurai,Vellore,Tamil Nadu,Tamil Nadu,4,4,0.16667,1.50088,0.4557024479071652,True
+25,40,Allahabad,Vaishali,Uttar Pradesh,Bihar,2,2,0.1875,1.27102,0.45451730261776196,True
+60,107,Thanjavur,Tirupati,Tamil Nadu,Andhra Pradesh,4,4,0.1875,1.26928,0.45427496717261573,True
+62,100,Jodhpur,Ratlam,Rajasthan,Madhya Pradesh,1,1,0.1875,1.26836,0.4541468357878258,True
+39,99,Saran,Rewa,Bihar,Madhya Pradesh,2,2,0.17647,1.38249,0.45371779566364767,True
+17,82,Solapur,Surat,Maharashtra,Gujarat,1,1,0.16667,1.48292,0.4532011004388744,True
+66,68,Bikaner,Alwar,Rajasthan,Rajasthan,1,0,0.15625,1.58782,0.4523893624902475,False
+13,119,Nagpur,Medak,Maharashtra,Telangana,3,3,0.1875,1.24969,0.4515466043160558,True
+58,126,Vellore,Kannur,Tamil Nadu,Kerala,4,4,0.17391,1.37818,0.4493287522343278,True
+67,91,Bhilwara,Bhopal,Rajasthan,Madhya Pradesh,1,1,0.1875,1.2266,0.4483307851043167,True
+89,97,Anand,Dewas,Gujarat,Madhya Pradesh,1,1,0.17647,1.31762,0.44468314030351275,True
+86,100,Jamnagar,Ratlam,Gujarat,Madhya Pradesh,1,1,0.1875,1.19473,0.4438921468072996,True
+14,89,Thane,Anand,Maharashtra,Gujarat,1,1,0.17647,1.30645,0.44312745816426957,True
+64,96,Kota,Sagar,Rajasthan,Madhya Pradesh,1,1,0.17647,1.30283,0.44262328901977,True
+57,78,Erode,Davangere,Tamil Nadu,Karnataka,4,4,0.16667,1.39449,0.4408851674421621,True
+21,39,Lucknow,Saran,Uttar Pradesh,Bihar,2,2,0.16667,1.38249,0.4392138885101193,True
+55,79,Salem,Shivamogga,Tamil Nadu,Karnataka,4,4,0.16667,1.37818,0.4386136208270272,True
+12,76,Pune,Kalaburagi,Maharashtra,Karnataka,1,3,0.15789,1.45604,0.43646311881395766,False
+13,114,Nagpur,Karimnagar,Maharashtra,Telangana,3,3,0.17647,1.24969,0.43522230881570695,True
+108,119,Rajahmundry,Medak,Andhra Pradesh,Telangana,3,3,0.1875,1.12947,0.43480317488187337,True
+22,93,Kanpur Nagar,Jabalpur,Uttar Pradesh,Madhya Pradesh,2,1,0.2,0.9948,0.4345471286404008,False
+25,93,Allahabad,Jabalpur,Uttar Pradesh,Madhya Pradesh,2,1,0.2,0.9948,0.4345471286404008,False
+65,95,Ajmer,Ujjain,Rajasthan,Madhya Pradesh,1,1,0.17647,1.2412,0.43403987897128665,True
+58,122,Vellore,Kochi,Tamil Nadu,Kerala,4,4,0.16,1.41256,0.4335302981597754,True
+58,130,Vellore,Kottayam,Tamil Nadu,Kerala,4,4,0.16,1.41256,0.4335302981597754,True
+58,124,Vellore,Thrissur,Tamil Nadu,Kerala,4,4,0.16,1.41256,0.4335302981597754,True
+63,91,Udaipur,Bhopal,Rajasthan,Madhya Pradesh,1,1,0.17647,1.2266,0.4320064896039678,True
+93,97,Jabalpur,Dewas,Madhya Pradesh,Madhya Pradesh,1,1,0.2,0.96902,0.43095666440139535,True
+83,91,Vadodara,Bhopal,Gujarat,Madhya Pradesh,1,1,0.16667,1.31762,0.4301792331499844,True
+88,92,Gandhinagar,Indore,Gujarat,Madhya Pradesh,1,1,0.17647,1.19473,0.42756785130695074,True
+81,92,Ahmedabad,Indore,Gujarat,Madhya Pradesh,1,1,0.17647,1.19473,0.42756785130695074,True
+106,111,Kakinada,Hyderabad,Andhra Pradesh,Telangana,3,3,0.17647,1.18217,0.42581857935807926,True
+13,112,Nagpur,Warangal,Maharashtra,Telangana,3,3,0.16667,1.24969,0.42071840166217855,True
+19,119,Amravati,Medak,Maharashtra,Telangana,3,3,0.16667,1.24969,0.42071840166217855,True
+102,118,Vijayawada,Adilabad,Andhra Pradesh,Telangana,3,3,0.17647,1.13806,0.4196752365503785,True
+36,44,Purnia,South 24 Parganas,Bihar,West Bengal,2,2,0.16667,1.23649,0.41887999483693145,True
+108,113,Rajahmundry,Nizamabad,Andhra Pradesh,Telangana,3,3,0.17647,1.12947,0.4184788793815245,True
+66,142,Bikaner,Faridabad,Rajasthan,Haryana,1,0,0.14706,1.4371,0.417796986171042,False
+89,91,Anand,Bhopal,Gujarat,Madhya Pradesh,1,1,0.15789,1.31762,0.4171849163328436,True
+65,146,Ajmer,Hisar,Rajasthan,Haryana,1,5,0.125,1.65013,0.4148177744114347,False
+72,109,Mysuru,Kadapa,Karnataka,Andhra Pradesh,4,3,0.14286,1.45095,0.413509960396453,False
+52,78,Coimbatore,Davangere,Tamil Nadu,Karnataka,4,4,0.14815,1.39449,0.4134757429030451,True
+76,80,Kalaburagi,Tumakuru,Karnataka,Karnataka,3,4,0.13333,1.54639,0.41269788912442357,False
+110,123,Anantapur,Kozhikode,Andhra Pradesh,Kerala,3,4,0.14286,1.44226,0.4122996759031653,False
+102,107,Vijayawada,Tirupati,Andhra Pradesh,Andhra Pradesh,3,4,0.16667,1.187,0.4119873619746981,False
+2,66,East Delhi,Bikaner,Delhi,Rajasthan,0,1,0.14286,1.4371,0.4115810259623869,False
+66,141,Bikaner,Gurugram,Rajasthan,Haryana,1,0,0.14286,1.4371,0.4115810259623869,False
+6,66,West Delhi,Bikaner,Delhi,Rajasthan,0,1,0.14286,1.4371,0.4115810259623869,False
+7,66,North East Delhi,Bikaner,Delhi,Rajasthan,0,1,0.14286,1.4371,0.4115810259623869,False
+4,66,North Delhi,Bikaner,Delhi,Rajasthan,0,1,0.14286,1.4371,0.4115810259623869,False
+26,66,Ghaziabad,Bikaner,Uttar Pradesh,Rajasthan,0,1,0.14286,1.4371,0.4115810259623869,False
+1,66,Central Delhi,Bikaner,Delhi,Rajasthan,0,1,0.14286,1.4371,0.4115810259623869,False
+8,66,North West Delhi,Bikaner,Delhi,Rajasthan,0,1,0.14286,1.4371,0.4115810259623869,False
+9,66,South West Delhi,Bikaner,Delhi,Rajasthan,0,1,0.14286,1.4371,0.4115810259623869,False
+5,66,South Delhi,Bikaner,Delhi,Rajasthan,0,1,0.14286,1.4371,0.4115810259623869,False
+27,66,Noida,Bikaner,Uttar Pradesh,Rajasthan,0,1,0.14286,1.4371,0.4115810259623869,False
+3,66,New Delhi,Bikaner,Delhi,Rajasthan,0,1,0.14286,1.4371,0.4115810259623869,False
+10,66,Shahdara,Bikaner,Delhi,Rajasthan,0,1,0.14286,1.4371,0.4115810259623869,False
+106,116,Kakinada,Mahbubnagar,Andhra Pradesh,Telangana,3,3,0.16667,1.18217,0.41131467220455087,True
+57,110,Erode,Anantapur,Tamil Nadu,Andhra Pradesh,4,3,0.14286,1.42765,0.41026489380340314,False
+71,125,Bengaluru Urban,Kollam,Karnataka,Kerala,4,4,0.14815,1.36818,0.40981146384454115,True
+80,125,Tumakuru,Kollam,Karnataka,Kerala,4,4,0.14815,1.36818,0.40981146384454115,True
+67,83,Bhilwara,Vadodara,Rajasthan,Gujarat,1,1,0.15789,1.25376,0.408290926949489,True
+19,114,Amravati,Karimnagar,Maharashtra,Telangana,3,3,0.15789,1.24969,0.40772408484503775,True
+13,111,Nagpur,Hyderabad,Maharashtra,Telangana,3,3,0.15789,1.24969,0.40772408484503775,True
+108,109,Rajahmundry,Kadapa,Andhra Pradesh,Andhra Pradesh,3,3,0.16667,1.15297,0.4072478934699133,True
+79,107,Shivamogga,Tirupati,Karnataka,Andhra Pradesh,4,4,0.17647,1.04852,0.4072047102524522,True
+67,88,Bhilwara,Gandhinagar,Rajasthan,Gujarat,1,1,0.15789,1.23649,0.40588567801979064,True
+67,81,Bhilwara,Ahmedabad,Rajasthan,Gujarat,1,1,0.15789,1.23649,0.40588567801979064,True
+66,148,Bikaner,Sonipat,Rajasthan,Haryana,1,0,0.13889,1.4371,0.40570546357468207,False
+103,118,Guntur,Adilabad,Andhra Pradesh,Telangana,3,3,0.16667,1.13806,0.4051713293968501,True
+13,98,Nagpur,Satna,Maharashtra,Madhya Pradesh,3,2,0.16667,1.13523,0.4047771861153766,False
+101,102,Visakhapatnam,Vijayawada,Andhra Pradesh,Andhra Pradesh,3,3,0.16667,1.13523,0.4047771861153766,True
+66,147,Bikaner,Rohtak,Rajasthan,Haryana,1,0,0.13514,1.4371,0.4001554991026686,False
+138,142,Pathankot,Faridabad,Punjab,Haryana,5,0,0.13514,1.4352,0.39989087993842853,False
+103,107,Guntur,Tirupati,Andhra Pradesh,Andhra Pradesh,3,4,0.15789,1.187,0.3989930451575573,False
+80,120,Tumakuru,Rangareddy,Karnataka,Telangana,4,3,0.12903,1.49102,0.3986223703242472,False
+80,116,Tumakuru,Mahbubnagar,Karnataka,Telangana,4,3,0.12903,1.49102,0.3986223703242472,False
+105,106,Kurnool,Kakinada,Andhra Pradesh,Andhra Pradesh,3,3,0.15789,1.18217,0.39832035538741006,True
+29,133,Bareilly,Jalandhar,Uttar Pradesh,Punjab,0,5,0.13514,1.42042,0.39783242138712904,False
+67,89,Bhilwara,Anand,Rajasthan,Gujarat,1,1,0.15,1.25376,0.3966138017003727,True
+19,112,Amravati,Warangal,Maharashtra,Telangana,3,3,0.15,1.24969,0.3960469595959215,True
+66,143,Bikaner,Panipat,Rajasthan,Haryana,1,5,0.13158,1.4371,0.3948867328305705,False
+104,114,Nellore,Karimnagar,Andhra Pradesh,Telangana,3,3,0.15789,1.15297,0.3942535766527725,True
+94,98,Gwalior,Satna,Madhya Pradesh,Madhya Pradesh,0,2,0.125,1.48292,0.3915298952258611,False
+51,105,Chennai,Kurnool,Tamil Nadu,Andhra Pradesh,4,3,0.14286,1.28916,0.3909769421951855,False
+31,47,Patna,Nadia,Bihar,West Bengal,2,2,0.15789,1.11746,0.3893079837463691,True
+33,47,Muzaffarpur,Nadia,Bihar,West Bengal,2,2,0.15789,1.11746,0.3893079837463691,True
+40,45,Vaishali,Hooghly,Bihar,West Bengal,2,2,0.15789,1.11746,0.3893079837463691,True
+32,46,Gaya,Bardhaman,Bihar,West Bengal,2,2,0.15789,1.11746,0.3893079837463691,True
+32,47,Gaya,Nadia,Bihar,West Bengal,2,2,0.15789,1.11746,0.3893079837463691,True
+33,46,Muzaffarpur,Bardhaman,Bihar,West Bengal,2,2,0.15789,1.11746,0.3893079837463691,True
+31,46,Patna,Bardhaman,Bihar,West Bengal,2,2,0.15789,1.11746,0.3893079837463691,True
+35,45,Darbhanga,Hooghly,Bihar,West Bengal,2,2,0.15789,1.11746,0.3893079837463691,True
+62,68,Jodhpur,Alwar,Rajasthan,Rajasthan,1,0,0.125,1.45958,0.38827925770303784,False
+77,104,Ballari,Nellore,Karnataka,Andhra Pradesh,3,3,0.15789,1.10115,0.3870364371312342,True
+13,99,Nagpur,Rewa,Maharashtra,Madhya Pradesh,3,2,0.15385,1.13523,0.38580370757372,False
+101,115,Visakhapatnam,Khammam,Andhra Pradesh,Telangana,3,3,0.15385,1.13523,0.38580370757372,True
+101,103,Visakhapatnam,Guntur,Andhra Pradesh,Andhra Pradesh,3,3,0.15385,1.13523,0.38580370757372,True
+19,111,Amravati,Hyderabad,Maharashtra,Telangana,3,3,0.14286,1.24969,0.3854798272412079,True
+21,93,Lucknow,Jabalpur,Uttar Pradesh,Madhya Pradesh,2,1,0.16667,0.9948,0.38521904441314536,False
+25,96,Allahabad,Sagar,Uttar Pradesh,Madhya Pradesh,2,1,0.16667,0.9948,0.38521904441314536,False
+94,99,Gwalior,Rewa,Madhya Pradesh,Madhya Pradesh,0,2,0.12,1.48292,0.3841299425965099,False
+55,104,Salem,Nellore,Tamil Nadu,Andhra Pradesh,4,3,0.13043,1.37145,0.384041455235102,False
+19,93,Amravati,Jabalpur,Maharashtra,Madhya Pradesh,3,1,0.16667,0.96902,0.38162858017414003,False
+68,140,Alwar,Firozpur,Rajasthan,Punjab,0,5,0.125,1.41096,0.38150779256337763,False
+73,125,Mangaluru,Kollam,Karnataka,Kerala,4,4,0.15789,1.03437,0.3777357698744158,True
+39,47,Saran,Nadia,Bihar,West Bengal,2,2,0.15,1.11746,0.3776308584972528,True
+39,46,Saran,Bardhaman,Bihar,West Bengal,2,2,0.15,1.11746,0.3776308584972528,True
+61,133,Jaipur,Jalandhar,Rajasthan,Punjab,1,5,0.12195,1.41338,0.37733086271076866,False
+58,73,Vellore,Mangaluru,Tamil Nadu,Karnataka,4,4,0.15789,1.02522,0.37646141968873315,True
+17,119,Solapur,Medak,Maharashtra,Telangana,1,3,0.15,1.10887,0.37643450132839884,False
+75,120,Belagavi,Rangareddy,Karnataka,Telangana,1,3,0.14286,1.17617,0.3752404583175588,False
+64,81,Kota,Ahmedabad,Rajasthan,Gujarat,1,1,0.13636,1.23649,0.3740214819978042,True
+64,88,Kota,Gandhinagar,Rajasthan,Gujarat,1,1,0.13636,1.23649,0.3740214819978042,True
+91,98,Bhopal,Satna,Madhya Pradesh,Madhya Pradesh,1,2,0.14286,1.13523,0.369538611694406,False
+107,117,Tirupati,Nalgonda,Andhra Pradesh,Telangana,4,3,0.13636,1.187,0.36712884913557087,False
+24,93,Varanasi,Jabalpur,Uttar Pradesh,Madhya Pradesh,2,1,0.15385,0.9948,0.36624556587148877,False
+17,113,Solapur,Nizamabad,Maharashtra,Telangana,1,3,0.14286,1.10887,0.3658673689736852,False
+17,114,Solapur,Karimnagar,Maharashtra,Telangana,1,3,0.14286,1.10887,0.3658673689736852,False
+75,105,Belagavi,Kurnool,Karnataka,Andhra Pradesh,1,3,0.13636,1.17617,0.36562051989940225,False
+62,150,Jodhpur,Bhiwani,Rajasthan,Haryana,1,5,0.10526,1.50618,0.3655543779084588,False
+74,109,Hubballi-Dharwad,Kadapa,Karnataka,Andhra Pradesh,1,3,0.14286,1.09876,0.36445931647343915,False
+13,16,Nagpur,Aurangabad,Maharashtra,Maharashtra,3,1,0.16667,0.83404,0.3628294776535449,False
+92,96,Indore,Sagar,Madhya Pradesh,Madhya Pradesh,1,1,0.15385,0.96902,0.3626551016324834,True
+76,104,Kalaburagi,Nellore,Karnataka,Andhra Pradesh,3,3,0.14286,1.0829,0.3622504428182559,True
+105,118,Kurnool,Adilabad,Andhra Pradesh,Telangana,3,3,0.13636,1.15062,0.3620620885065944,True
+16,75,Aurangabad,Belagavi,Maharashtra,Karnataka,1,1,0.15385,0.93093,0.3573501837556908,True
+14,75,Thane,Belagavi,Maharashtra,Karnataka,1,1,0.15385,0.93093,0.3573501837556908,True
+104,106,Nellore,Kakinada,Andhra Pradesh,Andhra Pradesh,3,3,0.16667,0.7923,0.35701621243492254,True
+71,75,Bengaluru Urban,Belagavi,Karnataka,Karnataka,4,1,0.125,1.22394,0.35546091040749006,False
+91,99,Bhopal,Rewa,Madhya Pradesh,Madhya Pradesh,1,2,0.13333,1.13523,0.3554343019828625,False
+17,110,Solapur,Anantapur,Maharashtra,Andhra Pradesh,1,3,0.13043,1.16424,0.35518264627605234,False
+107,120,Tirupati,Rangareddy,Andhra Pradesh,Telangana,4,3,0.13636,1.10115,0.3551722411092478,False
+107,116,Tirupati,Mahbubnagar,Andhra Pradesh,Telangana,4,3,0.13636,1.10115,0.3551722411092478,False
+13,92,Nagpur,Indore,Maharashtra,Madhya Pradesh,3,1,0.15385,0.91024,0.35446862033036025,False
+51,72,Chennai,Mysuru,Tamil Nadu,Karnataka,4,4,0.13636,1.09501,0.35431710338901923,True
+54,107,Tiruchirappalli,Tirupati,Tamil Nadu,Andhra Pradesh,4,4,0.13636,1.09501,0.35431710338901923,True
+74,123,Hubballi-Dharwad,Kozhikode,Karnataka,Kerala,1,4,0.125,1.19095,0.3508662860768156,False
+70,150,Pali,Bhiwani,Rajasthan,Haryana,1,5,0.09524,1.50618,0.3507248728392389,False
+74,116,Hubballi-Dharwad,Mahbubnagar,Karnataka,Telangana,1,3,0.13043,1.12841,0.35019248593146113,False
+23,65,Agra,Ajmer,Uttar Pradesh,Rajasthan,0,1,0.125,1.16923,0.34784127120981806,False
+17,111,Solapur,Hyderabad,Maharashtra,Telangana,1,3,0.13043,1.10887,0.347471086737118,False
+16,118,Aurangabad,Adilabad,Maharashtra,Telangana,1,3,0.15385,0.83404,0.34385599911188824,False
+60,126,Thanjavur,Kannur,Tamil Nadu,Kerala,4,4,0.13636,1.01522,0.3432044912233777,True
+51,52,Chennai,Coimbatore,Tamil Nadu,Tamil Nadu,4,4,0.125,1.12687,0.3419416565797069,True
+78,116,Davangere,Mahbubnagar,Karnataka,Telangana,4,3,0.125,1.1121,0.3398845907608508,False
+78,120,Davangere,Rangareddy,Karnataka,Telangana,4,3,0.125,1.1121,0.3398845907608508,False
+17,116,Solapur,Mahbubnagar,Maharashtra,Telangana,1,3,0.125,1.10887,0.3394347381816426,False
+17,117,Solapur,Nalgonda,Maharashtra,Telangana,1,3,0.125,1.10887,0.3394347381816426,False
+23,64,Agra,Kota,Uttar Pradesh,Rajasthan,0,1,0.11429,1.22177,0.3393079889352086,False
+53,73,Madurai,Mangaluru,Tamil Nadu,Karnataka,4,4,0.13043,1.03437,0.33709523003401876,True
+107,129,Tirupati,Malappuram,Andhra Pradesh,Kerala,4,4,0.13043,1.0322,0.3367930070938077,True
+107,123,Tirupati,Kozhikode,Andhra Pradesh,Kerala,4,4,0.13043,1.0322,0.3367930070938077,True
+24,96,Varanasi,Sagar,Uttar Pradesh,Madhya Pradesh,2,1,0.13333,0.9948,0.3358761602806313,False
+109,113,Kadapa,Nizamabad,Andhra Pradesh,Telangana,3,3,0.125,1.08202,0.33569525157119673,True
+51,128,Chennai,Palakkad,Tamil Nadu,Kerala,4,4,0.12,1.12687,0.33454170395035565,True
+11,74,Mumbai,Hubballi-Dharwad,Maharashtra,Karnataka,1,1,0.13333,0.97514,0.3331380482969678,True
+91,118,Bhopal,Adilabad,Madhya Pradesh,Telangana,1,3,0.13333,0.96902,0.33228569604162594,False
+95,96,Ujjain,Sagar,Madhya Pradesh,Madhya Pradesh,1,1,0.13333,0.96902,0.33228569604162594,True
+14,87,Thane,Junagadh,Maharashtra,Gujarat,1,1,0.14286,0.85133,0.32999893762715926,True
+14,84,Thane,Rajkot,Maharashtra,Gujarat,1,1,0.14286,0.85133,0.32999893762715926,True
+110,113,Anantapur,Nizamabad,Andhra Pradesh,Telangana,3,3,0.12,1.09062,0.3294930488431429,True
+110,114,Anantapur,Karimnagar,Andhra Pradesh,Telangana,3,3,0.12,1.09062,0.3294930488431429,True
+66,140,Bikaner,Firozpur,Rajasthan,Punjab,1,5,0.14286,0.84611,0.3292719312917206,False
+67,150,Bhilwara,Bhiwani,Rajasthan,Haryana,1,5,0.09756,1.32226,0.3285433157608147,False
+20,109,Nanded,Kadapa,Maharashtra,Andhra Pradesh,3,3,0.12,1.08202,0.3282952989418455,True
+110,115,Anantapur,Khammam,Andhra Pradesh,Telangana,3,3,0.12,1.0743,0.3272201094955646,True
+15,75,Nashik,Belagavi,Maharashtra,Karnataka,1,1,0.13333,0.93093,0.3269807781648333,True
+79,130,Shivamogga,Kottayam,Karnataka,Kerala,4,4,0.12,1.0682,0.3263705427051095,True
+79,122,Shivamogga,Kochi,Karnataka,Kerala,4,4,0.12,1.0682,0.3263705427051095,True
+79,124,Shivamogga,Thrissur,Karnataka,Kerala,4,4,0.12,1.0682,0.3263705427051095,True
+18,79,Kolhapur,Shivamogga,Maharashtra,Karnataka,1,4,0.13333,0.91519,0.32478861729897046,False
+18,78,Kolhapur,Davangere,Maharashtra,Karnataka,1,4,0.13333,0.91519,0.32478861729897046,False
+13,95,Nagpur,Ujjain,Maharashtra,Madhya Pradesh,3,1,0.13333,0.91024,0.32409921473950276,False
+15,86,Nashik,Jamnagar,Maharashtra,Gujarat,1,1,0.14286,0.8069,0.32381102738127066,True
+65,142,Ajmer,Faridabad,Rajasthan,Haryana,1,0,0.10811,1.16923,0.32284423122786954,False
+20,110,Nanded,Anantapur,Maharashtra,Andhra Pradesh,3,3,0.11538,1.09062,0.32265549261362236,True
+55,78,Salem,Davangere,Tamil Nadu,Karnataka,4,4,0.12,1.02522,0.32038457866350945,True
+110,112,Anantapur,Warangal,Andhra Pradesh,Telangana,3,3,0.11538,1.0743,0.3203825532660441,True
+12,85,Pune,Bhavnagar,Maharashtra,Gujarat,1,1,0.125,0.96902,0.31995737496112675,True
+16,85,Aurangabad,Bhavnagar,Maharashtra,Gujarat,1,1,0.125,0.96902,0.31995737496112675,True
+66,133,Bikaner,Jalandhar,Rajasthan,Punjab,1,5,0.13636,0.84611,0.31965199287356405,False
+64,150,Kota,Bhiwani,Rajasthan,Haryana,1,5,0.09091,1.32226,0.3187013787637776,False
+2,65,East Delhi,Ajmer,Delhi,Rajasthan,0,1,0.10526,1.16923,0.31862625822913937,False
+1,65,Central Delhi,Ajmer,Delhi,Rajasthan,0,1,0.10526,1.16923,0.31862625822913937,False
+27,65,Noida,Ajmer,Uttar Pradesh,Rajasthan,0,1,0.10526,1.16923,0.31862625822913937,False
+65,141,Ajmer,Gurugram,Rajasthan,Haryana,1,0,0.10526,1.16923,0.31862625822913937,False
+9,65,South West Delhi,Ajmer,Delhi,Rajasthan,0,1,0.10526,1.16923,0.31862625822913937,False
+5,65,South Delhi,Ajmer,Delhi,Rajasthan,0,1,0.10526,1.16923,0.31862625822913937,False
+8,65,North West Delhi,Ajmer,Delhi,Rajasthan,0,1,0.10526,1.16923,0.31862625822913937,False
+7,65,North East Delhi,Ajmer,Delhi,Rajasthan,0,1,0.10526,1.16923,0.31862625822913937,False
+4,65,North Delhi,Ajmer,Delhi,Rajasthan,0,1,0.10526,1.16923,0.31862625822913937,False
+10,65,Shahdara,Ajmer,Delhi,Rajasthan,0,1,0.10526,1.16923,0.31862625822913937,False
+26,65,Ghaziabad,Ajmer,Uttar Pradesh,Rajasthan,0,1,0.10526,1.16923,0.31862625822913937,False
+3,65,New Delhi,Ajmer,Delhi,Rajasthan,0,1,0.10526,1.16923,0.31862625822913937,False
+6,65,West Delhi,Ajmer,Delhi,Rajasthan,0,1,0.10526,1.16923,0.31862625822913937,False
+64,142,Kota,Faridabad,Rajasthan,Haryana,1,0,0.1,1.22177,0.31815892432052273,False
+29,140,Bareilly,Firozpur,Uttar Pradesh,Punjab,0,5,0.10811,1.13442,0.317996129592502,False
+77,123,Ballari,Kozhikode,Karnataka,Kerala,3,4,0.11111,1.09628,0.31712421963110327,False
+62,95,Jodhpur,Ujjain,Rajasthan,Madhya Pradesh,1,1,0.13333,0.85133,0.31589462791561584,True
+65,148,Ajmer,Sonipat,Rajasthan,Haryana,1,0,0.10256,1.16923,0.3146302838092897,False
+66,145,Bikaner,Karnal,Rajasthan,Haryana,1,5,0.10526,1.14013,0.31457340681893553,False
+6,64,West Delhi,Kota,Delhi,Rajasthan,0,1,0.09756,1.22177,0.3145477474373993,False
+5,64,South Delhi,Kota,Delhi,Rajasthan,0,1,0.09756,1.22177,0.3145477474373993,False
+3,64,New Delhi,Kota,Delhi,Rajasthan,0,1,0.09756,1.22177,0.3145477474373993,False
+9,64,South West Delhi,Kota,Delhi,Rajasthan,0,1,0.09756,1.22177,0.3145477474373993,False
+2,64,East Delhi,Kota,Delhi,Rajasthan,0,1,0.09756,1.22177,0.3145477474373993,False
+26,64,Ghaziabad,Kota,Uttar Pradesh,Rajasthan,0,1,0.09756,1.22177,0.3145477474373993,False
+1,64,Central Delhi,Kota,Delhi,Rajasthan,0,1,0.09756,1.22177,0.3145477474373993,False
+27,64,Noida,Kota,Uttar Pradesh,Rajasthan,0,1,0.09756,1.22177,0.3145477474373993,False
+10,64,Shahdara,Kota,Delhi,Rajasthan,0,1,0.09756,1.22177,0.3145477474373993,False
+7,64,North East Delhi,Kota,Delhi,Rajasthan,0,1,0.09756,1.22177,0.3145477474373993,False
+64,141,Kota,Gurugram,Rajasthan,Haryana,1,0,0.09756,1.22177,0.3145477474373993,False
+52,107,Coimbatore,Tirupati,Tamil Nadu,Andhra Pradesh,4,4,0.11538,1.0322,0.3145191496794605,True
+65,147,Ajmer,Rohtak,Rajasthan,Haryana,1,0,0.1,1.16923,0.3108415080630619,False
+54,110,Tiruchirappalli,Anantapur,Tamil Nadu,Andhra Pradesh,4,3,0.10714,1.08803,0.31009965297761893,False
+23,133,Agra,Jalandhar,Uttar Pradesh,Punjab,0,5,0.10256,1.13211,0.30946046097950386,False
+63,90,Udaipur,Kutch,Rajasthan,Gujarat,1,1,0.13333,0.80486,0.30942260025127993,True
+70,90,Pali,Kutch,Rajasthan,Gujarat,1,1,0.13333,0.80486,0.30942260025127993,True
+57,109,Erode,Kadapa,Tamil Nadu,Andhra Pradesh,4,3,0.10714,1.08168,0.30921526787607956,False
+96,100,Sagar,Ratlam,Madhya Pradesh,Madhya Pradesh,1,1,0.11765,0.96902,0.3090794445959804,True
+107,128,Tirupati,Palakkad,Andhra Pradesh,Kerala,4,4,0.11111,1.0322,0.30819959013399456,True
+84,92,Rajkot,Indore,Gujarat,Madhya Pradesh,1,1,0.13333,0.7923,0.30767332830240846,True
+87,92,Junagadh,Indore,Gujarat,Madhya Pradesh,1,1,0.13333,0.7923,0.30767332830240846,True
+15,92,Nashik,Indore,Maharashtra,Madhya Pradesh,1,1,0.13333,0.7923,0.30767332830240846,True
+65,143,Ajmer,Panipat,Rajasthan,Haryana,1,5,0.09756,1.16923,0.3072303311799384,False
+39,98,Saran,Satna,Bihar,Madhya Pradesh,2,2,0.11765,0.94819,0.3061783829164427,True
+69,137,Sikar,Hoshiarpur,Rajasthan,Punjab,1,5,0.1,1.12969,0.30533464398198074,False
+66,139,Bikaner,Moga,Rajasthan,Punjab,1,5,0.125,0.84611,0.302839300499678,False
+60,104,Thanjavur,Nellore,Tamil Nadu,Andhra Pradesh,4,3,0.11765,0.91633,0.301741137351869,False
+65,94,Ajmer,Gwalior,Rajasthan,Madhya Pradesh,1,0,0.11111,0.98382,0.3014615505729752,False
+67,94,Bhilwara,Gwalior,Rajasthan,Madhya Pradesh,1,0,0.11111,0.98382,0.3014615505729752,False
+61,140,Jaipur,Firozpur,Rajasthan,Punjab,1,5,0.09756,1.12738,0.301401745904439,False
+56,71,Tirunelveli,Bengaluru Urban,Tamil Nadu,Karnataka,4,4,0.10714,1.02294,0.30103435750372987,True
+59,71,Thoothukudi,Bengaluru Urban,Tamil Nadu,Karnataka,4,4,0.10714,1.02294,0.30103435750372987,True
+11,83,Mumbai,Vadodara,Maharashtra,Gujarat,1,1,0.11765,0.88941,0.2979919016143196,True
+71,120,Bengaluru Urban,Rangareddy,Karnataka,Telangana,4,3,0.09375,1.13806,0.29725042025039156,False
+71,116,Bengaluru Urban,Mahbubnagar,Karnataka,Telangana,4,3,0.09375,1.13806,0.29725042025039156,False
+70,86,Pali,Jamnagar,Rajasthan,Gujarat,1,1,0.125,0.80486,0.29709427917078074,True
+90,100,Kutch,Ratlam,Gujarat,Madhya Pradesh,1,1,0.125,0.80486,0.29709427917078074,True
+110,129,Anantapur,Malappuram,Andhra Pradesh,Kerala,3,4,0.10345,1.02522,0.2958907354603568,False
+72,105,Mysuru,Kurnool,Karnataka,Andhra Pradesh,4,3,0.09375,1.12593,0.2955610357965849,False
+70,97,Pali,Dewas,Rajasthan,Madhya Pradesh,1,1,0.125,0.7923,0.29534500722190926,True
+82,92,Surat,Indore,Gujarat,Madhya Pradesh,1,1,0.125,0.7923,0.29534500722190926,True
+63,68,Udaipur,Alwar,Rajasthan,Rajasthan,1,0,0.08108,1.25846,0.29526743890577856,False
+32,99,Gaya,Rewa,Bihar,Madhya Pradesh,2,2,0.11765,0.86859,0.2950922326672253,True
+33,99,Muzaffarpur,Rewa,Bihar,Madhya Pradesh,2,2,0.11765,0.86859,0.2950922326672253,True
+31,99,Patna,Rewa,Bihar,Madhya Pradesh,2,2,0.11765,0.86859,0.2950922326672253,True
+14,88,Thane,Gandhinagar,Maharashtra,Gujarat,1,1,0.11765,0.85133,0.2926883764699703,True
+14,81,Thane,Ahmedabad,Maharashtra,Gujarat,1,1,0.11765,0.85133,0.2926883764699703,True
+25,35,Allahabad,Darbhanga,Uttar Pradesh,Bihar,2,2,0.11765,0.83672,0.29065359437020816,True
+62,88,Jodhpur,Gandhinagar,Rajasthan,Gujarat,1,1,0.11765,0.83406,0.290283127540272,True
+62,81,Jodhpur,Ahmedabad,Rajasthan,Gujarat,1,1,0.11765,0.83406,0.290283127540272,True
+51,102,Chennai,Vijayawada,Tamil Nadu,Andhra Pradesh,4,3,0.11765,0.83404,0.2902803420753853,False
+61,100,Jaipur,Ratlam,Rajasthan,Madhya Pradesh,1,1,0.07895,1.2412,0.28971120288842006,True
+17,19,Solapur,Amravati,Maharashtra,Maharashtra,1,3,0.11111,0.89282,0.288787685338317,False
+11,89,Mumbai,Anand,Maharashtra,Gujarat,1,1,0.11111,0.88941,0.28831276357512814,True
+69,100,Sikar,Ratlam,Rajasthan,Madhya Pradesh,1,1,0.07692,1.2412,0.2867068221209034,True
+14,20,Thane,Nanded,Maharashtra,Maharashtra,1,3,0.10526,0.93093,0.28543744410365546,False
+12,20,Pune,Nanded,Maharashtra,Maharashtra,1,3,0.10526,0.93093,0.28543744410365546,False
+11,20,Mumbai,Nanded,Maharashtra,Maharashtra,1,3,0.10526,0.93093,0.28543744410365546,False
+21,33,Lucknow,Muzaffarpur,Uttar Pradesh,Bihar,2,2,0.11111,0.86859,0.2854130946280338,True
+40,99,Vaishali,Rewa,Bihar,Madhya Pradesh,2,2,0.11111,0.86859,0.2854130946280338,True
+21,31,Lucknow,Patna,Uttar Pradesh,Bihar,2,2,0.11111,0.86859,0.2854130946280338,True
+21,32,Lucknow,Gaya,Uttar Pradesh,Bihar,2,2,0.11111,0.86859,0.2854130946280338,True
+84,95,Rajkot,Ujjain,Gujarat,Madhya Pradesh,1,1,0.11765,0.7923,0.284467076856763,True
+85,92,Bhavnagar,Indore,Gujarat,Madhya Pradesh,1,1,0.11765,0.7923,0.284467076856763,True
+87,95,Junagadh,Ujjain,Gujarat,Madhya Pradesh,1,1,0.11765,0.7923,0.284467076856763,True
+15,95,Nashik,Ujjain,Maharashtra,Madhya Pradesh,1,1,0.11765,0.7923,0.284467076856763,True
+70,92,Pali,Indore,Rajasthan,Madhya Pradesh,1,1,0.11765,0.7923,0.284467076856763,True
+106,109,Kakinada,Kadapa,Andhra Pradesh,Andhra Pradesh,3,3,0.11765,0.7923,0.284467076856763,True
+11,76,Mumbai,Kalaburagi,Maharashtra,Karnataka,1,3,0.1,0.97514,0.2838099640697124,False
+19,83,Amravati,Vadodara,Maharashtra,Gujarat,3,1,0.10526,0.91519,0.2832452832377925,False
+91,113,Bhopal,Nizamabad,Madhya Pradesh,Telangana,1,3,0.1,0.96902,0.2829576118143705,False
+17,85,Solapur,Bhavnagar,Maharashtra,Gujarat,1,1,0.1,0.96902,0.2829576118143705,True
+52,110,Coimbatore,Anantapur,Tamil Nadu,Andhra Pradesh,4,3,0.09375,1.02522,0.2815348273594154,False
+51,103,Chennai,Guntur,Tamil Nadu,Andhra Pradesh,4,3,0.11111,0.83404,0.2806012040361938,False
+16,113,Aurangabad,Nizamabad,Maharashtra,Telangana,1,3,0.11111,0.83404,0.2806012040361938,False
+110,128,Anantapur,Palakkad,Andhra Pradesh,Kerala,3,4,0.09091,1.02522,0.2773316542659439,False
+21,40,Lucknow,Vaishali,Uttar Pradesh,Bihar,2,2,0.10526,0.86859,0.2767551500516929,True
+70,84,Pali,Rajkot,Rajasthan,Gujarat,1,1,0.11111,0.80486,0.276537210766443,True
+70,87,Pali,Junagadh,Rajasthan,Gujarat,1,1,0.11111,0.80486,0.276537210766443,True
+20,91,Nanded,Bhopal,Maharashtra,Madhya Pradesh,3,1,0.09524,0.96902,0.27591285691122813,False
+17,79,Solapur,Shivamogga,Maharashtra,Karnataka,1,4,0.1,0.91519,0.27546053307171503,False
+17,78,Solapur,Davangere,Maharashtra,Karnataka,1,4,0.1,0.91519,0.27546053307171503,False
+19,89,Amravati,Anand,Maharashtra,Gujarat,3,1,0.1,0.91519,0.27546053307171503,False
+15,63,Nashik,Udaipur,Maharashtra,Rajasthan,1,1,0.11111,0.7923,0.2747879388175715,True
+82,95,Surat,Ujjain,Gujarat,Madhya Pradesh,1,1,0.11111,0.7923,0.2747879388175715,True
+70,91,Pali,Bhopal,Rajasthan,Madhya Pradesh,1,1,0.11111,0.7923,0.2747879388175715,True
+18,20,Kolhapur,Nanded,Maharashtra,Maharashtra,1,3,0.11111,0.7863,0.2739522993515501,False
+37,43,Begusarai,North 24 Parganas,Bihar,West Bengal,2,2,0.11111,0.78135,0.27326289679208243,True
+37,41,Begusarai,Kolkata,Bihar,West Bengal,2,2,0.11111,0.78135,0.27326289679208243,True
+37,42,Begusarai,Howrah,Bihar,West Bengal,2,2,0.11111,0.78135,0.27326289679208243,True
+74,107,Hubballi-Dharwad,Tirupati,Karnataka,Andhra Pradesh,1,4,0.11765,0.70889,0.2728502955466219,False
+15,20,Nashik,Nanded,Maharashtra,Maharashtra,1,3,0.09524,0.93093,0.27060793903443553,False
+73,107,Mangaluru,Tirupati,Karnataka,Andhra Pradesh,4,4,0.11765,0.67925,0.2687222365844761,True
+70,82,Pali,Surat,Rajasthan,Gujarat,1,1,0.10526,0.80486,0.26787926619010205,True
+18,110,Kolhapur,Anantapur,Maharashtra,Andhra Pradesh,1,3,0.10526,0.80356,0.2676982109724641,False
+22,68,Kanpur Nagar,Alwar,Uttar Pradesh,Rajasthan,2,0,0.09091,0.9514,0.2670505033689937,False
+85,95,Bhavnagar,Ujjain,Gujarat,Madhya Pradesh,1,1,0.10526,0.7923,0.26612999424123057,True
+15,100,Nashik,Ratlam,Maharashtra,Madhya Pradesh,1,1,0.10526,0.7923,0.26612999424123057,True
+78,104,Davangere,Nellore,Karnataka,Andhra Pradesh,4,3,0.11111,0.72223,0.26502906258688474,False
+23,66,Agra,Bikaner,Uttar Pradesh,Rajasthan,0,1,0.09677,0.87225,0.26469977056132754,False
+51,77,Chennai,Ballari,Tamil Nadu,Karnataka,4,3,0.11111,0.71855,0.26451653704772493,False
+106,120,Kakinada,Rangareddy,Andhra Pradesh,Telangana,3,3,0.10526,0.77974,0.2643807222923591,True
+65,81,Ajmer,Ahmedabad,Rajasthan,Gujarat,1,1,0.1,0.83406,0.2641612947586621,True
+65,88,Ajmer,Gandhinagar,Rajasthan,Gujarat,1,1,0.1,0.83406,0.2641612947586621,True
+62,146,Jodhpur,Hisar,Rajasthan,Haryana,1,5,0.07692,1.07189,0.2631264691222224,False
+60,109,Thanjavur,Kadapa,Tamil Nadu,Andhra Pradesh,4,3,0.09091,0.91633,0.26216619069009856,False
+70,85,Pali,Bhavnagar,Rajasthan,Gujarat,1,1,0.1,0.80486,0.26009451602402456,True
+21,68,Lucknow,Alwar,Uttar Pradesh,Rajasthan,2,0,0.08571,0.9514,0.25935455263446844,False
+22,142,Kanpur Nagar,Faridabad,Uttar Pradesh,Haryana,2,0,0.08571,0.9514,0.25935455263446844,False
+16,76,Aurangabad,Kalaburagi,Maharashtra,Karnataka,1,3,0.1,0.79596,0.2588549841494261,False
+20,108,Nanded,Rajahmundry,Maharashtra,Andhra Pradesh,3,3,0.10526,0.7396,0.2587902942646758,True
+32,45,Gaya,Hooghly,Bihar,West Bengal,2,2,0.10526,0.73854,0.25864266462567864,True
+33,45,Muzaffarpur,Hooghly,Bihar,West Bengal,2,2,0.10526,0.73854,0.25864266462567864,True
+31,45,Patna,Hooghly,Bihar,West Bengal,2,2,0.10526,0.73854,0.25864266462567864,True
+23,67,Agra,Bhilwara,Uttar Pradesh,Rajasthan,0,1,0.09091,0.88796,0.25821500874826064,False
+18,120,Kolhapur,Rangareddy,Maharashtra,Telangana,1,3,0.1,0.7863,0.25750960460913164,False
+20,75,Nanded,Belagavi,Maharashtra,Karnataka,3,1,0.1,0.7863,0.25750960460913164,False
+75,126,Belagavi,Kannur,Karnataka,Kerala,1,4,0.09524,0.83406,0.25711653985551974,False
+51,117,Chennai,Nalgonda,Tamil Nadu,Telangana,4,3,0.09524,0.83404,0.257113754390633,False
+9,22,South West Delhi,Kanpur Nagar,Delhi,Uttar Pradesh,0,2,0.08333,0.9514,0.25583217518289725,False
+22,27,Kanpur Nagar,Noida,Uttar Pradesh,Uttar Pradesh,2,0,0.08333,0.9514,0.25583217518289725,False
+22,26,Kanpur Nagar,Ghaziabad,Uttar Pradesh,Uttar Pradesh,2,0,0.08333,0.9514,0.25583217518289725,False
+10,22,Shahdara,Kanpur Nagar,Delhi,Uttar Pradesh,0,2,0.08333,0.9514,0.25583217518289725,False
+1,22,Central Delhi,Kanpur Nagar,Delhi,Uttar Pradesh,0,2,0.08333,0.9514,0.25583217518289725,False
+22,141,Kanpur Nagar,Gurugram,Uttar Pradesh,Haryana,2,0,0.08333,0.9514,0.25583217518289725,False
+2,22,East Delhi,Kanpur Nagar,Delhi,Uttar Pradesh,0,2,0.08333,0.9514,0.25583217518289725,False
+3,22,New Delhi,Kanpur Nagar,Delhi,Uttar Pradesh,0,2,0.08333,0.9514,0.25583217518289725,False
+5,22,South Delhi,Kanpur Nagar,Delhi,Uttar Pradesh,0,2,0.08333,0.9514,0.25583217518289725,False
+7,22,North East Delhi,Kanpur Nagar,Delhi,Uttar Pradesh,0,2,0.08333,0.9514,0.25583217518289725,False
+6,22,West Delhi,Kanpur Nagar,Delhi,Uttar Pradesh,0,2,0.08333,0.9514,0.25583217518289725,False
+65,135,Ajmer,Bathinda,Rajasthan,Punjab,1,5,0.07317,1.05618,0.2553885219816762,False
+104,119,Nellore,Medak,Andhra Pradesh,Telangana,3,3,0.10526,0.71363,0.2551733681092464,True
+13,76,Nagpur,Kalaburagi,Maharashtra,Karnataka,3,3,0.1,0.76879,0.25507093010079246,True
+25,94,Allahabad,Gwalior,Uttar Pradesh,Madhya Pradesh,2,0,0.08,0.96902,0.25335780129696556,False
+70,146,Pali,Hisar,Rajasthan,Haryana,1,5,0.06977,1.07189,0.2525445368622501,False
+21,142,Lucknow,Faridabad,Uttar Pradesh,Haryana,2,0,0.08108,0.9514,0.2525021964996892,False
+16,120,Aurangabad,Rangareddy,Maharashtra,Telangana,1,3,0.09524,0.79596,0.2518102292462837,False
+39,45,Saran,Hooghly,Bihar,West Bengal,2,2,0.1,0.73854,0.25085791445960115,True
+58,102,Vellore,Vijayawada,Tamil Nadu,Andhra Pradesh,4,3,0.09091,0.83404,0.2507053954136148,False
+51,53,Chennai,Madurai,Tamil Nadu,Tamil Nadu,4,4,0.09524,0.78725,0.25059715928810933,True
+10,21,Shahdara,Lucknow,Delhi,Uttar Pradesh,0,2,0.07895,0.9514,0.24934981667958556,False
+2,21,East Delhi,Lucknow,Delhi,Uttar Pradesh,0,2,0.07895,0.9514,0.24934981667958556,False
+9,21,South West Delhi,Lucknow,Delhi,Uttar Pradesh,0,2,0.07895,0.9514,0.24934981667958556,False
+7,21,North East Delhi,Lucknow,Delhi,Uttar Pradesh,0,2,0.07895,0.9514,0.24934981667958556,False
+1,21,Central Delhi,Lucknow,Delhi,Uttar Pradesh,0,2,0.07895,0.9514,0.24934981667958556,False
+6,21,West Delhi,Lucknow,Delhi,Uttar Pradesh,0,2,0.07895,0.9514,0.24934981667958556,False
+21,27,Lucknow,Noida,Uttar Pradesh,Uttar Pradesh,2,0,0.07895,0.9514,0.24934981667958556,False
+3,21,New Delhi,Lucknow,Delhi,Uttar Pradesh,0,2,0.07895,0.9514,0.24934981667958556,False
+21,141,Lucknow,Gurugram,Uttar Pradesh,Haryana,2,0,0.07895,0.9514,0.24934981667958556,False
+5,21,South Delhi,Lucknow,Delhi,Uttar Pradesh,0,2,0.07895,0.9514,0.24934981667958556,False
+21,26,Lucknow,Ghaziabad,Uttar Pradesh,Uttar Pradesh,2,0,0.07895,0.9514,0.24934981667958556,False
+28,66,Meerut,Bikaner,Uttar Pradesh,Rajasthan,0,1,0.08824,0.84611,0.24843484876868765,False
+13,120,Nagpur,Rangareddy,Maharashtra,Telangana,3,3,0.09524,0.76879,0.24802617519765008,True
+13,117,Nagpur,Nalgonda,Maharashtra,Telangana,3,3,0.09524,0.76879,0.24802617519765008,True
+13,116,Nagpur,Mahbubnagar,Maharashtra,Telangana,3,3,0.09524,0.76879,0.24802617519765008,True
+58,74,Vellore,Hubballi-Dharwad,Tamil Nadu,Karnataka,4,1,0.1,0.70889,0.24672846276501198,False
+75,111,Belagavi,Hyderabad,Karnataka,Telangana,1,3,0.09524,0.75914,0.24668218838979897,False
+30,49,Gorakhpur,Malda,Uttar Pradesh,West Bengal,2,2,0.09091,0.80486,0.24664140214386399,True
+58,59,Vellore,Thoothukudi,Tamil Nadu,Tamil Nadu,4,4,0.09091,0.79497,0.24526398975737201,True
+56,58,Tirunelveli,Vellore,Tamil Nadu,Tamil Nadu,4,4,0.09091,0.79497,0.24526398975737201,True
+58,103,Vellore,Guntur,Tamil Nadu,Andhra Pradesh,4,3,0.08696,0.83404,0.24485943283642733,False
+94,97,Gwalior,Dewas,Madhya Pradesh,Madhya Pradesh,0,1,0.08,0.90377,0.24427022210398264,False
+20,74,Nanded,Hubballi-Dharwad,Maharashtra,Karnataka,3,1,0.09091,0.7863,0.24405649072897106,False
+29,137,Bareilly,Hoshiarpur,Uttar Pradesh,Punjab,0,5,0.08333,0.85084,0.2418268577323783,False
+19,76,Amravati,Kalaburagi,Maharashtra,Karnataka,3,3,0.09091,0.76879,0.24161781622063191,True
+66,131,Bikaner,Ludhiana,Rajasthan,Punjab,1,5,0.08333,0.84611,0.24116809528666475,False
+67,142,Bhilwara,Faridabad,Rajasthan,Haryana,1,0,0.07895,0.88796,0.24051432205885245,False
+75,116,Belagavi,Mahbubnagar,Karnataka,Telangana,1,3,0.09091,0.75914,0.2402738294127808,False
+72,75,Mysuru,Belagavi,Karnataka,Karnataka,4,1,0.08333,0.83406,0.23948985269240508,False
+66,134,Bikaner,Patiala,Rajasthan,Punjab,1,5,0.08108,0.84611,0.23783811660345666,False
+66,136,Bikaner,Mohali,Rajasthan,Punjab,1,5,0.08108,0.84611,0.23783811660345666,False
+66,144,Bikaner,Ambala,Rajasthan,Haryana,1,5,0.08108,0.84611,0.23783811660345666,False
+3,67,New Delhi,Bhilwara,Delhi,Rajasthan,0,1,0.07692,0.88796,0.23750994129133585,False
+5,67,South Delhi,Bhilwara,Delhi,Rajasthan,0,1,0.07692,0.88796,0.23750994129133585,False
+8,67,North West Delhi,Bhilwara,Delhi,Rajasthan,0,1,0.07692,0.88796,0.23750994129133585,False
+7,67,North East Delhi,Bhilwara,Delhi,Rajasthan,0,1,0.07692,0.88796,0.23750994129133585,False
+10,67,Shahdara,Bhilwara,Delhi,Rajasthan,0,1,0.07692,0.88796,0.23750994129133585,False
+1,67,Central Delhi,Bhilwara,Delhi,Rajasthan,0,1,0.07692,0.88796,0.23750994129133585,False
+6,67,West Delhi,Bhilwara,Delhi,Rajasthan,0,1,0.07692,0.88796,0.23750994129133585,False
+27,67,Noida,Bhilwara,Uttar Pradesh,Rajasthan,0,1,0.07692,0.88796,0.23750994129133585,False
+26,67,Ghaziabad,Bhilwara,Uttar Pradesh,Rajasthan,0,1,0.07692,0.88796,0.23750994129133585,False
+9,67,South West Delhi,Bhilwara,Delhi,Rajasthan,0,1,0.07692,0.88796,0.23750994129133585,False
+4,67,North Delhi,Bhilwara,Delhi,Rajasthan,0,1,0.07692,0.88796,0.23750994129133585,False
+2,67,East Delhi,Bhilwara,Delhi,Rajasthan,0,1,0.07692,0.88796,0.23750994129133585,False
+67,141,Bhilwara,Gurugram,Rajasthan,Haryana,1,0,0.07692,0.88796,0.23750994129133585,False
+19,120,Amravati,Rangareddy,Maharashtra,Telangana,3,3,0.08696,0.76879,0.2357718536434444,True
+19,116,Amravati,Mahbubnagar,Maharashtra,Telangana,3,3,0.08696,0.76879,0.2357718536434444,True
+19,117,Amravati,Nalgonda,Maharashtra,Telangana,3,3,0.08696,0.76879,0.2357718536434444,True
+91,94,Bhopal,Gwalior,Madhya Pradesh,Madhya Pradesh,1,0,0.07407,0.90377,0.23549387828557206,False
+76,107,Kalaburagi,Tirupati,Karnataka,Andhra Pradesh,3,4,0.09091,0.72223,0.23513325396430573,False
+66,149,Bikaner,Yamunanagar,Rajasthan,Haryana,1,5,0.07895,0.84611,0.23468573678335308,False
+67,148,Bhilwara,Sonipat,Rajasthan,Haryana,1,0,0.075,0.88796,0.23466835948166495,False
+66,132,Bikaner,Amritsar,Rajasthan,Punjab,1,5,0.10526,0.56484,0.23445090208435865,False
+74,111,Hubballi-Dharwad,Hyderabad,Karnataka,Telangana,1,3,0.08696,0.75914,0.2344278668355933,False
+25,29,Allahabad,Bareilly,Uttar Pradesh,Uttar Pradesh,2,0,0.06667,0.96902,0.2336295275871151,False
+29,98,Bareilly,Satna,Uttar Pradesh,Madhya Pradesh,0,2,0.06667,0.96902,0.2336295275871151,False
+67,147,Bhilwara,Rohtak,Rajasthan,Haryana,1,0,0.07317,0.88796,0.2319599768193224,False
+17,112,Solapur,Warangal,Maharashtra,Telangana,1,3,0.08696,0.7396,0.23170646764125022,False
+23,140,Agra,Firozpur,Uttar Pradesh,Punjab,0,5,0.07692,0.84611,0.23168135601583645,False
+51,123,Chennai,Kozhikode,Tamil Nadu,Kerala,4,4,0.09091,0.69258,0.23100380226971653,True
+51,129,Chennai,Malappuram,Tamil Nadu,Kerala,4,4,0.09091,0.69258,0.23100380226971653,True
+29,99,Bareilly,Rewa,Uttar Pradesh,Madhya Pradesh,0,2,0.06452,0.96902,0.23044754795649408,False
+23,98,Agra,Satna,Uttar Pradesh,Madhya Pradesh,0,2,0.06452,0.96902,0.23044754795649408,False
+23,25,Agra,Allahabad,Uttar Pradesh,Uttar Pradesh,0,2,0.06452,0.96902,0.23044754795649408,False
+58,117,Vellore,Nalgonda,Tamil Nadu,Telangana,4,3,0.07692,0.83404,0.23000032795669004,False
+65,145,Ajmer,Karnal,Rajasthan,Haryana,1,5,0.07317,0.87225,0.22977199415078964,False
+8,64,North West Delhi,Kota,Delhi,Rajasthan,0,1,0.07143,0.88796,0.22938479330430817,False
+4,64,North Delhi,Kota,Delhi,Rajasthan,0,1,0.07143,0.88796,0.22938479330430817,False
+67,146,Bhilwara,Hisar,Rajasthan,Haryana,1,5,0.07143,0.88796,0.22938479330430817,False
+67,143,Bhilwara,Panipat,Rajasthan,Haryana,1,5,0.07143,0.88796,0.22938479330430817,False
+69,132,Sikar,Amritsar,Rajasthan,Punjab,1,5,0.075,0.84842,0.2291614954005838,False
+73,109,Mangaluru,Kadapa,Karnataka,Andhra Pradesh,4,3,0.09091,0.67925,0.2291472899227056,False
+107,126,Tirupati,Kannur,Andhra Pradesh,Kerala,4,4,0.09091,0.67925,0.2291472899227056,True
+68,137,Alwar,Hoshiarpur,Rajasthan,Punjab,0,5,0.075,0.84611,0.22883977420616558,False
+23,99,Agra,Rewa,Uttar Pradesh,Madhya Pradesh,0,2,0.0625,0.96902,0.22745796709423619,False
+64,148,Kota,Sonipat,Rajasthan,Haryana,1,0,0.06977,0.88796,0.22692800903136356,False
+78,111,Davangere,Hyderabad,Karnataka,Telangana,4,3,0.08333,0.74283,0.22678395461154943,False
+66,137,Bikaner,Hoshiarpur,Rajasthan,Punjab,1,5,0.1,0.56484,0.2266661519182811,False
+74,129,Hubballi-Dharwad,Malappuram,Karnataka,Kerala,1,4,0.08,0.77392,0.2261855913268358,False
+72,104,Mysuru,Nellore,Karnataka,Andhra Pradesh,4,3,0.08,0.7717,0.2258764047244079,False
+64,147,Kota,Rohtak,Rajasthan,Haryana,1,0,0.06818,0.88796,0.22457482409522989,False
+79,116,Shivamogga,Mahbubnagar,Karnataka,Telangana,4,3,0.08,0.75914,0.22412713277553636,False
+79,120,Shivamogga,Rangareddy,Karnataka,Telangana,4,3,0.08,0.75914,0.22412713277553636,False
+79,127,Shivamogga,Alappuzha,Karnataka,Kerala,4,4,0.08333,0.72223,0.2239149257782092,True
+73,105,Mangaluru,Kurnool,Karnataka,Andhra Pradesh,4,3,0.08,0.75666,0.22378173512958086,False
+64,146,Kota,Hisar,Rajasthan,Haryana,1,5,0.06667,0.88796,0.22234003840116578,False
+64,143,Kota,Panipat,Rajasthan,Haryana,1,5,0.06667,0.88796,0.22234003840116578,False
+58,120,Vellore,Rangareddy,Tamil Nadu,Telangana,4,3,0.07692,0.74819,0.21804371993036692,False
+58,116,Vellore,Mahbubnagar,Tamil Nadu,Telangana,4,3,0.07692,0.74819,0.21804371993036692,False
+58,127,Vellore,Alappuzha,Tamil Nadu,Kerala,4,4,0.08,0.71363,0.21778880742576393,True
+17,105,Solapur,Kurnool,Maharashtra,Andhra Pradesh,1,3,0.07692,0.72994,0.21550198322121844,False
+54,78,Tiruchirappalli,Davangere,Tamil Nadu,Karnataka,4,4,0.08,0.6856,0.21388497838700055,True
+54,79,Tiruchirappalli,Shivamogga,Tamil Nadu,Karnataka,4,4,0.08,0.6856,0.21388497838700055,True
+78,130,Davangere,Kottayam,Karnataka,Kerala,4,4,0.07692,0.71525,0.21345605926190936,True
+78,124,Davangere,Thrissur,Karnataka,Kerala,4,4,0.07692,0.71525,0.21345605926190936,True
+78,122,Davangere,Kochi,Karnataka,Kerala,4,4,0.07692,0.71525,0.21345605926190936,True
+74,128,Hubballi-Dharwad,Palakkad,Karnataka,Kerala,1,4,0.06897,0.77392,0.20986129582648694,False
+54,109,Tiruchirappalli,Kadapa,Tamil Nadu,Andhra Pradesh,4,3,0.07143,0.74205,0.20906343422311066,False
+109,126,Kadapa,Kannur,Andhra Pradesh,Kerala,3,4,0.07407,0.67925,0.20422424946705062,False
+105,126,Kurnool,Kannur,Andhra Pradesh,Kerala,3,4,0.06667,0.75666,0.2040534614197304,False
+80,102,Tumakuru,Vijayawada,Karnataka,Andhra Pradesh,4,3,0.06897,0.73188,0.20400624863456354,False
+55,105,Salem,Kurnool,Tamil Nadu,Andhra Pradesh,4,3,0.0625,0.79474,0.20318542607120077,False
+80,121,Tumakuru,Thiruvananthapuram,Karnataka,Kerala,4,4,0.07407,0.66227,0.20185938977821,True
+71,121,Bengaluru Urban,Thiruvananthapuram,Karnataka,Kerala,4,4,0.07407,0.66227,0.20185938977821,True
+80,103,Tumakuru,Guntur,Karnataka,Andhra Pradesh,4,3,0.06667,0.73188,0.20060227042506196,False
+55,77,Salem,Ballari,Tamil Nadu,Karnataka,4,3,0.07143,0.67925,0.20031707447875316,False
+57,77,Erode,Ballari,Tamil Nadu,Karnataka,4,3,0.07143,0.67925,0.20031707447875316,False
+77,129,Ballari,Malappuram,Karnataka,Kerala,3,4,0.07143,0.67925,0.20031707447875316,False
+71,76,Bengaluru Urban,Kalaburagi,Karnataka,Karnataka,4,3,0.0625,0.75914,0.19822729857280702,False
+70,94,Pali,Gwalior,Rajasthan,Madhya Pradesh,1,0,0.06897,0.68685,0.19773477444207282,False
+109,123,Kadapa,Kozhikode,Andhra Pradesh,Kerala,3,4,0.06897,0.67925,0.19667629778511236,False
+109,129,Kadapa,Malappuram,Andhra Pradesh,Kerala,3,4,0.06897,0.67925,0.19667629778511236,False
+80,111,Tumakuru,Hyderabad,Karnataka,Telangana,4,3,0.0625,0.74283,0.19595575195767212,False
+93,118,Jabalpur,Adilabad,Madhya Pradesh,Telangana,1,3,0.08333,0.5139,0.19490013078550222,False
+68,95,Alwar,Ujjain,Rajasthan,Madhya Pradesh,0,1,0.05405,0.82417,0.1947783177084322,False
+61,95,Jaipur,Ujjain,Rajasthan,Madhya Pradesh,1,1,0.05405,0.82417,0.1947783177084322,True
+56,80,Tirunelveli,Tumakuru,Tamil Nadu,Karnataka,4,4,0.06897,0.66227,0.19431143809627174,True
+59,80,Thoothukudi,Tumakuru,Tamil Nadu,Karnataka,4,4,0.06897,0.66227,0.19431143809627174,True
+69,95,Sikar,Ujjain,Rajasthan,Madhya Pradesh,1,1,0.05263,0.82417,0.19267673116169648,True
+80,117,Tumakuru,Nalgonda,Karnataka,Telangana,4,3,0.06061,0.73188,0.19163352783828824,False
+68,100,Alwar,Ratlam,Rajasthan,Madhya Pradesh,0,1,0.05128,0.82417,0.19067874395177162,False
+52,77,Coimbatore,Ballari,Tamil Nadu,Karnataka,4,3,0.06452,0.67925,0.19009033994498975,False
+52,109,Coimbatore,Kadapa,Tamil Nadu,Andhra Pradesh,4,3,0.0625,0.67925,0.18710075908273183,False
+77,128,Ballari,Palakkad,Karnataka,Kerala,3,4,0.0625,0.67925,0.18710075908273183,False
+92,93,Indore,Jabalpur,Madhya Pradesh,Madhya Pradesh,1,1,0.08333,0.45512,0.1867136494833791,True
+97,98,Dewas,Satna,Madhya Pradesh,Madhya Pradesh,1,2,0.07692,0.5139,0.18541339151467395,False
+109,128,Kadapa,Palakkad,Andhra Pradesh,Kerala,3,4,0.06061,0.67925,0.18430357698883706,False
+62,135,Jodhpur,Bathinda,Rajasthan,Punjab,1,5,0.05128,0.77491,0.18381814393573578,False
+14,90,Thane,Kutch,Maharashtra,Gujarat,1,1,0.08333,0.41703,0.18140873160658644,True
+23,62,Agra,Jodhpur,Uttar Pradesh,Rajasthan,0,1,0.06452,0.59099,0.17779808339981468,False
+97,99,Dewas,Rewa,Madhya Pradesh,Madhya Pradesh,1,2,0.07143,0.5139,0.17728824352764627,False
+96,118,Sagar,Adilabad,Madhya Pradesh,Telangana,1,3,0.07143,0.5139,0.17728824352764627,False
+16,97,Aurangabad,Dewas,Maharashtra,Madhya Pradesh,1,1,0.07692,0.45512,0.17722691021255077,True
+70,135,Pali,Bathinda,Rajasthan,Punjab,1,5,0.04651,0.77491,0.17675858912733472,False
+22,61,Kanpur Nagar,Jaipur,Uttar Pradesh,Rajasthan,2,1,0.05882,0.64074,0.1762909813081152,False
+22,28,Kanpur Nagar,Meerut,Uttar Pradesh,Uttar Pradesh,2,0,0.05882,0.6176,0.17306819843415927,False
+30,93,Gorakhpur,Jabalpur,Uttar Pradesh,Madhya Pradesh,2,1,0.07143,0.4809,0.17269222646452848,False
+14,86,Thane,Jamnagar,Maharashtra,Gujarat,1,1,0.07692,0.41703,0.17192199233575814,True
+21,61,Lucknow,Jaipur,Uttar Pradesh,Rajasthan,2,1,0.05556,0.64074,0.17146621219377817,False
+12,19,Pune,Amravati,Maharashtra,Maharashtra,1,3,0.06667,0.5139,0.1702434886245039,False
+14,19,Thane,Amravati,Maharashtra,Maharashtra,1,3,0.06667,0.5139,0.1702434886245039,False
+101,112,Visakhapatnam,Warangal,Andhra Pradesh,Telangana,3,3,0.06667,0.5139,0.1702434886245039,True
+18,82,Kolhapur,Surat,Maharashtra,Gujarat,1,1,0.06667,0.5139,0.1702434886245039,True
+11,19,Mumbai,Amravati,Maharashtra,Maharashtra,1,3,0.06667,0.5139,0.1702434886245039,False
+29,64,Bareilly,Kota,Uttar Pradesh,Rajasthan,0,1,0.05556,0.63078,0.17007905068018264,False
+16,92,Aurangabad,Indore,Maharashtra,Madhya Pradesh,1,1,0.07143,0.45512,0.16910176222552312,True
+93,95,Jabalpur,Ujjain,Madhya Pradesh,Madhya Pradesh,1,1,0.07143,0.45512,0.16910176222552312,True
+97,118,Dewas,Adilabad,Madhya Pradesh,Telangana,1,3,0.07143,0.45512,0.16910176222552312,False
+21,28,Lucknow,Meerut,Uttar Pradesh,Uttar Pradesh,2,0,0.05556,0.6176,0.16824342931982225,False
+23,70,Agra,Pali,Uttar Pradesh,Rajasthan,0,1,0.05714,0.59099,0.16687575331889226,False
+43,50,North 24 Parganas,Darjeeling,West Bengal,West Bengal,2,2,0.07692,0.37892,0.16661428899407876,True
+42,50,Howrah,Darjeeling,West Bengal,West Bengal,2,2,0.07692,0.37892,0.16661428899407876,True
+41,50,Kolkata,Darjeeling,West Bengal,West Bengal,2,2,0.07692,0.37892,0.16661428899407876,True
+4,22,North Delhi,Kanpur Nagar,Delhi,Uttar Pradesh,0,2,0.05405,0.6176,0.16600864362575818,False
+8,22,North West Delhi,Kanpur Nagar,Delhi,Uttar Pradesh,0,2,0.05405,0.6176,0.16600864362575818,False
+62,142,Jodhpur,Faridabad,Rajasthan,Haryana,1,0,0.05556,0.59099,0.16453736828801727,False
+22,148,Kanpur Nagar,Sonipat,Uttar Pradesh,Haryana,2,0,0.05263,0.6176,0.16390705707902242,False
+15,90,Nashik,Kutch,Maharashtra,Gujarat,1,1,0.07143,0.41703,0.16379684434873049,True
+10,62,Shahdara,Jodhpur,Delhi,Rajasthan,0,1,0.05405,0.59099,0.1623025825939532,False
+6,62,West Delhi,Jodhpur,Delhi,Rajasthan,0,1,0.05405,0.59099,0.1623025825939532,False
+62,141,Jodhpur,Gurugram,Rajasthan,Haryana,1,0,0.05405,0.59099,0.1623025825939532,False
+8,62,North West Delhi,Jodhpur,Delhi,Rajasthan,0,1,0.05405,0.59099,0.1623025825939532,False
+4,62,North Delhi,Jodhpur,Delhi,Rajasthan,0,1,0.05405,0.59099,0.1623025825939532,False
+26,62,Ghaziabad,Jodhpur,Uttar Pradesh,Rajasthan,0,1,0.05405,0.59099,0.1623025825939532,False
+27,62,Noida,Jodhpur,Uttar Pradesh,Rajasthan,0,1,0.05405,0.59099,0.1623025825939532,False
+9,62,South West Delhi,Jodhpur,Delhi,Rajasthan,0,1,0.05405,0.59099,0.1623025825939532,False
+7,62,North East Delhi,Jodhpur,Delhi,Rajasthan,0,1,0.05405,0.59099,0.1623025825939532,False
+1,62,Central Delhi,Jodhpur,Delhi,Rajasthan,0,1,0.05405,0.59099,0.1623025825939532,False
+3,62,New Delhi,Jodhpur,Delhi,Rajasthan,0,1,0.05405,0.59099,0.1623025825939532,False
+5,62,South Delhi,Jodhpur,Delhi,Rajasthan,0,1,0.05405,0.59099,0.1623025825939532,False
+2,62,East Delhi,Jodhpur,Delhi,Rajasthan,0,1,0.05405,0.59099,0.1623025825939532,False
+92,118,Indore,Adilabad,Madhya Pradesh,Telangana,1,3,0.06667,0.45512,0.1620570073223807,False
+16,91,Aurangabad,Bhopal,Maharashtra,Madhya Pradesh,1,1,0.06667,0.45512,0.1620570073223807,True
+4,21,North Delhi,Lucknow,Delhi,Uttar Pradesh,0,2,0.05128,0.6176,0.1619090698690976,False
+22,147,Kanpur Nagar,Rohtak,Uttar Pradesh,Haryana,2,0,0.05128,0.6176,0.1619090698690976,False
+8,21,North West Delhi,Lucknow,Delhi,Uttar Pradesh,0,2,0.05128,0.6176,0.1619090698690976,False
+29,132,Bareilly,Amritsar,Uttar Pradesh,Punjab,0,5,0.05556,0.56958,0.16155552812676416,False
+28,65,Meerut,Ajmer,Uttar Pradesh,Rajasthan,0,1,0.05405,0.57824,0.1605268487286577,False
+62,148,Jodhpur,Sonipat,Rajasthan,Haryana,1,0,0.05263,0.59099,0.16020099604721744,False
+22,143,Kanpur Nagar,Panipat,Uttar Pradesh,Haryana,2,5,0.05,0.6176,0.16001468199598368,False
+21,148,Lucknow,Sonipat,Uttar Pradesh,Haryana,2,0,0.05,0.6176,0.16001468199598368,False
+86,92,Jamnagar,Indore,Gujarat,Madhya Pradesh,1,1,0.07143,0.38987,0.1600141830325402,True
+30,96,Gorakhpur,Sagar,Uttar Pradesh,Madhya Pradesh,2,1,0.0625,0.4809,0.15947591106850714,False
+11,87,Mumbai,Junagadh,Maharashtra,Gujarat,1,1,0.06667,0.43429,0.15915594564284302,True
+18,73,Kolhapur,Mangaluru,Maharashtra,Karnataka,1,4,0.06667,0.43429,0.15915594564284302,False
+11,84,Mumbai,Rajkot,Maharashtra,Gujarat,1,1,0.06667,0.43429,0.15915594564284302,True
+101,117,Visakhapatnam,Nalgonda,Andhra Pradesh,Telangana,3,3,0.05882,0.5139,0.15862556299642244,True
+15,19,Nashik,Amravati,Maharashtra,Maharashtra,1,3,0.05882,0.5139,0.15862556299642244,False
+93,113,Jabalpur,Nizamabad,Madhya Pradesh,Telangana,1,3,0.05882,0.5139,0.15862556299642244,False
+108,118,Rajahmundry,Adilabad,Andhra Pradesh,Telangana,3,3,0.07143,0.37892,0.1584891410070511,True
+21,147,Lucknow,Rohtak,Uttar Pradesh,Haryana,2,0,0.04878,0.6176,0.15820909355442198,False
+62,147,Jodhpur,Rohtak,Rajasthan,Haryana,1,0,0.05128,0.59099,0.1582030088372926,False
+21,143,Lucknow,Panipat,Uttar Pradesh,Haryana,2,5,0.04762,0.6176,0.15649230454441249,False
+62,143,Jodhpur,Panipat,Rajasthan,Haryana,1,5,0.05,0.59099,0.1563086209641787,False
+70,142,Pali,Faridabad,Rajasthan,Haryana,1,0,0.05,0.59099,0.1563086209641787,False
+16,95,Aurangabad,Ujjain,Maharashtra,Madhya Pradesh,1,1,0.0625,0.45512,0.15588544682950178,True
+93,100,Jabalpur,Ratlam,Madhya Pradesh,Madhya Pradesh,1,1,0.0625,0.45512,0.15588544682950178,True
+30,50,Gorakhpur,Darjeeling,Uttar Pradesh,West Bengal,2,2,0.06667,0.40243,0.1547187000782693,True
+9,70,South West Delhi,Pali,Delhi,Rajasthan,0,1,0.04878,0.59099,0.154503032522617,False
+8,70,North West Delhi,Pali,Delhi,Rajasthan,0,1,0.04878,0.59099,0.154503032522617,False
+27,70,Noida,Pali,Uttar Pradesh,Rajasthan,0,1,0.04878,0.59099,0.154503032522617,False
+3,70,New Delhi,Pali,Delhi,Rajasthan,0,1,0.04878,0.59099,0.154503032522617,False
+6,70,West Delhi,Pali,Delhi,Rajasthan,0,1,0.04878,0.59099,0.154503032522617,False
+7,70,North East Delhi,Pali,Delhi,Rajasthan,0,1,0.04878,0.59099,0.154503032522617,False
+1,70,Central Delhi,Pali,Delhi,Rajasthan,0,1,0.04878,0.59099,0.154503032522617,False
+10,70,Shahdara,Pali,Delhi,Rajasthan,0,1,0.04878,0.59099,0.154503032522617,False
+5,70,South Delhi,Pali,Delhi,Rajasthan,0,1,0.04878,0.59099,0.154503032522617,False
+4,70,North Delhi,Pali,Delhi,Rajasthan,0,1,0.04878,0.59099,0.154503032522617,False
+70,141,Pali,Gurugram,Rajasthan,Haryana,1,0,0.04878,0.59099,0.154503032522617,False
+2,70,East Delhi,Pali,Delhi,Rajasthan,0,1,0.04878,0.59099,0.154503032522617,False
+26,70,Ghaziabad,Pali,Uttar Pradesh,Rajasthan,0,1,0.04878,0.59099,0.154503032522617,False
+12,78,Pune,Davangere,Maharashtra,Karnataka,1,4,0.05882,0.4809,0.15402954593330465,False
+12,79,Pune,Shivamogga,Maharashtra,Karnataka,1,4,0.05882,0.4809,0.15402954593330465,False
+22,39,Kanpur Nagar,Saran,Uttar Pradesh,Bihar,2,2,0.05556,0.5139,0.15380079388208542,True
+20,93,Nanded,Jabalpur,Maharashtra,Madhya Pradesh,3,1,0.05556,0.5139,0.15380079388208542,False
+70,148,Pali,Sonipat,Rajasthan,Haryana,1,0,0.04762,0.59099,0.1527862435126075,False
+67,145,Bhilwara,Karnal,Rajasthan,Haryana,1,5,0.04762,0.59099,0.1527862435126075,False
+68,132,Alwar,Amritsar,Rajasthan,Punjab,0,5,0.05,0.56484,0.15266662562476868,False
+70,147,Pali,Rohtak,Rajasthan,Haryana,1,0,0.04651,0.59099,0.1511434540288915,False
+14,74,Thane,Hubballi-Dharwad,Maharashtra,Karnataka,1,1,0.0625,0.41703,0.15058052895270915,True
+16,74,Aurangabad,Hubballi-Dharwad,Maharashtra,Karnataka,1,1,0.0625,0.41703,0.15058052895270915,True
+61,137,Jaipur,Hoshiarpur,Rajasthan,Punjab,1,5,0.04878,0.56253,0.15053931598878872,False
+64,93,Kota,Jabalpur,Rajasthan,Madhya Pradesh,1,1,0.05882,0.45512,0.1504390816942993,True
+95,118,Ujjain,Adilabad,Madhya Pradesh,Telangana,1,3,0.05882,0.45512,0.1504390816942993,False
+70,143,Pali,Panipat,Rajasthan,Haryana,1,5,0.04545,0.59099,0.14957466407146905,False
+96,113,Sagar,Nizamabad,Madhya Pradesh,Telangana,1,3,0.05263,0.5139,0.1494644216412856,False
+64,145,Kota,Karnal,Rajasthan,Haryana,1,5,0.04444,0.59099,0.1480798736403401,False
+33,98,Muzaffarpur,Satna,Bihar,Madhya Pradesh,2,2,0.05882,0.43429,0.1475380200147616,True
+31,98,Patna,Satna,Bihar,Madhya Pradesh,2,2,0.05882,0.43429,0.1475380200147616,True
+32,98,Gaya,Satna,Bihar,Madhya Pradesh,2,2,0.05882,0.43429,0.1475380200147616,True
+106,119,Kakinada,Medak,Andhra Pradesh,Telangana,3,3,0.0625,0.38987,0.14679786763651886,True
+86,95,Jamnagar,Ujjain,Gujarat,Madhya Pradesh,1,1,0.0625,0.38987,0.14679786763651886,True
+65,97,Ajmer,Dewas,Rajasthan,Madhya Pradesh,1,1,0.0625,0.38987,0.14679786763651886,True
+13,100,Nagpur,Ratlam,Maharashtra,Madhya Pradesh,3,1,0.05556,0.45512,0.14561431257996227,False
+16,83,Aurangabad,Vadodara,Maharashtra,Gujarat,1,1,0.05556,0.45512,0.14561431257996227,True
+12,83,Pune,Vadodara,Maharashtra,Gujarat,1,1,0.05556,0.45512,0.14561431257996227,True
+20,96,Nanded,Sagar,Maharashtra,Madhya Pradesh,3,1,0.05,0.5139,0.14557204655824685,False
+12,77,Pune,Ballari,Maharashtra,Karnataka,1,3,0.05263,0.4809,0.1448684045781678,False
+19,67,Amravati,Bhilwara,Maharashtra,Rajasthan,3,1,0.05556,0.43429,0.14271325090042458,False
+11,88,Mumbai,Gandhinagar,Maharashtra,Gujarat,1,1,0.05556,0.43429,0.14271325090042458,True
+40,98,Vaishali,Satna,Bihar,Madhya Pradesh,2,2,0.05556,0.43429,0.14271325090042458,True
+11,81,Mumbai,Ahmedabad,Maharashtra,Gujarat,1,1,0.05556,0.43429,0.14271325090042458,True
+51,59,Chennai,Thoothukudi,Tamil Nadu,Tamil Nadu,4,4,0.05556,0.43429,0.14271325090042458,True
+51,56,Chennai,Tirunelveli,Tamil Nadu,Tamil Nadu,4,4,0.05556,0.43429,0.14271325090042458,True
+106,113,Kakinada,Nizamabad,Andhra Pradesh,Telangana,3,3,0.05882,0.38987,0.14135150250131637,True
+65,92,Ajmer,Indore,Rajasthan,Madhya Pradesh,1,1,0.05882,0.38987,0.14135150250131637,True
+13,64,Nagpur,Kota,Maharashtra,Rajasthan,3,1,0.05263,0.45512,0.14127794033916247,False
+12,89,Pune,Anand,Maharashtra,Gujarat,1,1,0.05263,0.45512,0.14127794033916247,True
+16,89,Aurangabad,Anand,Maharashtra,Gujarat,1,1,0.05263,0.45512,0.14127794033916247,True
+97,113,Dewas,Nizamabad,Madhya Pradesh,Telangana,1,3,0.05263,0.45512,0.14127794033916247,False
+62,83,Jodhpur,Vadodara,Rajasthan,Gujarat,1,1,0.05556,0.41703,0.14030939470316964,True
+15,74,Nashik,Hubballi-Dharwad,Maharashtra,Karnataka,1,1,0.05556,0.41703,0.14030939470316964,True
+13,17,Nagpur,Solapur,Maharashtra,Maharashtra,3,1,0.05882,0.37892,0.13982646047582728,False
+51,73,Chennai,Mangaluru,Tamil Nadu,Karnataka,4,4,0.0625,0.33962,0.1397993871085895,True
+18,119,Kolhapur,Medak,Maharashtra,Telangana,1,3,0.05882,0.36927,0.13848247366797617,False
+19,63,Amravati,Udaipur,Maharashtra,Rajasthan,3,1,0.05263,0.43429,0.13837687865962475,False
+35,99,Darbhanga,Rewa,Bihar,Madhya Pradesh,2,2,0.05263,0.43429,0.13837687865962475,True
+25,37,Allahabad,Begusarai,Uttar Pradesh,Bihar,2,2,0.05556,0.40243,0.13827600533585085,True
+37,44,Begusarai,South 24 Parganas,Bihar,West Bengal,2,2,0.05556,0.40243,0.13827600533585085,True
+88,97,Gandhinagar,Dewas,Gujarat,Madhya Pradesh,1,1,0.05556,0.40243,0.13827600533585085,True
+81,97,Ahmedabad,Dewas,Gujarat,Madhya Pradesh,1,1,0.05556,0.40243,0.13827600533585085,True
+92,113,Indore,Nizamabad,Madhya Pradesh,Telangana,1,3,0.05,0.45512,0.1373855652561237,False
+20,97,Nanded,Dewas,Maharashtra,Madhya Pradesh,3,1,0.05,0.45512,0.1373855652561237,False
+65,91,Ajmer,Bhopal,Rajasthan,Madhya Pradesh,1,1,0.05556,0.38987,0.13652673338697935,True
+66,81,Bikaner,Ahmedabad,Rajasthan,Gujarat,1,1,0.05263,0.41703,0.1359730224623698,True
+62,89,Jodhpur,Anand,Rajasthan,Gujarat,1,1,0.05263,0.41703,0.1359730224623698,True
+66,100,Bikaner,Ratlam,Rajasthan,Madhya Pradesh,1,1,0.05263,0.41703,0.1359730224623698,True
+66,88,Bikaner,Gandhinagar,Rajasthan,Gujarat,1,1,0.05263,0.41703,0.1359730224623698,True
+17,118,Solapur,Adilabad,Maharashtra,Telangana,1,3,0.05556,0.37892,0.13500169136149026,False
+16,119,Aurangabad,Medak,Maharashtra,Telangana,1,3,0.05556,0.37892,0.13500169136149026,False
+17,73,Solapur,Mangaluru,Maharashtra,Karnataka,1,4,0.05,0.43429,0.134484503576586,False
+21,35,Lucknow,Darbhanga,Uttar Pradesh,Bihar,2,2,0.05,0.43429,0.134484503576586,True
+51,78,Chennai,Davangere,Tamil Nadu,Karnataka,4,4,0.05882,0.33962,0.134353021973387,True
+51,79,Chennai,Shivamogga,Tamil Nadu,Karnataka,4,4,0.05882,0.33962,0.134353021973387,True
+20,92,Nanded,Indore,Maharashtra,Madhya Pradesh,3,1,0.04762,0.45512,0.1338631878045525,False
+18,114,Kolhapur,Karimnagar,Maharashtra,Telangana,1,3,0.05556,0.36927,0.13365770455363915,False
+74,104,Hubballi-Dharwad,Nellore,Karnataka,Andhra Pradesh,1,3,0.05556,0.36927,0.13365770455363915,False
+18,113,Kolhapur,Nizamabad,Maharashtra,Telangana,1,3,0.05556,0.36927,0.13365770455363915,False
+93,94,Jabalpur,Gwalior,Madhya Pradesh,Madhya Pradesh,1,0,0.04167,0.5139,0.13324372547774768,False
+13,115,Nagpur,Khammam,Maharashtra,Telangana,3,3,0.05263,0.38987,0.13219036114617955,True
+40,43,Vaishali,North 24 Parganas,Bihar,West Bengal,2,2,0.05263,0.37892,0.13066531912069043,True
+40,42,Vaishali,Howrah,Bihar,West Bengal,2,2,0.05263,0.37892,0.13066531912069043,True
+40,41,Vaishali,Kolkata,Bihar,West Bengal,2,2,0.05263,0.37892,0.13066531912069043,True
+35,42,Darbhanga,Howrah,Bihar,West Bengal,2,2,0.05263,0.37892,0.13066531912069043,True
+16,114,Aurangabad,Karimnagar,Maharashtra,Telangana,1,3,0.05263,0.37892,0.13066531912069043,False
+35,43,Darbhanga,North 24 Parganas,Bihar,West Bengal,2,2,0.05263,0.37892,0.13066531912069043,True
+35,41,Darbhanga,Kolkata,Bihar,West Bengal,2,2,0.05263,0.37892,0.13066531912069043,True
+17,83,Solapur,Vadodara,Maharashtra,Gujarat,1,1,0.04545,0.45512,0.13065160836341405,True
+95,113,Ujjain,Nizamabad,Madhya Pradesh,Telangana,1,3,0.04545,0.45512,0.13065160836341405,False
+88,91,Gandhinagar,Bhopal,Gujarat,Madhya Pradesh,1,1,0.05,0.40243,0.13004725801201228,True
+81,91,Ahmedabad,Bhopal,Gujarat,Madhya Pradesh,1,1,0.05,0.40243,0.13004725801201228,True
+25,36,Allahabad,Purnia,Uttar Pradesh,Bihar,2,2,0.05,0.40243,0.13004725801201228,True
+75,119,Belagavi,Medak,Karnataka,Telangana,1,3,0.05263,0.36927,0.12932133231283932,False
+79,104,Shivamogga,Nellore,Karnataka,Andhra Pradesh,4,3,0.05263,0.36927,0.12932133231283932,False
+14,76,Thane,Kalaburagi,Maharashtra,Karnataka,1,3,0.04762,0.41703,0.12855826992775987,False
+65,83,Ajmer,Vadodara,Rajasthan,Gujarat,1,1,0.04762,0.41703,0.12855826992775987,True
+13,94,Nagpur,Gwalior,Maharashtra,Madhya Pradesh,3,0,0.03846,0.5139,0.12849295588970416,False
+20,95,Nanded,Ujjain,Maharashtra,Madhya Pradesh,3,1,0.04348,0.45512,0.12773602702744968,False
+17,89,Solapur,Anand,Maharashtra,Gujarat,1,1,0.04348,0.45512,0.12773602702744968,True
+16,112,Aurangabad,Warangal,Maharashtra,Telangana,1,3,0.05,0.37892,0.12677294403765169,False
+25,34,Allahabad,Bhagalpur,Uttar Pradesh,Bihar,2,2,0.04762,0.40243,0.1265248805604411,True
+25,38,Allahabad,Munger,Uttar Pradesh,Bihar,2,2,0.04762,0.40243,0.1265248805604411,True
+18,111,Kolhapur,Hyderabad,Maharashtra,Telangana,1,3,0.05,0.36927,0.12542895722980058,False
+77,118,Ballari,Adilabad,Karnataka,Telangana,3,3,0.05,0.36927,0.12542895722980058,True
+75,114,Belagavi,Karimnagar,Karnataka,Telangana,1,3,0.05,0.36927,0.12542895722980058,False
+75,113,Belagavi,Nizamabad,Karnataka,Telangana,1,3,0.05,0.36927,0.12542895722980058,False
+65,89,Ajmer,Anand,Rajasthan,Gujarat,1,1,0.04545,0.41703,0.12534669048662142,True
+12,120,Pune,Rangareddy,Maharashtra,Telangana,1,3,0.04545,0.41703,0.12534669048662142,False
+11,120,Mumbai,Rangareddy,Maharashtra,Telangana,1,3,0.04545,0.41703,0.12534669048662142,False
+14,120,Thane,Rangareddy,Maharashtra,Telangana,1,3,0.04545,0.41703,0.12534669048662142,False
+75,109,Belagavi,Kadapa,Karnataka,Andhra Pradesh,1,3,0.04762,0.38987,0.12477560861156958,False
+19,115,Amravati,Khammam,Maharashtra,Telangana,3,3,0.04762,0.38987,0.12477560861156958,True
+22,64,Kanpur Nagar,Kota,Uttar Pradesh,Rajasthan,2,1,0.05263,0.33381,0.12438270306865276,False
+73,121,Mangaluru,Thiruvananthapuram,Karnataka,Kerala,4,4,0.05263,0.32846,0.12363759121145032,True
+60,73,Thanjavur,Mangaluru,Tamil Nadu,Karnataka,4,4,0.05263,0.32846,0.12363759121145032,True
+16,111,Aurangabad,Hyderabad,Maharashtra,Telangana,1,3,0.04762,0.37892,0.1232505665860805,False
+107,119,Tirupati,Medak,Andhra Pradesh,Telangana,4,3,0.05,0.35296,0.12315741061466569,False
+15,76,Nashik,Kalaburagi,Maharashtra,Karnataka,1,3,0.04348,0.41703,0.12243110915065702,False
+73,76,Mangaluru,Kalaburagi,Karnataka,Karnataka,4,3,0.04167,0.43429,0.12215618249608683,False
+18,80,Kolhapur,Tumakuru,Maharashtra,Karnataka,1,4,0.04167,0.43429,0.12215618249608683,False
+18,117,Kolhapur,Nalgonda,Maharashtra,Telangana,1,3,0.04762,0.36927,0.12190657977822938,False
+18,116,Kolhapur,Mahbubnagar,Maharashtra,Telangana,1,3,0.04762,0.36927,0.12190657977822938,False
+74,119,Hubballi-Dharwad,Medak,Karnataka,Telangana,1,3,0.04762,0.36927,0.12190657977822938,False
+66,138,Bikaner,Pathankot,Rajasthan,Punjab,1,5,0.05556,0.28358,0.12172338024640994,False
+76,108,Kalaburagi,Rajahmundry,Karnataka,Andhra Pradesh,3,3,0.04762,0.36067,0.12070882987693202,True
+104,113,Nellore,Nizamabad,Andhra Pradesh,Telangana,3,3,0.04762,0.36067,0.12070882987693202,True
+24,49,Varanasi,Malda,Uttar Pradesh,West Bengal,2,2,0.04348,0.40243,0.12039771978333824,True
+16,116,Aurangabad,Mahbubnagar,Maharashtra,Telangana,1,3,0.04545,0.37892,0.12003898714494204,False
+16,117,Aurangabad,Nalgonda,Maharashtra,Telangana,1,3,0.04545,0.37892,0.12003898714494204,False
+51,120,Chennai,Rangareddy,Tamil Nadu,Telangana,4,3,0.04545,0.37892,0.12003898714494204,False
+51,116,Chennai,Mahbubnagar,Tamil Nadu,Telangana,4,3,0.04545,0.37892,0.12003898714494204,False
+15,120,Nashik,Rangareddy,Maharashtra,Telangana,1,3,0.04167,0.41703,0.11975232629883188,False
+75,123,Belagavi,Kozhikode,Karnataka,Kerala,1,4,0.04167,0.41703,0.11975232629883188,False
+107,115,Tirupati,Khammam,Andhra Pradesh,Telangana,4,3,0.04762,0.35296,0.1196350331630945,False
+74,114,Hubballi-Dharwad,Karimnagar,Karnataka,Telangana,1,3,0.04545,0.36927,0.11869500033709093,False
+18,105,Kolhapur,Kurnool,Maharashtra,Andhra Pradesh,1,3,0.04545,0.36927,0.11869500033709093,False
+74,113,Hubballi-Dharwad,Nizamabad,Karnataka,Telangana,1,3,0.04545,0.36927,0.11869500033709093,False
+51,126,Chennai,Kannur,Tamil Nadu,Kerala,4,4,0.04762,0.33962,0.11777712808364021,True
+60,110,Thanjavur,Anantapur,Tamil Nadu,Andhra Pradesh,4,3,0.04167,0.40243,0.1177189369315131,False
+54,104,Tiruchirappalli,Nellore,Tamil Nadu,Andhra Pradesh,4,3,0.04167,0.40243,0.1177189369315131,False
+20,104,Nanded,Nellore,Maharashtra,Andhra Pradesh,3,3,0.04545,0.36067,0.11749725043579357,True
+21,64,Lucknow,Kota,Uttar Pradesh,Rajasthan,2,1,0.04762,0.33381,0.1169679505340428,False
+79,125,Shivamogga,Kollam,Karnataka,Kerala,4,4,0.04545,0.35296,0.11642345372195605,True
+78,119,Davangere,Medak,Karnataka,Telangana,4,3,0.04545,0.35296,0.11642345372195605,False
+107,112,Tirupati,Warangal,Andhra Pradesh,Telangana,4,3,0.04545,0.35296,0.11642345372195605,False
+78,102,Davangere,Vijayawada,Karnataka,Andhra Pradesh,4,3,0.04545,0.35296,0.11642345372195605,False
+59,73,Thoothukudi,Mangaluru,Tamil Nadu,Karnataka,4,4,0.04762,0.32846,0.11622283867684037,True
+56,73,Tirunelveli,Mangaluru,Tamil Nadu,Karnataka,4,4,0.04762,0.32846,0.11622283867684037,True
+75,117,Belagavi,Nalgonda,Karnataka,Telangana,1,3,0.04348,0.36927,0.11577941900112654,False
+57,104,Erode,Nellore,Tamil Nadu,Andhra Pradesh,4,3,0.04,0.40243,0.11524735275330979,False
+17,115,Solapur,Khammam,Maharashtra,Telangana,1,3,0.04348,0.36067,0.11458166909982918,False
+17,103,Solapur,Guntur,Maharashtra,Andhra Pradesh,1,3,0.04348,0.36067,0.11458166909982918,False
+30,94,Gorakhpur,Gwalior,Uttar Pradesh,Madhya Pradesh,2,0,0.03448,0.45512,0.11441611229461743,False
+24,94,Varanasi,Gwalior,Uttar Pradesh,Madhya Pradesh,2,0,0.03448,0.45512,0.11441611229461743,False
+51,124,Chennai,Thrissur,Tamil Nadu,Kerala,4,4,0.04348,0.35296,0.11350787238599166,True
+51,122,Chennai,Kochi,Tamil Nadu,Kerala,4,4,0.04348,0.35296,0.11350787238599166,True
+78,115,Davangere,Khammam,Karnataka,Telangana,4,3,0.04348,0.35296,0.11350787238599166,False
+107,111,Tirupati,Hyderabad,Andhra Pradesh,Telangana,4,3,0.04348,0.35296,0.11350787238599166,False
+51,130,Chennai,Kottayam,Tamil Nadu,Kerala,4,4,0.04348,0.35296,0.11350787238599166,True
+78,103,Davangere,Guntur,Karnataka,Andhra Pradesh,4,3,0.04348,0.35296,0.11350787238599166,False
+79,111,Shivamogga,Hyderabad,Karnataka,Telangana,4,3,0.04,0.38987,0.1134980808044383,False
+17,109,Solapur,Kadapa,Maharashtra,Andhra Pradesh,1,3,0.04167,0.36067,0.11190288624800404,False
+17,80,Solapur,Tumakuru,Maharashtra,Karnataka,1,4,0.03448,0.43429,0.11151505061507974,False
+53,107,Madurai,Tirupati,Tamil Nadu,Andhra Pradesh,4,4,0.04167,0.35296,0.11082908953416651,True
+78,112,Davangere,Warangal,Karnataka,Telangana,4,3,0.04167,0.35296,0.11082908953416651,False
+78,127,Davangere,Alappuzha,Karnataka,Kerala,4,4,0.04,0.36927,0.11062905197109808,True
+74,117,Hubballi-Dharwad,Nalgonda,Karnataka,Telangana,1,3,0.04,0.36927,0.11062905197109808,False
+92,94,Indore,Gwalior,Madhya Pradesh,Madhya Pradesh,1,0,0.03704,0.38987,0.10911730884786235,False
+107,122,Tirupati,Kochi,Andhra Pradesh,Kerala,4,4,0.04,0.35296,0.1083575053559632,True
+107,124,Tirupati,Thrissur,Andhra Pradesh,Kerala,4,4,0.04,0.35296,0.1083575053559632,True
+107,130,Tirupati,Kottayam,Andhra Pradesh,Kerala,4,4,0.04,0.35296,0.1083575053559632,True
+58,76,Vellore,Kalaburagi,Tamil Nadu,Karnataka,4,3,0.03846,0.36927,0.10834986656125789,False
+24,29,Varanasi,Bareilly,Uttar Pradesh,Uttar Pradesh,2,0,0.02941,0.45512,0.10691256032845528,False
+29,30,Bareilly,Gorakhpur,Uttar Pradesh,Uttar Pradesh,0,2,0.02941,0.45512,0.10691256032845528,False
+78,117,Davangere,Nalgonda,Karnataka,Telangana,4,3,0.03846,0.35296,0.10607831994612302,False
+53,79,Madurai,Shivamogga,Tamil Nadu,Karnataka,4,4,0.03846,0.35296,0.10607831994612302,True
+23,24,Agra,Varanasi,Uttar Pradesh,Uttar Pradesh,0,2,0.02857,0.45512,0.10566936828672427,False
+23,30,Agra,Gorakhpur,Uttar Pradesh,Uttar Pradesh,0,2,0.02857,0.45512,0.10566936828672427,False
+94,95,Gwalior,Ujjain,Madhya Pradesh,Madhya Pradesh,0,1,0.03448,0.38987,0.10532853310163451,False
+55,74,Salem,Hubballi-Dharwad,Tamil Nadu,Karnataka,4,1,0.03846,0.33962,0.10422041486666872,False
+57,74,Erode,Hubballi-Dharwad,Tamil Nadu,Karnataka,4,1,0.03846,0.33962,0.10422041486666872,False
+63,94,Udaipur,Gwalior,Rajasthan,Madhya Pradesh,1,0,0.03333,0.38987,0.10362654399688373,False
+71,102,Bengaluru Urban,Vijayawada,Karnataka,Andhra Pradesh,4,3,0.03333,0.37892,0.10210150197139463,False
+94,100,Gwalior,Ratlam,Madhya Pradesh,Madhya Pradesh,0,1,0.03226,0.38987,0.10204295413420256,False
+71,103,Bengaluru Urban,Guntur,Karnataka,Andhra Pradesh,4,3,0.03226,0.37892,0.10051791210871347,False
+54,77,Tiruchirappalli,Ballari,Tamil Nadu,Karnataka,4,3,0.03571,0.33962,0.10015044092052555,False
+71,111,Bengaluru Urban,Hyderabad,Karnataka,Telangana,4,3,0.0303,0.38987,0.09914217270349687,False
+80,119,Tumakuru,Medak,Karnataka,Telangana,4,3,0.03333,0.35296,0.09848596854840863,False
+65,140,Ajmer,Firozpur,Rajasthan,Punjab,1,5,0.04,0.28127,0.09837300646945063,False
+52,74,Coimbatore,Hubballi-Dharwad,Tamil Nadu,Karnataka,4,1,0.03448,0.33962,0.09833005257370514,False
+62,94,Jodhpur,Gwalior,Rajasthan,Madhya Pradesh,1,0,0.03846,0.29697,0.09828041099569981,False
+72,76,Mysuru,Kalaburagi,Karnataka,Karnataka,4,3,0.03125,0.36927,0.0976791348697334,False
+80,115,Tumakuru,Khammam,Karnataka,Telangana,4,3,0.03226,0.35296,0.09690237868572747,False
+61,97,Jaipur,Dewas,Rajasthan,Madhya Pradesh,1,1,0.02857,0.38987,0.09658178909374135,True
+68,97,Alwar,Dewas,Rajasthan,Madhya Pradesh,0,1,0.02857,0.38987,0.09658178909374135,False
+71,117,Bengaluru Urban,Nalgonda,Karnataka,Telangana,4,3,0.02941,0.37892,0.09629993910998326,False
+72,120,Mysuru,Rangareddy,Karnataka,Telangana,4,3,0.0303,0.36927,0.09627314387015667,False
+72,116,Mysuru,Mahbubnagar,Karnataka,Telangana,4,3,0.0303,0.36927,0.09627314387015667,False
+66,94,Bikaner,Gwalior,Rajasthan,Madhya Pradesh,1,0,0.03704,0.29697,0.09617882444896406,False
+65,133,Ajmer,Jalandhar,Rajasthan,Punjab,1,5,0.03846,0.28127,0.09609382105961045,False
+110,124,Anantapur,Thrissur,Andhra Pradesh,Kerala,3,4,0.03226,0.34598,0.09593025144025588,False
+110,122,Anantapur,Kochi,Andhra Pradesh,Kerala,3,4,0.03226,0.34598,0.09593025144025588,False
+110,130,Anantapur,Kottayam,Andhra Pradesh,Kerala,3,4,0.03226,0.34598,0.09593025144025588,False
+69,97,Sikar,Dewas,Rajasthan,Madhya Pradesh,1,1,0.02778,0.38987,0.09541259657830384,True
+61,92,Jaipur,Indore,Rajasthan,Madhya Pradesh,1,1,0.02778,0.38987,0.09541259657830384,True
+68,92,Alwar,Indore,Rajasthan,Madhya Pradesh,0,1,0.02778,0.38987,0.09541259657830384,False
+80,112,Tumakuru,Warangal,Karnataka,Telangana,4,3,0.03125,0.35296,0.09540758825459852,False
+61,88,Jaipur,Gandhinagar,Rajasthan,Gujarat,1,1,0.025,0.41703,0.09508088423257484,True
+61,81,Jaipur,Ahmedabad,Rajasthan,Gujarat,1,1,0.025,0.41703,0.09508088423257484,True
+68,91,Alwar,Bhopal,Rajasthan,Madhya Pradesh,0,1,0.02703,0.38987,0.09430260368390116,False
+69,92,Sikar,Indore,Rajasthan,Madhya Pradesh,1,1,0.02703,0.38987,0.09430260368390116,True
+61,91,Jaipur,Bhopal,Rajasthan,Madhya Pradesh,1,1,0.02703,0.38987,0.09430260368390116,True
+29,96,Bareilly,Sagar,Uttar Pradesh,Madhya Pradesh,0,1,0.03226,0.33381,0.09423529605667577,False
+69,88,Sikar,Gandhinagar,Rajasthan,Gujarat,1,1,0.02439,0.41703,0.09417809001179397,True
+69,81,Sikar,Ahmedabad,Rajasthan,Gujarat,1,1,0.02439,0.41703,0.09417809001179397,True
+63,150,Udaipur,Bhiwani,Rajasthan,Haryana,1,5,0.02222,0.43429,0.0933703667679105,False
+69,91,Sikar,Bhopal,Rajasthan,Madhya Pradesh,1,1,0.02632,0.38987,0.09325181041053329,True
+23,96,Agra,Sagar,Uttar Pradesh,Madhya Pradesh,0,1,0.03125,0.33381,0.09274050562554684,False
+57,105,Erode,Kurnool,Tamil Nadu,Andhra Pradesh,4,3,0.0303,0.33962,0.0921436921755675,False
+105,123,Kurnool,Kozhikode,Andhra Pradesh,Kerala,3,4,0.0303,0.33962,0.0921436921755675,False
+105,129,Kurnool,Malappuram,Andhra Pradesh,Kerala,3,4,0.0303,0.33962,0.0921436921755675,False
+65,139,Ajmer,Moga,Rajasthan,Punjab,1,5,0.03571,0.28127,0.09202384711346726,False
+68,96,Alwar,Sagar,Rajasthan,Madhya Pradesh,0,1,0.02857,0.33381,0.08877413101621456,False
+61,96,Jaipur,Sagar,Rajasthan,Madhya Pradesh,1,1,0.02857,0.33381,0.08877413101621456,True
+52,105,Coimbatore,Kurnool,Tamil Nadu,Andhra Pradesh,4,3,0.02778,0.33962,0.08841411605037447,False
+105,128,Kurnool,Palakkad,Andhra Pradesh,Kerala,3,4,0.02703,0.33962,0.08730412315597177,False
+96,142,Sagar,Faridabad,Madhya Pradesh,Haryana,1,0,0.02703,0.33381,0.08649494560637438,False
+3,96,New Delhi,Sagar,Delhi,Madhya Pradesh,0,1,0.02632,0.33381,0.0854441523330065,False
+1,96,Central Delhi,Sagar,Delhi,Madhya Pradesh,0,1,0.02632,0.33381,0.0854441523330065,False
+27,96,Noida,Sagar,Uttar Pradesh,Madhya Pradesh,0,1,0.02632,0.33381,0.0854441523330065,False
+2,96,East Delhi,Sagar,Delhi,Madhya Pradesh,0,1,0.02632,0.33381,0.0854441523330065,False
+26,96,Ghaziabad,Sagar,Uttar Pradesh,Madhya Pradesh,0,1,0.02632,0.33381,0.0854441523330065,False
+9,96,South West Delhi,Sagar,Delhi,Madhya Pradesh,0,1,0.02632,0.33381,0.0854441523330065,False
+6,96,West Delhi,Sagar,Delhi,Madhya Pradesh,0,1,0.02632,0.33381,0.0854441523330065,False
+5,96,South Delhi,Sagar,Delhi,Madhya Pradesh,0,1,0.02632,0.33381,0.0854441523330065,False
+7,96,North East Delhi,Sagar,Delhi,Madhya Pradesh,0,1,0.02632,0.33381,0.0854441523330065,False
+10,96,Shahdara,Sagar,Delhi,Madhya Pradesh,0,1,0.02632,0.33381,0.0854441523330065,False
+96,141,Sagar,Gurugram,Madhya Pradesh,Haryana,1,0,0.02632,0.33381,0.0854441523330065,False
+29,67,Bareilly,Bhilwara,Uttar Pradesh,Rajasthan,0,1,0.02941,0.29697,0.08488649673657407,False
+29,65,Bareilly,Ajmer,Uttar Pradesh,Rajasthan,0,1,0.02941,0.29697,0.08488649673657407,False
+22,69,Kanpur Nagar,Sikar,Uttar Pradesh,Rajasthan,2,1,0.02778,0.30693,0.08386127369300111,False
+29,138,Bareilly,Pathankot,Uttar Pradesh,Punjab,0,5,0.02857,0.286,0.08211547720446724,False
+21,69,Lucknow,Sikar,Uttar Pradesh,Rajasthan,2,1,0.02632,0.30693,0.08170048752523056,False
+22,149,Kanpur Nagar,Yamunanagar,Uttar Pradesh,Haryana,2,5,0.02564,0.31067,0.08121497590145879,False
+28,67,Meerut,Bhilwara,Uttar Pradesh,Rajasthan,0,1,0.02632,0.29697,0.080313326011635,False
+22,145,Kanpur Nagar,Karnal,Uttar Pradesh,Haryana,2,5,0.025,0.31067,0.08026778196490184,False
+21,149,Lucknow,Yamunanagar,Uttar Pradesh,Haryana,2,5,0.02439,0.31067,0.07936498774412099,False
+22,150,Kanpur Nagar,Bhiwani,Uttar Pradesh,Haryana,2,5,0.02439,0.30693,0.07884410581030096,False
+21,145,Lucknow,Karnal,Uttar Pradesh,Haryana,2,5,0.02381,0.31067,0.07850659323911624,False
+62,145,Jodhpur,Karnal,Rajasthan,Haryana,1,5,0.025,0.29401,0.07794748971424904,False
+28,64,Meerut,Kota,Uttar Pradesh,Rajasthan,0,1,0.02439,0.29697,0.07745694429670541,False
+21,150,Lucknow,Bhiwani,Uttar Pradesh,Haryana,2,5,0.02326,0.30693,0.07717171651606759,False
+23,137,Agra,Hoshiarpur,Uttar Pradesh,Punjab,0,5,0.02564,0.28127,0.07712034251795385,False
+69,138,Sikar,Pathankot,Rajasthan,Punjab,1,5,0.025,0.28358,0.07649486977581514,False
+65,131,Ajmer,Ludhiana,Rajasthan,Punjab,1,5,0.025,0.28127,0.0761731485813969,False
+67,135,Bhilwara,Bathinda,Rajasthan,Punjab,1,5,0.02326,0.29401,0.07537230619923481,False
+65,136,Ajmer,Mohali,Rajasthan,Punjab,1,5,0.02439,0.28127,0.07527035436061605,False
+65,134,Ajmer,Patiala,Rajasthan,Punjab,1,5,0.02439,0.28127,0.07527035436061605,False
+61,132,Jaipur,Amritsar,Rajasthan,Punjab,1,5,0.02439,0.28127,0.07527035436061605,False
+65,144,Ajmer,Ambala,Rajasthan,Haryana,1,5,0.02439,0.28127,0.07527035436061605,False
+70,145,Pali,Karnal,Rajasthan,Haryana,1,5,0.02273,0.29401,0.07458791122052358,False
+65,149,Ajmer,Yamunanagar,Rajasthan,Haryana,1,5,0.02381,0.28127,0.0744119598556113,False
+64,135,Kota,Bathinda,Rajasthan,Punjab,1,5,0.02174,0.29401,0.07312272059991204,False
