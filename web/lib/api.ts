@@ -46,6 +46,11 @@ export async function getScatter(x: string, y: string) {
 export async function getHeatmap() {
   return fetchJSON<{ vars: string[]; matrix: number[][] }>("/correlations/heatmap");
 }
+export async function getScatter3D(x: string, y: string, z: string) {
+  return fetchJSON<{ data: any[]; stats: { n: number; x_var: string; y_var: string; z_var: string } }>(
+    `/correlations/scatter3d?x=${x}&y=${y}&z=${z}`
+  );
+}
 
 // ── Clusters ─────────────────────────────────────────────────────────
 export async function getClusters() {

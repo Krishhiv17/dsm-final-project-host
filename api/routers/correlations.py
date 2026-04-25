@@ -39,6 +39,27 @@ def scatter(
     }
 
 
+@router.get("/scatter3d")
+def scatter3d(
+    x: str = Query("pm25"),
+    y: str = Query("pm10"),
+    z: str = Query("respiratory_cases"),
+    sample: int = Query(2500, le=4000),
+):
+    """Sampled 3D scatter for any three numeric variables in the merged panel."""
+    d = all_data()
+    merged = d["merged"]
+    if merged is None or any(c not in merged.columns for c in (x, y, z)):
+        return {"data": [], "stats": {}}
+    df = merged[[x, y, z, "state"]].dropna()
+    if len(df) > sample:
+        df = df.sample(sample, random_state=42)
+    return {
+        "data": df_to_records(df.rename(columns={x: "x", y: "y", z: "z"})),
+        "stats": {"n": int(len(df)), "x_var": x, "y_var": y, "z_var": z},
+    }
+
+
 @router.get("/heatmap")
 def heatmap():
     """Full correlation matrix for the heatmap on the correlations page."""

@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 interface Props {
   children: ReactNode;
   title?: string;
-  variant?: "info" | "warning" | "critical";
+  variant?: "info" | "warning" | "critical" | "success";
   className?: string;
 }
 
@@ -13,6 +13,7 @@ const VARIANTS = {
   info:     "border-sky-500/30 bg-sky-500/5",
   warning:  "border-amber-500/30 bg-amber-500/5",
   critical: "border-rose-500/30 bg-rose-500/5",
+  success:  "border-emerald-500/30 bg-emerald-500/5",
 };
 
 export function InsightBox({ children, title = "Insight", variant = "info", className }: Props) {

@@ -8,7 +8,19 @@ router = APIRouter(prefix="/causal", tags=["causal"])
 
 @router.get("/granger-within")
 def granger_within():
-    return df_to_records(all_data()["granger_within"])
+    """Granger causality results enriched with district name + state."""
+    d = all_data()
+    g = d["granger_within"]
+    districts = d["districts"]
+    if g is None:
+        return []
+    out = g.copy()
+    if districts is not None:
+        out = out.merge(
+            districts[["district_id", "district_name", "state"]],
+            on="district_id", how="left",
+        )
+    return df_to_records(out)
 
 
 @router.get("/cross-correlation")
