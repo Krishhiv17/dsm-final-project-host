@@ -1,0 +1,5 @@
+pm25_reduction_pct,baseline_total_cases,counterfactual_total,cases_averted,percent_cases_reduced,mean_case_reduction
+10,7262305,6812859,449445,6.19,41.6
+20,7262305,6311204,951100,13.1,88.1
+30,7262305,5819527,1442777,19.87,133.6
+50,7262305,4809144,2453160,33.78,227.1
