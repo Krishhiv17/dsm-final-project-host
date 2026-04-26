@@ -34,10 +34,10 @@ def all_data() -> dict:
         merged["resp_rate_per_100k"] = (
             merged["respiratory_cases"] * 100_000 / merged["population"].replace(0, np.nan)
         )
-        merged["year_month"] = pd.to_datetime(merged["year_month"], errors="ignore")
+        merged["year_month"] = pd.to_datetime(merged["year_month"], errors="coerce")
 
     if aq is not None and "date" in aq.columns:
-        aq["date"] = pd.to_datetime(aq["date"], errors="ignore")
+        aq["date"] = pd.to_datetime(aq["date"], errors="coerce")
 
     return {
         "merged": merged,
