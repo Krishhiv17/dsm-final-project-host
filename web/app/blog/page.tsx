@@ -61,18 +61,68 @@ export default function BlogPage() {
   const [centrality,  setCentrality]  = useState<any[]>([]);
 
   useEffect(() => {
-    Promise.all([getKPIs(), getStates(), getSeasonality(), getScatter("pm25","respiratory_cases"), getHeatmap()])
-      .then(([k,s,sea,sc,hm]) => { setKpis(k); setStates(s); setSeason(sea); setScatter(sc); setHeatmap(hm); })
-      .catch(console.error);
-    Promise.all([getCrossCorrelation(), getDoseResponse(), getSyntheticControl(), getRDD(), getPSM()])
-      .then(([xc,dr,sy,rd,ps]) => { setXcorr(xc); setDoseResp(dr); setSynth(sy); setRdd(rd); setPsm(ps); })
-      .catch(console.error);
-    Promise.all([getGrangerWithin(), getEpiMetrics(), getPartialCorrelation(), getPanelFE(), getGWR()])
-      .then(([gr,em,pc,pf,gw]) => { setGranger(gr); setEpi(em); setPartialCorr(pc); setPanelFE(pf); setGwr(gw); })
-      .catch(console.error);
-    Promise.all([getClusters(), getCommunities(), getMoransI(), getKnowledgeGraph(), getCentralityTop("betweenness_centrality")])
-      .then(([cl,co,mo,kg_,ct]) => { setClusters(cl); setCommunities(co); setMoran(mo); setKg(kg_); setCentrality(ct); })
-      .catch(console.error);
+    let cancelled = false;
+
+    const loadBlogData = async () => {
+      try {
+        const [k,s,sea] = await Promise.all([getKPIs(), getStates(), getSeasonality()]);
+        if (cancelled) return;
+        setKpis(k); setStates(s); setSeason(sea);
+      } catch (err) {
+        console.error(err);
+      }
+
+      try {
+        const [sc,hm] = await Promise.all([getScatter("pm25","respiratory_cases"), getHeatmap()]);
+        if (cancelled) return;
+        setScatter(sc); setHeatmap(hm);
+      } catch (err) {
+        console.error(err);
+      }
+
+      try {
+        const [xc,dr,sy] = await Promise.all([getCrossCorrelation(), getDoseResponse(), getSyntheticControl()]);
+        if (cancelled) return;
+        setXcorr(xc); setDoseResp(dr); setSynth(sy);
+      } catch (err) {
+        console.error(err);
+      }
+
+      try {
+        const [rd,ps,gr] = await Promise.all([getRDD(), getPSM(), getGrangerWithin()]);
+        if (cancelled) return;
+        setRdd(rd); setPsm(ps); setGranger(gr);
+      } catch (err) {
+        console.error(err);
+      }
+
+      try {
+        const [em,pc,pf] = await Promise.all([getEpiMetrics(), getPartialCorrelation(), getPanelFE()]);
+        if (cancelled) return;
+        setEpi(em); setPartialCorr(pc); setPanelFE(pf);
+      } catch (err) {
+        console.error(err);
+      }
+
+      try {
+        const [gw,cl,co] = await Promise.all([getGWR(), getClusters(), getCommunities()]);
+        if (cancelled) return;
+        setGwr(gw); setClusters(cl); setCommunities(co);
+      } catch (err) {
+        console.error(err);
+      }
+
+      try {
+        const [mo,kg_,ct] = await Promise.all([getMoransI(), getKnowledgeGraph(), getCentralityTop("betweenness_centrality")]);
+        if (cancelled) return;
+        setMoran(mo); setKg(kg_); setCentrality(ct);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+
+    loadBlogData();
+    return () => { cancelled = true; };
   }, []);
 
   const top5           = states.slice(0, 5);
