@@ -80,6 +80,15 @@ export async function getDoseResponse()     { return fetchJSON<any[]>("/causal/d
 export async function getCounterfactual()   { return fetchJSON<any[]>("/causal/counterfactual"); }
 export async function getChangePoint()      { return fetchJSON<{ series: any[]; changepoints: any[] }>("/causal/changepoint"); }
 export async function getAttributable()     { return fetchJSON<any[]>("/causal/attributable"); }
+export async function getSyntheticControl() {
+  return fetchJSON<{ series: any[]; meta: any }>("/causal/synthetic-control");
+}
+export async function getRDD() {
+  return fetchJSON<{ estimates: any[]; scatter: any[] }>("/causal/rdd");
+}
+export async function getPSM() {
+  return fetchJSON<{ summary: any; balance: any[] }>("/causal/psm");
+}
 
 // ── Advanced stats ───────────────────────────────────────────────────
 export async function getPCA()               { return fetchJSON<{ sample: any[]; n_total: number }>("/advanced/pca"); }
@@ -89,6 +98,15 @@ export async function getGWR()               { return fetchJSON<any[]>("/advance
 export async function getEpiMetrics()        { return fetchJSON<any[]>("/advanced/epi-metrics"); }
 export async function getPartialCorrelation(){ return fetchJSON<any>("/advanced/partial-correlation"); }
 export async function getSpatialLag()        { return fetchJSON<any[]>("/advanced/spatial-lag"); }
+
+// ── Chat ─────────────────────────────────────────────────────────────
+export interface ChatMessage { role: "user" | "assistant"; content: string; }
+export async function sendChatMessage(messages: ChatMessage[]) {
+  return fetchJSON<{ reply: string; queries: string[] }>("/chat/message", {
+    method: "POST",
+    body: JSON.stringify({ messages }),
+  });
+}
 
 // ── Predict ──────────────────────────────────────────────────────────
 export interface PredictionInput {
