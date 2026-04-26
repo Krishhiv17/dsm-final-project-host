@@ -99,6 +99,7 @@ def trained_model():
 
 def df_to_records(df: pd.DataFrame | None, replace_nan=None) -> list:
     """Safely convert a DataFrame to a list of dicts, replacing NaN with None or scalar."""
+    import math
     if df is None or df.empty:
         return []
     out = df.copy()
@@ -106,4 +107,10 @@ def df_to_records(df: pd.DataFrame | None, replace_nan=None) -> list:
         out = out.where(pd.notnull(out), None)
     else:
         out = out.fillna(replace_nan)
-    return out.to_dict(orient="records")
+    records = out.to_dict(orient="records")
+    # pandas 2.x can leave float nan/inf in dicts even after .where(); clean them out
+    def _clean(v):
+        if isinstance(v, float) and (math.isnan(v) or math.isinf(v)):
+            return None if replace_nan is None else replace_nan
+        return v
+    return [{k: _clean(v) for k, v in row.items()} for row in records]
