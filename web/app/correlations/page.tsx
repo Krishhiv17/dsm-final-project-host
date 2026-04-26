@@ -233,7 +233,7 @@ export default function CorrelationsPage() {
                     colorscale: [[0, "#1e3a8a"], [0.5, "#0f172a"], [1, "#dc2626"]],
                     zmid: 0, zmin: -1, zmax: 1,
                     hovertemplate: "%{x} ↔ %{y}<br>r = %{z:.2f}<extra></extra>",
-                    text: heatmap.matrix.map((row: number[]) => row.map(v => v.toFixed(2))),
+                    text: heatmap.matrix.map((row: (number|null)[]) => row.map(v => v != null ? v.toFixed(2) : "")),
                     texttemplate: "%{text}", textfont: { size: 11 },
                   }]}
                   layout={{
