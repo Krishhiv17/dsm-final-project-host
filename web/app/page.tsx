@@ -111,9 +111,9 @@ export default function OverviewPage() {
 
       <Card>
         <CardHeader>
-          <CardTitle>Seasonal Rhythm</CardTitle>
+          <CardTitle>Year-Over-Year Trend</CardTitle>
           <CardDescription>
-            Monthly mean across all districts. Winter inversions trap pollutants near ground level — the November-February peak is consistent year over year.
+            Annual mean across all districts, 2013–2023. National PM2.5 has remained flat at ~59 µg/m³ despite GRAP, BS-VI, and crop-burning bans.
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -123,26 +123,28 @@ export default function OverviewPage() {
               data={[
                 {
                   type: "scatter", mode: "lines+markers",
-                  x: season.pollution.map((d: any) => d.month),
+                  x: season.pollution.map((d: any) => d.year),
                   y: season.pollution.map((d: any) => d.pm25),
                   name: "PM2.5", line: { width: 3, color: "#f87171" },
+                  marker: { size: 8 },
                 },
                 {
                   type: "scatter", mode: "lines+markers",
-                  x: season.pollution.map((d: any) => d.month),
+                  x: season.pollution.map((d: any) => d.year),
                   y: season.pollution.map((d: any) => d.pm10),
                   name: "PM10", line: { width: 3, color: "#fbbf24" },
+                  marker: { size: 8 },
                 },
                 {
                   type: "scatter", mode: "lines+markers", yaxis: "y2",
-                  x: season.health.map((d: any) => d.month),
+                  x: season.health.map((d: any) => d.year),
                   y: season.health.map((d: any) => d.respiratory_cases),
                   name: "Respiratory cases", line: { width: 3, color: "#38bdf8", dash: "dot" },
+                  marker: { size: 8 },
                 },
               ]}
               layout={{
-                xaxis: { title: { text: "Month" }, tickmode: "array", tickvals: [1,2,3,4,5,6,7,8,9,10,11,12],
-                  ticktext: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"] },
+                xaxis: { title: { text: "Year" }, dtick: 1 },
                 yaxis:  { title: { text: "Pollutant (µg/m³)" } },
                 yaxis2: { title: { text: "Avg respiratory cases / district" }, overlaying: "y", side: "right", showgrid: false },
                 legend: { orientation: "h", y: -0.2 },

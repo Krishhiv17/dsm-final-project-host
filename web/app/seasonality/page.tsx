@@ -6,22 +6,20 @@ import { InsightBox } from "@/components/insight-box";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { getSeasonality } from "@/lib/api";
 
-const MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
-
 export default function SeasonalityPage() {
   const [data, setData] = useState<any>(null);
   useEffect(() => { getSeasonality().then(setData).catch(console.error); }, []);
 
   return (
     <div className="space-y-8">
-      <PageHeader badge="Seasonality" title="The Winter Pollution Cycle"
-        subtitle="One of the strongest patterns in this dataset: PM2.5 levels in November-February are 2-3× higher than the monsoon trough. Health outcomes track this rhythm with a short lag." />
+      <PageHeader badge="Seasonality" title="The Annual Pollution Trend"
+        subtitle="National PM2.5 has remained stubbornly flat at ~59 µg/m³ from 2013–2023. Despite GRAP, BS-VI vehicles, odd-even schemes, and crop-burning bans, the trend line barely moves." />
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <Card>
           <CardHeader>
-            <CardTitle>Pollutant Seasonality</CardTitle>
-            <CardDescription>Monthly mean across all districts — averaged over 2018-2023.</CardDescription>
+            <CardTitle>Pollution Trend 2013–2023</CardTitle>
+            <CardDescription>Annual mean across all districts. No sustained improvement visible over the decade.</CardDescription>
           </CardHeader>
           <CardContent>
             {data?.pollution && (
@@ -29,24 +27,25 @@ export default function SeasonalityPage() {
                 height={420}
                 data={[
                   { type: "scatter", mode: "lines+markers", name: "PM2.5",
-                    x: data.pollution.map((d: any) => MONTHS[d.month - 1]),
+                    x: data.pollution.map((d: any) => d.year),
                     y: data.pollution.map((d: any) => d.pm25),
-                    line: { width: 3, color: "#f87171" }, marker: { size: 8 } },
+                    line: { width: 3, color: "#f87171" }, marker: { size: 9 } },
                   { type: "scatter", mode: "lines+markers", name: "PM10",
-                    x: data.pollution.map((d: any) => MONTHS[d.month - 1]),
+                    x: data.pollution.map((d: any) => d.year),
                     y: data.pollution.map((d: any) => d.pm10),
-                    line: { width: 3, color: "#fbbf24" }, marker: { size: 8 } },
+                    line: { width: 3, color: "#fbbf24" }, marker: { size: 9 } },
                   { type: "scatter", mode: "lines+markers", name: "NO₂",
-                    x: data.pollution.map((d: any) => MONTHS[d.month - 1]),
+                    x: data.pollution.map((d: any) => d.year),
                     y: data.pollution.map((d: any) => d.no2),
-                    line: { width: 3, color: "#a78bfa" }, marker: { size: 8 } },
+                    line: { width: 3, color: "#a78bfa" }, marker: { size: 9 } },
                   { type: "scatter", mode: "lines+markers", name: "SO₂",
-                    x: data.pollution.map((d: any) => MONTHS[d.month - 1]),
+                    x: data.pollution.map((d: any) => d.year),
                     y: data.pollution.map((d: any) => d.so2),
-                    line: { width: 3, color: "#22d3ee" }, marker: { size: 8 } },
+                    line: { width: 3, color: "#22d3ee" }, marker: { size: 9 } },
                 ]}
                 layout={{
-                  yaxis: { title: { text: "Concentration (µg/m³)" } },
+                  xaxis: { title: { text: "Year" }, dtick: 1 },
+                  yaxis: { title: { text: "Annual mean concentration (µg/m³)" } },
                   legend: { orientation: "h", y: -0.2 },
                 }}
               />
@@ -56,8 +55,8 @@ export default function SeasonalityPage() {
 
         <Card>
           <CardHeader>
-            <CardTitle>Health Seasonality</CardTitle>
-            <CardDescription>Monthly mean cases per district. Note diarrhoea&apos;s opposite phase.</CardDescription>
+            <CardTitle>Health Burden Trend 2013–2023</CardTitle>
+            <CardDescription>Annual mean cases per district. Respiratory burden grows as pollution stays flat.</CardDescription>
           </CardHeader>
           <CardContent>
             {data?.health && (
@@ -65,20 +64,21 @@ export default function SeasonalityPage() {
                 height={420}
                 data={[
                   { type: "scatter", mode: "lines+markers", name: "Respiratory",
-                    x: data.health.map((d: any) => MONTHS[d.month - 1]),
+                    x: data.health.map((d: any) => d.year),
                     y: data.health.map((d: any) => d.respiratory_cases),
-                    line: { width: 3, color: "#38bdf8" }, marker: { size: 8 },
+                    line: { width: 3, color: "#38bdf8" }, marker: { size: 9 },
                     fill: "tozeroy", fillcolor: "rgba(56,189,248,0.08)" },
                   { type: "scatter", mode: "lines+markers", name: "Cardiovascular",
-                    x: data.health.map((d: any) => MONTHS[d.month - 1]),
+                    x: data.health.map((d: any) => d.year),
                     y: data.health.map((d: any) => d.cardiovascular_cases),
-                    line: { width: 3, color: "#f472b6" }, marker: { size: 8 } },
+                    line: { width: 3, color: "#f472b6" }, marker: { size: 9 } },
                   { type: "scatter", mode: "lines+markers", name: "Diarrhoea",
-                    x: data.health.map((d: any) => MONTHS[d.month - 1]),
+                    x: data.health.map((d: any) => d.year),
                     y: data.health.map((d: any) => d.diarrhoea_cases),
-                    line: { width: 3, color: "#34d399" }, marker: { size: 8 } },
+                    line: { width: 3, color: "#34d399" }, marker: { size: 9 } },
                 ]}
                 layout={{
+                  xaxis: { title: { text: "Year" }, dtick: 1 },
                   yaxis: { title: { text: "Average cases / district" } },
                   legend: { orientation: "h", y: -0.2 },
                 }}
@@ -89,11 +89,11 @@ export default function SeasonalityPage() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <InsightBox variant="critical" title="Winter inversions are the mechanism">
-          Cold air sinking under warmer aloft layers traps pollutants near ground level. Combined with crop-residue burning in Punjab/Haryana and reduced wind dispersion, this produces the November-February peak that&apos;s visible in <b>every</b> northern district.
+        <InsightBox variant="critical" title="Six years of policy, zero movement">
+          National PM2.5 in 2018: ~59 µg/m³. In 2023: ~59 µg/m³. BS-VI fuel standards, GRAP escalation frameworks, odd-even vehicle schemes, and paddy-stubble bans have not moved the national average. The levers being pulled are not the ones that matter at scale.
         </InsightBox>
-        <InsightBox variant="info" title="Diarrhoea runs opposite">
-          Notice how diarrhoea cases rise in monsoon (Jun-Sep) — the same months when air pollution drops. This isn&apos;t pollution-driven; it&apos;s waterborne. A useful sanity check that respiratory ≠ diarrhoea ≠ random.
+        <InsightBox variant="info" title="The data is annual district averages">
+          The CPCB/NDAP dataset provides annual summary statistics per district (250,008 records across 233 districts). Each point on these charts is one year&apos;s mean. District-level variation is large — northern states run 2–5× southern baselines even within the same year.
         </InsightBox>
       </div>
     </div>

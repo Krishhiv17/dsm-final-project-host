@@ -54,12 +54,17 @@ def seasonality():
         return {"pollution": [], "health": []}
 
     aq_m = aq.copy()
-    aq_m["month"] = aq_m["date"].dt.month
-    poll = aq_m.groupby("month")[["pm25", "pm10", "no2", "so2"]].mean().round(1).reset_index()
+    aq_m["year"] = aq_m["date"].dt.year
+    poll = aq_m.groupby("year")[["pm25", "pm10", "no2", "so2"]].mean().round(1).reset_index()
+    poll = poll[poll["year"].between(2013, 2023)]
 
     h_m = merged.copy()
-    h_m["month"] = h_m["year_month"].dt.month if hasattr(h_m["year_month"], "dt") else h_m["year_month"].astype(str).str[5:7].astype(int)
-    health = h_m.groupby("month")[["respiratory_cases", "cardiovascular_cases", "diarrhoea_cases"]].mean().round(1).reset_index()
+    if hasattr(h_m["year_month"], "dt"):
+        h_m["year"] = h_m["year_month"].dt.year
+    else:
+        h_m["year"] = h_m["year_month"].astype(str).str[:4].astype(int)
+    health = h_m.groupby("year")[["respiratory_cases", "cardiovascular_cases", "diarrhoea_cases"]].mean().round(1).reset_index()
+    health = health[health["year"].between(2013, 2023)]
 
     return {
         "pollution": df_to_records(poll),
