@@ -1,0 +1,6 @@
+web/
+src/
+notebooks/
+data/raw/
+db/
+*.md
