@@ -1,0 +1,6 @@
+covariate,smd_before,smd_after
+urban_percentage,0.2752,0.0411
+literacy_rate,0.5493,0.1358
+log_pop,0.0145,0.1962
+month_sin,0.528,0.1138
+month_cos,0.965,0.1693
