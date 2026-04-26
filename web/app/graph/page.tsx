@@ -92,8 +92,8 @@ export default function GraphPage() {
                 <CardContent className="text-sm space-y-2">
                   <div className="text-muted-foreground text-xs leading-relaxed">{c.states}</div>
                   <div className="grid grid-cols-2 gap-2 pt-2 border-t border-border/50">
-                    <div><span className="text-muted-foreground text-xs">PM2.5</span><div className="font-mono">{c.avg_pm25?.toFixed(1)}</div></div>
-                    <div><span className="text-muted-foreground text-xs">Resp rate</span><div className="font-mono">{c.avg_resp_rate?.toFixed(0)}</div></div>
+                    <div><span className="text-muted-foreground text-xs">PM2.5</span><div className="font-mono">{c.avg_pm25 != null ? c.avg_pm25.toFixed(1) : "—"}</div></div>
+                    <div><span className="text-muted-foreground text-xs">Resp rate</span><div className="font-mono">{c.avg_resp_rate != null ? c.avg_resp_rate.toFixed(0) : "—"}</div></div>
                   </div>
                 </CardContent>
               </Card>

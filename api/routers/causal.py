@@ -35,12 +35,15 @@ def cross_correlation():
            .reset_index().sort_values("year_month"))
     pm = (nat["pm25"] - nat["pm25"].mean()) / nat["pm25"].std()
     rs = (nat["resp"] - nat["resp"].mean()) / nat["resp"].std()
+    import math
     out = []
     for lag in range(0, 13):
         if lag == 0:
             r = float(np.corrcoef(pm.values, rs.values)[0, 1])
         else:
             r = float(np.corrcoef(pm.values[:-lag], rs.values[lag:])[0, 1])
+        if math.isnan(r) or math.isinf(r):
+            r = 0.0
         out.append({"lag_months": lag, "cross_correlation": round(r, 5)})
     return out
 

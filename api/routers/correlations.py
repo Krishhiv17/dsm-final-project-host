@@ -70,7 +70,12 @@ def heatmap():
     cols = POLLUTANTS + HEALTH + ["urban_percentage", "literacy_rate"]
     cols = [c for c in cols if c in merged.columns]
     corr = merged[cols].corr().round(3)
+    import math
+    matrix = [
+        [None if isinstance(v, float) and math.isnan(v) else v for v in row]
+        for row in corr.values.tolist()
+    ]
     return {
         "vars": cols,
-        "matrix": corr.values.tolist(),
+        "matrix": matrix,
     }

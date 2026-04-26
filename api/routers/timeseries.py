@@ -8,13 +8,15 @@ router = APIRouter(prefix="/timeseries", tags=["timeseries"])
 
 @router.get("/districts")
 def districts():
-    """List of all districts with id, name, state for selectors."""
+    """List districts that actually have air-quality data (id, name, state)."""
     d = all_data()
-    if d["districts"] is None:
+    if d["districts"] is None or d["aq"] is None:
         return []
+    aq_ids = set(d["aq"]["district_id"].dropna().astype(int))
+    df = d["districts"].copy()
+    df = df[df["district_id"].astype(int).isin(aq_ids)]
     return df_to_records(
-        d["districts"][["district_id", "district_name", "state"]]
-            .sort_values(["state", "district_name"])
+        df[["district_id", "district_name", "state"]].sort_values(["state", "district_name"])
     )
 
 

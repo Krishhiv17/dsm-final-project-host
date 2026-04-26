@@ -74,18 +74,34 @@ Rules:
   large, your JOIN likely overcounted — use AVG instead of SUM.
 
 ## Exact database schema (ONLY these column names)
+
 ```
-districts        : district_id, district_name, state, population, area_sq_km,
-                   density_per_sq_km, literacy_rate, urban_percentage
-air_quality      : id, district_id, date (TEXT 'YYYY-MM-DD'), pm25, pm10, no2, so2, aqi
-health_indicators: id, district_id, year_month (TEXT 'YYYY-MM'),
-                   respiratory_cases, cardiovascular_cases, diarrhoea_cases,
-                   total_opd_visits, institutional_deliveries, immunization_doses
-water_quality    : id, district_id, year, quarter, ph, dissolved_oxygen_mg_l,
-                   bod_mg_l, total_coliform_mpn, turbidity_ntu, tds_mg_l
+districts        : district_id (INT), district_name (TEXT), state (TEXT),
+                   population, urban_percentage, literacy_rate
+air_quality      : district (TEXT district name), date (TEXT 'YYYY-MM-DD'),
+                   pm25, pm10, no2, so2, aqi, district_id (CPCB station ID — DO NOT join on this)
+health_indicators: district (TEXT district name), state (TEXT), district_id,
+                   year_month (TEXT 'YYYY-MM'), respiratory_cases, cardiovascular_cases,
+                   diarrhoea_cases, total_opd_visits
 ```
 
-NO pre-aggregated columns exist. Always compute: AVG(a.pm25), SUM(h.respiratory_cases), etc.
+CRITICAL JOIN RULES:
+- air_quality uses CPCB station IDs in district_id — these do NOT match districts.district_id.
+- ALWAYS join air_quality to health_indicators (or districts) using LOWER(a.district) = LOWER(h.district).
+- Only ~233 districts have air quality data. Delhi has NO rows in air_quality.
+  For Delhi pollution questions, note this limitation and quote the project finding (~59 µg/m³ national avg).
+- For health-only questions, query health_indicators directly (state column is reliable).
+- NO pre-aggregated columns exist. Always compute: AVG(a.pm25), SUM(h.respiratory_cases), etc.
+
+Example correct join:
+```sql
+SELECT a.district, h.state, AVG(a.pm25) as avg_pm25, SUM(h.respiratory_cases) as total_resp
+FROM air_quality a
+JOIN health_indicators h ON LOWER(a.district) = LOWER(h.district)
+   AND strftime('%Y-%m', a.date) = h.year_month
+WHERE a.pm25 IS NOT NULL
+GROUP BY a.district, h.state
+```
 
 ## Answering
 1. Compare numbers against NAAQS standards, national averages, or seasonal norms.
