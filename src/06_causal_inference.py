@@ -128,6 +128,10 @@ def within_district_granger(merged: pd.DataFrame):
             "significant_10": best_p < 0.10,
         })
 
+    if not results:
+        print("  [ERROR] No districts had sufficient non-NaN overlapping data for Granger testing.")
+        return pd.DataFrame()
+        
     df_res = pd.DataFrame(results)
     n_sig  = df_res["significant_05"].sum()
     pct    = n_sig / len(df_res) * 100
@@ -160,10 +164,14 @@ def optimal_lag_detection(merged: pd.DataFrame):
                      resp_avg=("respiratory_cases", "mean"))
                 .sort_index().reset_index())
 
+    if len(national) < 5:
+        print(f"  [ERROR] Insufficient national data for lag detection (n={len(national)})")
+        return pd.DataFrame(), 0
+
     pm25_s = (national["pm25_avg"] - national["pm25_avg"].mean()) / national["pm25_avg"].std()
     resp_s = (national["resp_avg"] - national["resp_avg"].mean()) / national["resp_avg"].std()
 
-    lags = range(0, 13)
+    lags = range(0, min(13, len(national) // 2))
     xcorr = []
     for lag in lags:
         if lag == 0:
@@ -173,11 +181,10 @@ def optimal_lag_detection(merged: pd.DataFrame):
         xcorr.append({"lag_months": lag, "cross_correlation": round(r, 5)})
 
     xcorr_df = pd.DataFrame(xcorr)
+    if xcorr_df.empty: return pd.DataFrame(), 0
     peak_row  = xcorr_df.loc[xcorr_df["cross_correlation"].idxmax()]
     print(f"  Peak cross-correlation: r={peak_row['cross_correlation']:.4f} "
           f"at lag {int(peak_row['lag_months'])} month(s)")
-    print(f"  Interpretation: respiratory burden peaks ~{int(peak_row['lag_months'])} "
-          f"month(s) after a PM2.5 spike")
     return xcorr_df, int(peak_row["lag_months"])
 
 
@@ -209,10 +216,18 @@ def var_model(merged: pd.DataFrame, optimal_lag: int):
 
     # First-difference for stationarity
     national_d = national.diff().dropna()
+    
+    if len(national_d) < 20:
+        print(f"  [SKIP] Not enough data for national VAR model (n={len(national_d)})")
+        return None, None
 
-    model  = VAR(national_d)
-    max_ic = min(MAXLAG, len(national_d) // 5)
-    res    = model.fit(maxlags=max_ic, ic="aic")
+    try:
+        model  = VAR(national_d)
+        max_ic = min(MAXLAG, len(national_d) // 5)
+        res    = model.fit(maxlags=max_ic, ic="aic")
+    except Exception as e:
+        print(f"  [ERROR] VAR fit failed: {e}")
+        return None, None
 
     print(f"\n  VAR selected lag order: {res.k_ar} (AIC)")
     print(f"  AIC = {res.aic:.2f}")
@@ -355,6 +370,10 @@ def change_point_detection(merged: pd.DataFrame):
     national = (merged.groupby("year_month")
                 .agg(pm25=("pm25", "mean"))
                 .sort_index().reset_index())
+    
+    if len(national) < 10:
+        print(f"  [SKIP] Not enough data for change-point detection (n={len(national)})")
+        return None, pd.DataFrame()
 
     series = national["pm25"].values
     mu     = series.mean()
@@ -707,6 +726,9 @@ def plot_counterfactual(cf_df: pd.DataFrame):
 
 
 def plot_changepoint(national: pd.DataFrame, cp_df: pd.DataFrame):
+    if national is None or national.empty:
+        print("  [SKIP] Skipping change-point plot (no data)")
+        return
     print("  Plotting change-point detection...")
     fig, axes = plt.subplots(2, 1, figsize=(16, 10), sharex=True)
 
