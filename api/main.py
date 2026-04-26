@@ -46,6 +46,7 @@ def root():
             "/advanced/gwr", "/advanced/epi-metrics",
             "/advanced/partial-correlation", "/advanced/spatial-lag",
             "/predict",
+            "/chat",
         ],
     }
 
