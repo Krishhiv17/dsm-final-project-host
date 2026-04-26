@@ -30,7 +30,7 @@ export default function GraphPage() {
   useEffect(() => {
     Promise.all([
       getGraphNodes(), getGraphEdges(), getCommunities(), getMoransI(),
-      getKnowledgeGraph(), getLinkPrediction(20), getCentralityTop("betweenness_centrality"),
+      getKnowledgeGraph(), getLinkPrediction(500), getCentralityTop("betweenness_centrality"),
     ]).then(([n, e, c, m, k, lp, ct]) => {
       setNodes(n); setEdges(e); setCommunities(c); setMoran(m);
       setKg(k); setLinkPred(lp); setCentrality(ct);
