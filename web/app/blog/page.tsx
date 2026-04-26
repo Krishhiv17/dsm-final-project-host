@@ -499,18 +499,19 @@ export default function BlogPage() {
                   data={[
                     {
                       type: "scatter", mode: "lines+markers", name: "PM2.5 (µg/m³)",
-                      x: season.pollution.map((d:any) => MONTHS[d.month - 1]),
+                      x: season.pollution.map((d:any) => d.year),
                       y: season.pollution.map((d:any) => d.pm25),
-                      line: { width: 3, color: "#f87171" }, marker: { size: 6 },
+                      line: { width: 3, color: "#f87171" }, marker: { size: 8 },
                     },
                     {
                       type: "scatter", mode: "lines+markers", name: "Respiratory cases", yaxis: "y2",
-                      x: season.health.map((d:any) => MONTHS[d.month - 1]),
+                      x: season.health.map((d:any) => d.year),
                       y: season.health.map((d:any) => d.respiratory_cases),
-                      line: { width: 3, color: "#38bdf8", dash: "dot" }, marker: { size: 6 },
+                      line: { width: 3, color: "#38bdf8", dash: "dot" }, marker: { size: 8 },
                     },
                   ]}
                   layout={{
+                    xaxis: { title: { text: "Year" }, dtick: 1 },
                     yaxis: { title: { text: "PM2.5 (µg/m³)" } },
                     yaxis2: { title: { text: "Avg respiratory cases" }, overlaying: "y", side: "right", showgrid: false },
                     legend: { orientation: "h", y: -0.28 },
@@ -521,17 +522,18 @@ export default function BlogPage() {
           )}
 
           <Para>
-            Both curves peak in December–January and trough in July–August. The co-movement is the dominant
-            temporal pattern across all six years. PM2.5 in winter runs 1.5–2× the annual mean; respiratory
-            cases follow with roughly the same amplitude and a slight lag.
+            National PM2.5 has tracked between 55–70 µg/m³ annually from 2013 to 2023 with no sustained
+            downward trend. Respiratory cases follow the same flat-to-rising trajectory. The co-movement
+            is the dominant pattern across all years: when pollution rises, so does disease; when pollution
+            holds flat, so does disease burden.
           </Para>
 
           <Para>
-            The mechanism is physical. In winter, temperature inversions cap the boundary layer: warmer air
-            sits above cooler surface air, preventing upward mixing and trapping pollutants in the breathing zone.
-            Add stubble burning (Punjab and Haryana: October–November), low wind speeds, and higher combustion
-            from heating, and you get the predictable spike that returns every year regardless of what vehicle
-            restrictions or factory closures are announced in response.
+            Within each year the mechanism is seasonal: temperature inversions in winter (November–February)
+            cap the atmospheric boundary layer and trap pollutants near ground level. Add stubble burning in
+            Punjab and Haryana each October–November, reduced wind speeds, and higher combustion from heating,
+            and the winter spike returns predictably every year. The annual data here represents each year&apos;s
+            mean — the underlying intra-year variation is 1.5–2× between winter peaks and monsoon troughs.
           </Para>
 
           <InsightBox variant="warning" title="A predictable crisis, managed reactively">
