@@ -66,7 +66,7 @@ export async function getKnowledgeGraph(rel?: string) {
   const q = rel ? `?relationship=${rel}` : "";
   return fetchJSON<{ counts: any[]; triples: any[] }>(`/graph/knowledge${q}`);
 }
-export async function getLinkPrediction(top_n = 30) {
+export async function getLinkPrediction(top_n = 100) {
   return fetchJSON<any[]>(`/graph/link-prediction?top_n=${top_n}`);
 }
 export async function getCentralityTop(metric = "betweenness_centrality") {
