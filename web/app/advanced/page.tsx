@@ -117,19 +117,24 @@ export default function AdvancedPage() {
                       </tr>
                     </thead>
                     <tbody>
-                      {panel.map((r: any, i: number) => (
-                        <tr key={i} className="border-b border-border/30">
-                          <td className="py-1.5 px-3 font-medium">{r.variable ?? r.feature ?? r.name}</td>
-                          <td className="py-1.5 px-3 text-right font-mono">{(r.coef ?? r.coefficient)?.toFixed(4)}</td>
-                          <td className="py-1.5 px-3 text-right font-mono">{(r.std_err ?? r.se)?.toFixed?.(4) ?? "—"}</td>
-                          <td className="py-1.5 px-3 text-right font-mono">{(r.t_stat ?? r.tstat)?.toFixed?.(2) ?? "—"}</td>
-                          <td className="py-1.5 px-3 text-right">
-                            <Badge variant={(r.p_value ?? r.pvalue) < 0.05 ? "critical" : "secondary"}>
-                              {(r.p_value ?? r.pvalue) < 0.0001 ? "<.0001" : (r.p_value ?? r.pvalue)?.toFixed?.(4)}
-                            </Badge>
-                          </td>
-                        </tr>
-                      ))}
+                      {panel.map((r: any, i: number) => {
+                        const se = r.std_error ?? r.std_err ?? r.se;
+                        const t  = r.t_stat ?? r.tstat;
+                        const p  = r.p_value ?? r.pvalue;
+                        return (
+                          <tr key={i} className="border-b border-border/30">
+                            <td className="py-1.5 px-3 font-medium">{r.variable ?? r.feature ?? r.name}</td>
+                            <td className="py-1.5 px-3 text-right font-mono">{(r.coef ?? r.coefficient)?.toFixed(4)}</td>
+                            <td className="py-1.5 px-3 text-right font-mono">{se?.toFixed?.(4) ?? "—"}</td>
+                            <td className="py-1.5 px-3 text-right font-mono">{t?.toFixed?.(2) ?? "—"}</td>
+                            <td className="py-1.5 px-3 text-right">
+                              <Badge variant={p < 0.05 ? "critical" : "secondary"}>
+                                {p < 0.0001 ? "<.0001" : p?.toFixed?.(4)}
+                              </Badge>
+                            </td>
+                          </tr>
+                        );
+                      })}
                     </tbody>
                   </table>
                 </div>
@@ -281,14 +286,36 @@ export default function AdvancedPage() {
             <CardContent>
               {partial ? (
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  {Object.entries(partial).map(([k, v]: any) => (
-                    <div key={k} className="p-4 rounded-lg border border-border/60 bg-card/40">
-                      <div className="text-xs uppercase tracking-wider text-muted-foreground">{k}</div>
-                      <div className="text-2xl font-mono mt-1">{typeof v === "number" ? v.toFixed(4) : String(v)}</div>
-                    </div>
-                  ))}
+                  {Object.entries(partial).map(([k, v]: any) => {
+                    const isPValue = /^p_/i.test(k);
+                    let display: string;
+                    if (typeof v !== "number") {
+                      display = String(v);
+                    } else if (isPValue) {
+                      // p-values: show "<0.0001" for floor, scientific notation for tiny ones
+                      if (v === 0 || v < 1e-4) display = "< 0.0001";
+                      else display = v.toFixed(4);
+                    } else {
+                      display = v.toFixed(4);
+                    }
+                    const tone = isPValue && v < 0.05 ? "text-rose-300" : "";
+                    return (
+                      <div key={k} className="p-4 rounded-lg border border-border/60 bg-card/40">
+                        <div className="text-xs uppercase tracking-wider text-muted-foreground">
+                          {k.replace(/_/g, " ")}
+                        </div>
+                        <div className={`text-2xl font-mono mt-1 ${tone}`}>{display}</div>
+                        {isPValue && (v === 0 || v < 1e-4) && (
+                          <div className="text-xs text-muted-foreground mt-1">numerically zero — significance well beyond α=0.001</div>
+                        )}
+                      </div>
+                    );
+                  })}
                 </div>
               ) : <div className="text-sm text-muted-foreground py-8 text-center">Partial correlation not available.</div>}
+              <InsightBox variant="info" title="Reading r_partial vs r_pearson" className="mt-4">
+                If the partial correlation (after controlling for population, urban %, literacy) stays close to the raw Pearson value, it means PM2.5 has independent explanatory power on respiratory cases — the relationship is not mediated away by demographic confounders.
+              </InsightBox>
             </CardContent>
           </Card>
         </TabsContent>
