@@ -67,7 +67,7 @@ def heatmap():
     merged = d["merged"]
     if merged is None:
         return {"vars": [], "matrix": []}
-    cols = POLLUTANTS + HEALTH + ["urban_percentage", "literacy_rate"]
+    cols = POLLUTANTS + ["respiratory_cases"] + ["urban_percentage", "literacy_rate"]
     cols = [c for c in cols if c in merged.columns]
     corr = merged[cols].corr().round(3)
     import math
