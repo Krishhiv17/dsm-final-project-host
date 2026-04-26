@@ -278,11 +278,20 @@ export default function BlogPage() {
             {clusters.summary.map((c: any) => (
               <div key={c.cluster} className="rounded-lg border border-border/60 p-4 bg-card/40">
                 <div className="text-xs uppercase tracking-wider text-muted-foreground">Cluster {c.cluster}</div>
-                <div className="font-semibold mt-1">{c.risk_label}</div>
-                <div className="text-xs text-muted-foreground mt-2 grid grid-cols-3 gap-2">
-                  <span>{c.n_districts} districts</span>
-                  <span>PM2.5 {c.avg_pm25?.toFixed(0)}</span>
-                  <span>Resp {c.avg_resp?.toFixed(0)}</span>
+                <div className="font-semibold mt-1 mb-3">{c.risk_label}</div>
+                <div className="flex gap-4 text-sm">
+                  <div>
+                    <div className="text-xs text-muted-foreground">Districts</div>
+                    <div className="font-mono font-medium">{c.n_districts}</div>
+                  </div>
+                  <div>
+                    <div className="text-xs text-muted-foreground">Avg PM2.5</div>
+                    <div className="font-mono font-medium">{c.avg_pm25?.toFixed(0)} µg/m³</div>
+                  </div>
+                  <div>
+                    <div className="text-xs text-muted-foreground">Avg Resp cases</div>
+                    <div className="font-mono font-medium">{c.avg_resp?.toFixed(0)}</div>
+                  </div>
                 </div>
               </div>
             ))}
