@@ -60,13 +60,13 @@ function pollutionColor(v: number): [number, number, number] {
   return [Math.round(40 + t * 215), Math.round(220 - t * 180), Math.round(120 - t * 100)];
 }
 
-// Score → red/orange/yellow gradient (higher score = more red)
+// Score → blue/cyan → yellow → red gradient (visible on dark map at all scores)
 function scoreColor(score: number, min: number, max: number): [number, number, number] {
   const t = max > min ? (score - min) / (max - min) : 0.5;
-  // green (low) → yellow (mid) → red (high)
+  // cyan (low) → yellow (mid) → red (high)
   if (t < 0.5) {
     const k = t * 2;
-    return [Math.round(52 + k * 199), Math.round(211 - k * 20), Math.round(153 - k * 117)];
+    return [Math.round(56 + k * 195), Math.round(189 + k * 2), Math.round(248 - k * 212)];
   }
   const k = (t - 0.5) * 2;
   return [Math.round(251 - k * 3), Math.round(191 - k * 78), Math.round(36 - k * 0)];
@@ -134,18 +134,22 @@ export default function DeckMapImpl({
         },
         getSourceColor: (e: PredictedEdge) => {
           const s = e.combined_score ?? e.adamic_adar ?? 0;
-          return [...scoreColor(s, sMin, sMax), 220] as any;
+          const t = sMax > sMin ? (s - sMin) / (sMax - sMin) : 0.5;
+          const opacity = Math.round(120 + t * 120);
+          return [...scoreColor(s, sMin, sMax), opacity] as any;
         },
         getTargetColor: (e: PredictedEdge) => {
           const s = e.combined_score ?? e.adamic_adar ?? 0;
-          return [...scoreColor(s, sMin, sMax), 220] as any;
+          const t = sMax > sMin ? (s - sMin) / (sMax - sMin) : 0.5;
+          const opacity = Math.round(120 + t * 120);
+          return [...scoreColor(s, sMin, sMax), opacity] as any;
         },
         getWidth: (e: PredictedEdge) => {
           const s = e.combined_score ?? e.adamic_adar ?? 0;
           const t = sMax > sMin ? (s - sMin) / (sMax - sMin) : 0.5;
-          return 1.5 + t * 3.5;
+          return 1.5 + t * 4;
         },
-        getHeight: 0.4,
+        getHeight: 0.5,
         greatCircle: false,
         pickable: true,
         onHover: (info: any) => setHoveredEdge(info.object || null),
