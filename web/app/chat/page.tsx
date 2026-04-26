@@ -7,14 +7,14 @@ import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 
 const SUGGESTIONS = [
-  "Which 5 states have the worst average PM2.5?",
-  "Show PM2.5 trend for Delhi from 2018 to 2023.",
-  "Which districts have the highest respiratory disease burden?",
-  "Compare winter vs monsoon pollution levels nationally.",
-  "What are the Critical cluster districts?",
-  "Is there a link between PM2.5 and cardiovascular cases?",
-  "How many districts exceed NAAQS limits on average?",
-  "What policy changes would help the most?",
+  "Which 5 districts have the highest average PM2.5?",
+  "Which states have the most respiratory cases on average?",
+  "Compare PM2.5 levels in winter (Nov–Feb) vs monsoon (Jul–Sep).",
+  "Which districts have both high pollution and high respiratory burden?",
+  "Show the year-by-year PM2.5 trend from 2018 to 2023.",
+  "What are the key causal findings of this project?",
+  "Which districts have the highest cardiovascular case burden?",
+  "What policy changes would reduce respiratory disease the most?",
 ];
 
 interface StoredMessage extends ChatMessage {
