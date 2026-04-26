@@ -90,6 +90,16 @@ def link_prediction(top_n: int = Query(50, le=200)):
     lp = d["link_prediction"]
     if lp is None:
         return []
+    nodes_df = d["graph_nodes"]
+    if nodes_df is not None:
+        coords = nodes_df[["district_id", "lat", "lon"]].copy()
+        lp = lp.head(top_n).merge(
+            coords.rename(columns={"district_id": "district_a", "lat": "lat_a", "lon": "lon_a"}),
+            on="district_a", how="left"
+        ).merge(
+            coords.rename(columns={"district_id": "district_b", "lat": "lat_b", "lon": "lon_b"}),
+            on="district_b", how="left"
+        )
     return df_to_records(lp.head(top_n))
 
 

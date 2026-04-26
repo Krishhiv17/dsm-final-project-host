@@ -26,6 +26,10 @@ interface EdgeFeature {
 interface PredictedEdge {
   district_a: number;
   district_b: number;
+  lat_a?: number;
+  lon_a?: number;
+  lat_b?: number;
+  lon_b?: number;
   combined_score?: number;
   jaccard?: number;
   adamic_adar?: number;
@@ -115,7 +119,7 @@ export default function DeckMapImpl({
 
     if (predictedEdges.length > 0) {
       const valid = predictedEdges.filter(
-        e => nodeMap.has(Number(e.district_a)) && nodeMap.has(Number(e.district_b))
+        e => e.lat_a != null && e.lon_a != null && e.lat_b != null && e.lon_b != null
       );
       const scores = valid.map(e => e.combined_score ?? e.adamic_adar ?? 0);
       const sMin = Math.min(...scores);
@@ -124,14 +128,8 @@ export default function DeckMapImpl({
       out.push(new ArcLayer({
         id: "predicted",
         data: valid,
-        getSourcePosition: (e: PredictedEdge) => {
-          const n = nodeMap.get(Number(e.district_a));
-          return n ? [n.lon, n.lat] : [0, 0];
-        },
-        getTargetPosition: (e: PredictedEdge) => {
-          const n = nodeMap.get(Number(e.district_b));
-          return n ? [n.lon, n.lat] : [0, 0];
-        },
+        getSourcePosition: (e: PredictedEdge) => [e.lon_a!, e.lat_a!],
+        getTargetPosition: (e: PredictedEdge) => [e.lon_b!, e.lat_b!],
         getSourceColor: (e: PredictedEdge) => {
           const s = e.combined_score ?? e.adamic_adar ?? 0;
           const t = sMax > sMin ? (s - sMin) / (sMax - sMin) : 0.5;
