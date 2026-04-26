@@ -92,7 +92,7 @@ export default function DeckMapImpl({
   }), []);
 
   const layers = useMemo(() => {
-    const nodeMap = new Map(nodes.map(n => [Number(n.district_id), n]));
+    const nodeMap = new Map(nodes.map(n => [n.district_id, n]));
     const out: any[] = [];
 
     if (showBaseEdges && edges.length > 0) {
@@ -115,7 +115,7 @@ export default function DeckMapImpl({
 
     if (predictedEdges.length > 0) {
       const valid = predictedEdges.filter(
-        e => nodeMap.has(Number(e.district_a)) && nodeMap.has(Number(e.district_b))
+        e => nodeMap.has(e.district_a) && nodeMap.has(e.district_b)
       );
       const scores = valid.map(e => e.combined_score ?? e.adamic_adar ?? 0);
       const sMin = Math.min(...scores);
@@ -125,12 +125,12 @@ export default function DeckMapImpl({
         id: "predicted",
         data: valid,
         getSourcePosition: (e: PredictedEdge) => {
-          const n = nodeMap.get(Number(e.district_a));
-          return n ? [n.lon, n.lat] : [0, 0];
+          const n = nodeMap.get(e.district_a)!;
+          return [n.lon, n.lat];
         },
         getTargetPosition: (e: PredictedEdge) => {
-          const n = nodeMap.get(Number(e.district_b));
-          return n ? [n.lon, n.lat] : [0, 0];
+          const n = nodeMap.get(e.district_b)!;
+          return [n.lon, n.lat];
         },
         getSourceColor: (e: PredictedEdge) => {
           const s = e.combined_score ?? e.adamic_adar ?? 0;
@@ -147,10 +147,9 @@ export default function DeckMapImpl({
         getWidth: (e: PredictedEdge) => {
           const s = e.combined_score ?? e.adamic_adar ?? 0;
           const t = sMax > sMin ? (s - sMin) / (sMax - sMin) : 0.5;
-          return 2 + t * 4;
+          return 1.5 + t * 4;
         },
-        widthMinPixels: 2,
-        getHeight: 0.4,
+        getHeight: 0.5,
         greatCircle: false,
         pickable: true,
         onHover: (info: any) => setHoveredEdge(info.object || null),
