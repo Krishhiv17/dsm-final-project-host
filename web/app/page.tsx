@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { Wind, Heart, MapPin, Activity, TrendingUp, AlertTriangle } from "lucide-react";
+import { Wind, MapPin, Activity, TrendingUp, AlertTriangle } from "lucide-react";
 import { PageHeader } from "@/components/page-header";
 import { KPICard } from "@/components/kpi-card";
 import { InsightBox } from "@/components/insight-box";
@@ -40,9 +40,7 @@ export default function OverviewPage() {
         <KPICard label="Respiratory Cases" tone="critical" icon={<Activity className="w-4 h-4" />}
           value={kpis ? formatNumber(kpis.total_respiratory) : "—"}
           delta="total reported · 2018–2023" />
-        <KPICard label="Cardiovascular" tone="warning" icon={<Heart className="w-4 h-4" />}
-          value={kpis ? formatNumber(kpis.total_cardiovascular) : "—"}
-          delta="total reported" />
+
         <KPICard label="Districts" tone="info" icon={<MapPin className="w-4 h-4" />}
           value={kpis ? kpis.num_districts : "—"}
           delta={kpis ? `${kpis.num_states} states` : ""} />
