@@ -85,7 +85,7 @@ def knowledge_graph(relationship: Optional[str] = None, limit: int = Query(500, 
 
 
 @router.get("/link-prediction")
-def link_prediction(top_n: int = Query(50, le=200)):
+def link_prediction(top_n: int = Query(50, le=500)):
     d = all_data()
     lp = d["link_prediction"]
     if lp is None:
