@@ -1,0 +1,2 @@
+treatment_threshold_pm25,n_treated,n_control_pool,att,att_se,att_ci_lower,att_ci_upper,mean_treated,mean_matched_control,avg_smd_before,avg_smd_after
+50.91,5399,5401,41.5043,0.5934,40.3412,42.6674,86.6107,45.1064,0.4664,0.1312

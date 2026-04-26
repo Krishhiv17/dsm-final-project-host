@@ -132,7 +132,7 @@ export default function GraphPage() {
           <Card>
             <CardHeader>
               <CardTitle>Moran&apos;s I — Spatial Autocorrelation</CardTitle>
-              <CardDescription>Tests whether values cluster geographically. I &gt; 0 means similar values are geographically near each other.</CardDescription>
+              <CardDescription>Tests whether values cluster geographically. I &gt; 0 means similar values are geographically near each other. p-values from 999-permutation Monte Carlo.</CardDescription>
             </CardHeader>
             <CardContent>
               {moran.length > 0 && (
@@ -141,22 +141,30 @@ export default function GraphPage() {
                     <thead className="text-xs uppercase text-muted-foreground border-b border-border/60">
                       <tr><th className="text-left py-2 px-3">Variable</th>
                           <th className="text-right py-2 px-3">Moran&apos;s I</th>
-                          <th className="text-right py-2 px-3">p-value</th>
+                          <th className="text-right py-2 px-3">Expected I</th>
+                          <th className="text-right py-2 px-3">z-score</th>
+                          <th className="text-right py-2 px-3">p-value (MC)</th>
                           <th className="text-left py-2 px-3">Interpretation</th></tr>
                     </thead>
                     <tbody>
-                      {moran.map((m: any, i: number) => (
-                        <tr key={i} className="border-b border-border/30">
-                          <td className="py-2 px-3 font-medium">{m.variable}</td>
-                          <td className="py-2 px-3 text-right font-mono">{m.morans_i?.toFixed(4)}</td>
-                          <td className="py-2 px-3 text-right font-mono">{m.p_value < 1e-4 ? "< 0.0001" : m.p_value?.toFixed(4)}</td>
-                          <td className="py-2 px-3">
-                            <Badge variant={m.morans_i > 0.3 ? "critical" : m.morans_i > 0.1 ? "warning" : "secondary"}>
-                              {m.morans_i > 0.3 ? "Strong clustering" : m.morans_i > 0.1 ? "Moderate" : "Weak/random"}
-                            </Badge>
-                          </td>
-                        </tr>
-                      ))}
+                      {moran.map((m: any, i: number) => {
+                        const I = m.morans_I ?? m.morans_i;
+                        const p = m.p_value_mc ?? m.p_value;
+                        return (
+                          <tr key={i} className="border-b border-border/30">
+                            <td className="py-2 px-3 font-medium">{m.variable}</td>
+                            <td className="py-2 px-3 text-right font-mono">{I?.toFixed(4)}</td>
+                            <td className="py-2 px-3 text-right font-mono text-muted-foreground">{m.expected_I?.toFixed(4) ?? "—"}</td>
+                            <td className="py-2 px-3 text-right font-mono">{m.z_score?.toFixed(2) ?? "—"}</td>
+                            <td className="py-2 px-3 text-right font-mono">{p != null && p < 1e-3 ? "< 0.001" : p?.toFixed(4)}</td>
+                            <td className="py-2 px-3">
+                              <Badge variant={I > 0.3 ? "critical" : I > 0.1 ? "warning" : "secondary"}>
+                                {I > 0.3 ? "Strong clustering" : I > 0.1 ? "Moderate" : "Weak/random"}
+                              </Badge>
+                            </td>
+                          </tr>
+                        );
+                      })}
                     </tbody>
                   </table>
                 </div>
@@ -169,41 +177,97 @@ export default function GraphPage() {
         </TabsContent>
 
         <TabsContent value="knowledge">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            <Card className="lg:col-span-1">
-              <CardHeader>
-                <CardTitle>Relationship counts</CardTitle>
-              </CardHeader>
-              <CardContent>
-                {kg?.counts && (
-                  <div className="space-y-2 text-sm">
-                    {kg.counts.map((c: any, i: number) => (
-                      <div key={i} className="flex justify-between items-center py-1.5 border-b border-border/30">
-                        <span className="text-muted-foreground">{c.relationship}</span>
-                        <Badge variant="secondary">{c.count}</Badge>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </CardContent>
-            </Card>
-            <Card className="lg:col-span-2">
+          <div className="space-y-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <Card>
+                <CardHeader>
+                  <CardTitle>Relationship counts</CardTitle>
+                  <CardDescription>How many edges of each typed relation are encoded in the KG.</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  {kg?.counts && kg.counts.length > 0 && (
+                    <PlotlyChart
+                      height={320}
+                      data={[{
+                        type: "bar", orientation: "h",
+                        x: [...kg.counts].reverse().map((c: any) => c.count),
+                        y: [...kg.counts].reverse().map((c: any) => c.relationship),
+                        marker: {
+                          color: [...kg.counts].reverse().map((c: any) => c.count),
+                          colorscale: [[0, "#38bdf8"], [0.5, "#a78bfa"], [1, "#f472b6"]],
+                        },
+                        text: [...kg.counts].reverse().map((c: any) => c.count.toLocaleString()),
+                        textposition: "outside",
+                        hovertemplate: "<b>%{y}</b><br>%{x:,} edges<extra></extra>",
+                      }]}
+                      layout={{
+                        xaxis: { title: { text: "edges" } },
+                        margin: { l: 200, r: 50, t: 10, b: 40 },
+                      }}
+                    />
+                  )}
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle>Relationship mix</CardTitle>
+                  <CardDescription>Share of each typed edge in the full KG.</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  {kg?.counts && kg.counts.length > 0 && (
+                    <PlotlyChart
+                      height={320}
+                      data={[{
+                        type: "pie",
+                        labels: kg.counts.map((c: any) => c.relationship),
+                        values: kg.counts.map((c: any) => c.count),
+                        hole: 0.55,
+                        marker: { colors: ["#38bdf8", "#34d399", "#fbbf24", "#f472b6", "#a78bfa"] },
+                        textinfo: "label+percent",
+                        hovertemplate: "<b>%{label}</b><br>%{value:,} edges (%{percent})<extra></extra>",
+                      }]}
+                      layout={{ showlegend: false, margin: { l: 20, r: 20, t: 20, b: 20 } }}
+                    />
+                  )}
+                </CardContent>
+              </Card>
+            </div>
+
+            <Card>
               <CardHeader>
                 <CardTitle>Top triples</CardTitle>
-                <CardDescription>(subject, relationship, object) — the structural shape of pollution-health knowledge.</CardDescription>
+                <CardDescription>
+                  (subject, relationship, object) — the structural shape of pollution-health knowledge.
+                  Shown across all relationship types so you can see the full schema.
+                </CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="overflow-x-auto max-h-[420px] scroll-area">
+                <div className="overflow-x-auto max-h-[480px] scroll-area">
                   <table className="w-full text-sm">
                     <thead className="sticky top-0 bg-card text-xs uppercase text-muted-foreground border-b border-border/60">
-                      <tr><th className="text-left py-2 px-3">Subject</th><th className="text-left py-2 px-3">Relationship</th><th className="text-left py-2 px-3">Object</th></tr>
+                      <tr>
+                        <th className="text-left py-2 px-3">Subject</th>
+                        <th className="text-left py-2 px-3">Relationship</th>
+                        <th className="text-left py-2 px-3">Object</th>
+                        <th className="text-right py-2 px-3">Weight</th>
+                        <th className="text-left py-2 px-3">Metadata</th>
+                      </tr>
                     </thead>
                     <tbody>
-                      {(kg?.triples || []).slice(0, 60).map((t: any, i: number) => (
-                        <tr key={i} className="border-b border-border/30">
-                          <td className="py-1.5 px-3">{t.subject}</td>
+                      {(kg?.triples || []).map((t: any, i: number) => (
+                        <tr key={i} className="border-b border-border/30 hover:bg-accent/30">
+                          <td className="py-1.5 px-3">
+                            <div>{t.subject ?? t.source_id}</div>
+                            {t.subject_state && <div className="text-xs text-muted-foreground">{t.subject_state}</div>}
+                          </td>
                           <td className="py-1.5 px-3"><Badge variant="outline">{t.relationship}</Badge></td>
-                          <td className="py-1.5 px-3 text-muted-foreground">{t.object}</td>
+                          <td className="py-1.5 px-3">
+                            <div>{t.object ?? t.target_id}</div>
+                            {t.object_state && <div className="text-xs text-muted-foreground">{t.object_state}</div>}
+                          </td>
+                          <td className="py-1.5 px-3 text-right font-mono text-xs">{t.weight?.toFixed?.(3) ?? "—"}</td>
+                          <td className="py-1.5 px-3 text-xs text-muted-foreground">{t.metadata ?? "—"}</td>
                         </tr>
                       ))}
                     </tbody>
@@ -214,29 +278,68 @@ export default function GraphPage() {
           </div>
         </TabsContent>
 
-        <TabsContent value="prediction">
+        <TabsContent value="prediction" className="space-y-6">
           <Card>
             <CardHeader>
-              <CardTitle>Top 20 Predicted Future Edges</CardTitle>
-              <CardDescription>Adamic-Adar / Jaccard scoring on the existing graph — district pairs that are likely to behave similarly even though they aren&apos;t connected today.</CardDescription>
+              <CardTitle>Predicted Long-Range Pollution Corridors</CardTitle>
+              <CardDescription>
+                Arcs between districts that the model expects to behave similarly even though they aren&apos;t
+                spatially adjacent. Color and width encode the combined Jaccard + Adamic-Adar score —
+                deeper red / thicker = stronger predicted similarity. These are the latent connections that a
+                geographic-only view of pollution misses.
+              </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="overflow-x-auto">
+              {nodes.length > 0 && linkPred.length > 0 && (
+                <DeckMap
+                  nodes={nodes}
+                  predictedEdges={linkPred}
+                  showBaseEdges={false}
+                  colorBy="community"
+                  height={560}
+                />
+              )}
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Top {linkPred.length} Predicted Future Edges</CardTitle>
+              <CardDescription>Score = Jaccard + scaled Adamic-Adar over shared graph neighbours.</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="overflow-x-auto max-h-[420px] scroll-area">
                 <table className="w-full text-sm">
-                  <thead className="text-xs uppercase text-muted-foreground border-b border-border/60">
+                  <thead className="sticky top-0 bg-card text-xs uppercase text-muted-foreground border-b border-border/60">
                     <tr>
                       <th className="text-left py-2 px-3">District A</th>
                       <th className="text-left py-2 px-3">District B</th>
+                      <th className="text-right py-2 px-3">Jaccard</th>
+                      <th className="text-right py-2 px-3">Adamic-Adar</th>
                       <th className="text-right py-2 px-3">Score</th>
+                      <th className="text-left py-2 px-3">Same community</th>
                     </tr>
                   </thead>
                   <tbody>
                     {linkPred.map((l: any, i: number) => (
-                      <tr key={i} className="border-b border-border/30">
-                        <td className="py-1.5 px-3">{l.district_a || l.source_name || l.source}</td>
-                        <td className="py-1.5 px-3">{l.district_b || l.target_name || l.target}</td>
-                        <td className="py-1.5 px-3 text-right font-mono">
-                          {(l.score ?? l.adamic_adar ?? l.weight)?.toFixed?.(3) ?? "—"}
+                      <tr key={i} className="border-b border-border/30 hover:bg-accent/30">
+                        <td className="py-1.5 px-3">
+                          <div>{l.name_a ?? l.district_a}</div>
+                          {l.state_a && <div className="text-xs text-muted-foreground">{l.state_a}</div>}
+                        </td>
+                        <td className="py-1.5 px-3">
+                          <div>{l.name_b ?? l.district_b}</div>
+                          {l.state_b && <div className="text-xs text-muted-foreground">{l.state_b}</div>}
+                        </td>
+                        <td className="py-1.5 px-3 text-right font-mono">{l.jaccard?.toFixed(3) ?? "—"}</td>
+                        <td className="py-1.5 px-3 text-right font-mono">{l.adamic_adar?.toFixed(3) ?? "—"}</td>
+                        <td className="py-1.5 px-3 text-right font-mono text-amber-300">
+                          {(l.combined_score ?? l.score ?? l.adamic_adar)?.toFixed?.(3) ?? "—"}
+                        </td>
+                        <td className="py-1.5 px-3">
+                          <Badge variant={l.same_community ? "warning" : "secondary"}>
+                            {l.same_community ? "Yes" : "Cross-community"}
+                          </Badge>
                         </td>
                       </tr>
                     ))}
@@ -245,6 +348,12 @@ export default function GraphPage() {
               </div>
             </CardContent>
           </Card>
+
+          <InsightBox variant="critical" title="Why long-range links matter">
+            Most pollution edges in this graph are short-range (proximity). The predicted corridors connect
+            districts hundreds of kilometres apart — Punjab ↔ Haryana, UP ↔ Rajasthan, etc. These are the
+            airshed-level relationships that single-district interventions cannot break.
+          </InsightBox>
         </TabsContent>
       </Tabs>
     </div>

@@ -2,10 +2,14 @@
 FastAPI backend for the Air Quality & Public Health analytics platform.
 Run:    uvicorn api.main:app --reload --port 8000
 """
+from pathlib import Path
+from dotenv import load_dotenv
+load_dotenv(Path(__file__).resolve().parent.parent / ".env")
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from .routers import overview, timeseries, correlations, clusters, graph, causal, advanced, predict
+from .routers import overview, timeseries, correlations, clusters, graph, causal, advanced, predict, chat
 
 app = FastAPI(
     title="Air Quality & Public Health API",
@@ -54,3 +58,4 @@ app.include_router(graph.router)
 app.include_router(causal.router)
 app.include_router(advanced.router)
 app.include_router(predict.router)
+app.include_router(chat.router)

@@ -1,0 +1,2 @@
+treated_district_id,treated_district_name,n_donors,T0_months,pre_rmse,att,att_pct_of_mean,top_donor_id,top_donor_weight
+3,New Delhi,30,36,83.9322,76.2383,63.47,115,1.0

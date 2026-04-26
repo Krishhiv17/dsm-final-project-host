@@ -759,6 +759,280 @@ def plot_changepoint(national: pd.DataFrame, cp_df: pd.DataFrame):
 
 
 # ════════════════════════════════════════════════════════════════════
+# 9. SYNTHETIC CONTROL METHOD
+# ════════════════════════════════════════════════════════════════════
+
+def synthetic_control(merged: pd.DataFrame, districts: pd.DataFrame):
+    """
+    Synthetic Control Method (SCM):
+    Construct a weighted combination of clean 'donor' districts that
+    best replicates the pre-period respiratory trajectory of the most
+    polluted district.  The post-period gap is the causal effect of
+    sustained excess pollution.
+
+    Outputs:
+        synthetic_control.csv  — treated / synthetic / gap per month
+        synthetic_control_meta.csv — ATT, pre-RMSE, treated district
+    """
+    print("\n  [9] Synthetic Control Method...")
+
+    from scipy.optimize import minimize
+
+    panel = (merged.groupby(["district_id", "year_month"])
+             .agg(resp_rate=("resp_rate_per_100k", "mean"),
+                  pm25=("pm25", "mean"))
+             .reset_index())
+
+    avg_pm25 = panel.groupby("district_id")["pm25"].mean().sort_values(ascending=False)
+    treated_id = int(avg_pm25.index[0])
+    donor_ids  = list(avg_pm25.index[-30:].astype(int))
+
+    pivot = (panel.pivot(index="year_month", columns="district_id", values="resp_rate")
+             .sort_index().fillna(panel["resp_rate"].mean()))
+
+    T   = len(pivot)
+    T0  = T // 2     # pre/post split
+
+    Y_treated   = pivot[treated_id].values
+    Y_donors    = pivot[donor_ids].values   # T × n_donors
+
+    Y_pre_t = Y_treated[:T0]
+    Y_pre_d = Y_donors[:T0]
+
+    n_donors = len(donor_ids)
+
+    def loss(w):
+        return float(np.sum((Y_pre_t - Y_pre_d @ w) ** 2))
+
+    w0 = np.ones(n_donors) / n_donors
+    res = minimize(
+        loss, w0, method="SLSQP",
+        bounds=[(0, 1)] * n_donors,
+        constraints=[{"type": "eq", "fun": lambda w: w.sum() - 1}],
+        options={"ftol": 1e-10, "maxiter": 2000},
+    )
+    w_opt = res.x
+
+    Y_synthetic = Y_donors @ w_opt
+    gap         = Y_treated - Y_synthetic
+
+    pre_rmse  = float(np.sqrt(np.mean(gap[:T0] ** 2)))
+    att       = float(gap[T0:].mean())
+
+    times = pivot.index.astype(str).str[:7]
+    out = pd.DataFrame({
+        "year_month": times,
+        "treated":   np.round(Y_treated,   3),
+        "synthetic": np.round(Y_synthetic, 3),
+        "gap":       np.round(gap,         3),
+        "is_post":   [i >= T0 for i in range(T)],
+    })
+    out.to_csv(PROCESSED_DIR / "synthetic_control.csv", index=False)
+
+    # district name for treated
+    treated_name = (districts[districts["district_id"] == treated_id]["district_name"].iloc[0]
+                    if len(districts[districts["district_id"] == treated_id]) else str(treated_id))
+
+    meta = pd.DataFrame([{
+        "treated_district_id": treated_id,
+        "treated_district_name": treated_name,
+        "n_donors": n_donors,
+        "T0_months": T0,
+        "pre_rmse": round(pre_rmse, 4),
+        "att": round(att, 4),
+        "att_pct_of_mean": round(att / Y_treated[T0:].mean() * 100, 2),
+        "top_donor_id": int(donor_ids[w_opt.argmax()]),
+        "top_donor_weight": round(float(w_opt.max()), 4),
+    }])
+    meta.to_csv(PROCESSED_DIR / "synthetic_control_meta.csv", index=False)
+
+    print(f"  Treated district: {treated_name} (avg PM2.5: {avg_pm25.iloc[0]:.1f} µg/m³)")
+    print(f"  Pre-period RMSE (balance quality): {pre_rmse:.3f}")
+    print(f"  Post-period ATT: +{att:.2f} cases/100k ({meta['att_pct_of_mean'].iloc[0]:+.1f}% vs treated mean)")
+    print("  → Saved: synthetic_control.csv, synthetic_control_meta.csv")
+    return out, meta
+
+
+# ════════════════════════════════════════════════════════════════════
+# 10. REGRESSION DISCONTINUITY DESIGN
+# ════════════════════════════════════════════════════════════════════
+
+def regression_discontinuity(merged: pd.DataFrame):
+    """
+    RDD at the NAAQS PM2.5 standard (60 µg/m³).
+
+    District-months just above vs just below 60 µg/m³ differ primarily
+    in NAAQS compliance.  A discontinuity in respiratory outcomes at the
+    cutoff — estimated with local linear regression — is a credible causal
+    estimate of the marginal effect of crossing the threshold.
+
+    Multiple bandwidths give a robustness table.
+
+    Outputs:
+        rdd_results.csv  — estimates by bandwidth
+        rdd_scatter.csv  — binned scatter for visualization
+    """
+    print("\n  [10] Regression Discontinuity Design (cutoff = 60 µg/m³)...")
+
+    try:
+        import statsmodels.api as sm
+    except ImportError:
+        print("  [SKIP] statsmodels not available")
+        return pd.DataFrame()
+
+    CUTOFF = 60.0
+    df = merged[["pm25", "resp_rate_per_100k"]].dropna().copy()
+    df["running"] = df["pm25"] - CUTOFF
+    df["above"]   = (df["running"] >= 0).astype(int)
+
+    rdd_rows = []
+    for bw in [10, 15, 20, 30, 40]:
+        local = df[df["running"].abs() <= bw].copy()
+        if len(local) < 40:
+            continue
+        local["interaction"] = local["above"] * local["running"]
+        X = sm.add_constant(local[["above", "running", "interaction"]])
+        model = sm.OLS(local["resp_rate_per_100k"], X).fit()
+        ci = model.conf_int().loc["above"]
+        rdd_rows.append({
+            "bandwidth":    bw,
+            "rdd_estimate": round(float(model.params["above"]),      4),
+            "std_err":      round(float(model.bse["above"]),          4),
+            "p_value":      round(float(model.pvalues["above"]),      5),
+            "ci_lower":     round(float(ci[0]),                       4),
+            "ci_upper":     round(float(ci[1]),                       4),
+            "n_obs":        len(local),
+        })
+        print(f"  BW ±{bw:2d} µg/m³: LATE = {rdd_rows[-1]['rdd_estimate']:+.2f}  "
+              f"SE={rdd_rows[-1]['std_err']:.2f}  p={rdd_rows[-1]['p_value']:.4f}  "
+              f"n={len(local)}")
+
+    rdd_df = pd.DataFrame(rdd_rows)
+    rdd_df.to_csv(PROCESSED_DIR / "rdd_results.csv", index=False)
+
+    # Binned scatter near cutoff (BW = 30) for visualization
+    local30 = df[df["running"].abs() <= 30].copy()
+    local30["bin"] = pd.cut(local30["running"], bins=30)
+    scatter = (local30.groupby("bin", observed=True)["resp_rate_per_100k"]
+               .mean().reset_index())
+    scatter["running_center"] = scatter["bin"].apply(
+        lambda b: (b.left + b.right) / 2).astype(float)
+    scatter["above"] = (scatter["running_center"] >= 0).astype(int)
+    scatter[["running_center", "resp_rate_per_100k", "above"]].to_csv(
+        PROCESSED_DIR / "rdd_scatter.csv", index=False)
+
+    print("  → Saved: rdd_results.csv, rdd_scatter.csv")
+    return rdd_df
+
+
+# ════════════════════════════════════════════════════════════════════
+# 11. PROPENSITY SCORE MATCHING
+# ════════════════════════════════════════════════════════════════════
+
+def propensity_score_matching(merged: pd.DataFrame):
+    """
+    Propensity Score Matching (PSM):
+    - Treatment: district-month with PM2.5 above the national median
+    - Covariates: urban%, literacy, log-population, month (as sin/cos)
+    - Logistic regression → propensity scores
+    - 1:1 nearest-neighbour matching without replacement
+    - ATT = mean(resp_treated_matched - resp_control_matched)
+    - Covariate balance: Standardised Mean Difference (SMD) before/after
+
+    Outputs:
+        psm_summary.csv  — ATT + CI
+        psm_balance.csv  — per-covariate SMD before/after
+    """
+    print("\n  [11] Propensity Score Matching...")
+
+    from sklearn.linear_model import LogisticRegression
+    from sklearn.neighbors import NearestNeighbors
+
+    threshold = float(merged["pm25"].median())
+
+    df = merged[["pm25", "resp_rate_per_100k", "urban_percentage",
+                 "literacy_rate", "population", "year_month"]].dropna().copy()
+    df = df.reset_index(drop=True)
+
+    df["treated"]   = (df["pm25"] > threshold).astype(int)
+    df["log_pop"]   = np.log1p(df["population"])
+    df["month"]     = pd.to_datetime(df["year_month"]).dt.month
+    df["month_sin"] = np.sin(2 * np.pi * df["month"] / 12)
+    df["month_cos"] = np.cos(2 * np.pi * df["month"] / 12)
+
+    covariates = ["urban_percentage", "literacy_rate", "log_pop",
+                  "month_sin", "month_cos"]
+
+    X_cov   = df[covariates].values
+    y_treat = df["treated"].values
+
+    lr = LogisticRegression(max_iter=500, C=1.0, random_state=42)
+    lr.fit(X_cov, y_treat)
+    ps = lr.predict_proba(X_cov)[:, 1]
+    df["ps"] = ps
+
+    t_mask = df["treated"] == 1
+    c_mask = df["treated"] == 0
+    t_idx  = df[t_mask].index.tolist()
+    c_idx  = df[c_mask].index.tolist()
+
+    ps_t = ps[t_mask]
+    ps_c = ps[c_mask]
+
+    nbrs = NearestNeighbors(n_neighbors=1, algorithm="ball_tree")
+    nbrs.fit(ps_c.reshape(-1, 1))
+    _, nn_idx = nbrs.kneighbors(ps_t.reshape(-1, 1))
+    matched_c_idx = [c_idx[i] for i in nn_idx.flatten()]
+
+    resp_t = df.loc[t_idx, "resp_rate_per_100k"].values
+    resp_c = df.loc[matched_c_idx, "resp_rate_per_100k"].values
+    diffs  = resp_t - resp_c
+    n      = len(diffs)
+
+    att    = float(diffs.mean())
+    se_att = float(diffs.std() / np.sqrt(n))
+
+    # SMD per covariate
+    smd_rows = []
+    for cov in covariates:
+        t_all  = df.loc[t_idx, cov].values
+        c_all  = df.loc[c_idx, cov].values
+        c_mat  = df.loc[matched_c_idx, cov].values
+        pool   = np.sqrt((t_all.var() + c_all.var()) / 2) + 1e-9
+        smd_rows.append({
+            "covariate":  cov,
+            "smd_before": round(abs(t_all.mean() - c_all.mean()) / pool, 4),
+            "smd_after":  round(abs(t_all.mean() - c_mat.mean()) / pool, 4),
+        })
+    balance_df = pd.DataFrame(smd_rows)
+    avg_smd_before = balance_df["smd_before"].mean()
+    avg_smd_after  = balance_df["smd_after"].mean()
+
+    summary = pd.DataFrame([{
+        "treatment_threshold_pm25": round(threshold, 2),
+        "n_treated":                n,
+        "n_control_pool":           len(c_idx),
+        "att":                      round(att,    4),
+        "att_se":                   round(se_att, 4),
+        "att_ci_lower":             round(att - 1.96 * se_att, 4),
+        "att_ci_upper":             round(att + 1.96 * se_att, 4),
+        "mean_treated":             round(float(resp_t.mean()),  4),
+        "mean_matched_control":     round(float(resp_c.mean()), 4),
+        "avg_smd_before":           round(avg_smd_before, 4),
+        "avg_smd_after":            round(avg_smd_after,  4),
+    }])
+
+    summary.to_csv(PROCESSED_DIR / "psm_summary.csv",  index=False)
+    balance_df.to_csv(PROCESSED_DIR / "psm_balance.csv", index=False)
+
+    print(f"  Threshold: {threshold:.1f} µg/m³  |  n_matched: {n}")
+    print(f"  ATT: {att:+.2f} cases/100k  (95% CI: [{att-1.96*se_att:.2f}, {att+1.96*se_att:.2f}])")
+    print(f"  Avg SMD before: {avg_smd_before:.3f} → after: {avg_smd_after:.3f}")
+    print("  → Saved: psm_summary.csv, psm_balance.csv")
+    return summary, balance_df
+
+
+# ════════════════════════════════════════════════════════════════════
 # MAIN
 # ════════════════════════════════════════════════════════════════════
 
@@ -793,6 +1067,15 @@ def main():
     # 8. DiD
     did = difference_in_differences(merged)
 
+    # 9. Synthetic Control Method
+    sc_df, sc_meta = synthetic_control(merged, districts)
+
+    # 10. Regression Discontinuity Design
+    rdd_df = regression_discontinuity(merged)
+
+    # 11. Propensity Score Matching
+    psm_summary, psm_balance = propensity_score_matching(merged)
+
     # Plots
     print("\n  Generating visualisations...")
     plot_granger_lags(granger_df, xcorr_df, merged)
@@ -811,6 +1094,13 @@ def main():
     print(f"  Relative Risk (PM2.5 > NAAQS): {RR:.3f}")
     print(f"  Population Attributable Fraction: {PAF*100:.1f}%")
     print(f"  DiD estimate (winter vs summer effect): {did:.2f} cases/100k")
+    if len(sc_meta):
+        print(f"  SCM ATT (most polluted district): {sc_meta['att'].iloc[0]:+.2f} cases/100k")
+    if len(rdd_df):
+        main_rdd = rdd_df[rdd_df["bandwidth"] == 20].iloc[0] if 20 in rdd_df["bandwidth"].values else rdd_df.iloc[0]
+        print(f"  RDD LATE (BW±20): {main_rdd['rdd_estimate']:+.2f} cases/100k  p={main_rdd['p_value']:.4f}")
+    if len(psm_summary):
+        print(f"  PSM ATT: {psm_summary['att'].iloc[0]:+.2f} cases/100k")
     print(f"  Figures saved to: {FIG_DIR}")
     print("=" * 60)
 

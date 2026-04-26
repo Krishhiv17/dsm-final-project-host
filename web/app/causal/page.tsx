@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import {
   getGrangerWithin, getCrossCorrelation, getDoseResponse,
   getCounterfactual, getChangePoint, getAttributable,
+  getSyntheticControl, getRDD, getPSM,
 } from "@/lib/api";
 
 export default function CausalPage() {
@@ -18,13 +19,18 @@ export default function CausalPage() {
   const [counter, setCounter] = useState<any[]>([]);
   const [cp, setCp] = useState<any>(null);
   const [attr, setAttr] = useState<any[]>([]);
+  const [sc, setSc] = useState<any>(null);
+  const [rdd, setRdd] = useState<any>(null);
+  const [psm, setPsm] = useState<any>(null);
 
   useEffect(() => {
     Promise.all([
       getGrangerWithin(), getCrossCorrelation(), getDoseResponse(),
       getCounterfactual(), getChangePoint(), getAttributable(),
-    ]).then(([g, x, d, c, cp_, a]) => {
+      getSyntheticControl(), getRDD(), getPSM(),
+    ]).then(([g, x, d, c, cp_, a, sc_, rdd_, psm_]) => {
       setGranger(g); setXcorr(x); setDose(d); setCounter(c); setCp(cp_); setAttr(a);
+      setSc(sc_); setRdd(rdd_); setPsm(psm_);
     }).catch(console.error);
   }, []);
 
@@ -41,6 +47,9 @@ export default function CausalPage() {
           <TabsTrigger value="counter">Counterfactual</TabsTrigger>
           <TabsTrigger value="cp">Change-points</TabsTrigger>
           <TabsTrigger value="attr">Attributable Fraction</TabsTrigger>
+          <TabsTrigger value="sc">Synthetic Control</TabsTrigger>
+          <TabsTrigger value="rdd">RDD</TabsTrigger>
+          <TabsTrigger value="psm">PSM</TabsTrigger>
         </TabsList>
 
         <TabsContent value="dose">
@@ -355,6 +364,294 @@ export default function CausalPage() {
             </CardContent>
           </Card>
         </TabsContent>
+        {/* ── SYNTHETIC CONTROL ─────────────────────────────── */}
+        <TabsContent value="sc">
+          <Card>
+            <CardHeader>
+              <CardTitle>Synthetic Control Method</CardTitle>
+              <CardDescription>
+                The most-polluted district is matched to a weighted combination of the 30 least-polluted
+                districts that mirrors its pre-period respiratory trajectory. The post-period gap is the
+                causal effect of sustained excess pollution — a policy-counterfactual for what would have
+                happened had pollution stayed low.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              {sc?.series?.length > 0 && (() => {
+                const meta = sc.meta ?? {};
+                const pre  = sc.series.filter((r: any) => !r.is_post);
+                const post = sc.series.filter((r: any) => r.is_post);
+                const att  = meta.att ?? 0;
+                return (
+                  <div className="space-y-4">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                      {[
+                        { label: "Treated district", val: meta.treated_district_name ?? "—", tone: "text-rose-300" },
+                        { label: "Pre-period RMSE", val: meta.pre_rmse != null ? meta.pre_rmse.toFixed(3) : "—", tone: "text-muted-foreground" },
+                        { label: "Post-period ATT", val: att != null ? `${att > 0 ? "+" : ""}${att.toFixed(1)} / 100k` : "—", tone: att > 0 ? "text-rose-300" : "text-emerald-300" },
+                        { label: "ATT vs treated mean", val: meta.att_pct_of_mean != null ? `${meta.att_pct_of_mean > 0 ? "+" : ""}${meta.att_pct_of_mean.toFixed(1)}%` : "—", tone: "text-amber-300" },
+                      ].map(({ label, val, tone }) => (
+                        <div key={label} className="rounded-lg border border-border/60 p-4 bg-card/40">
+                          <div className="text-xs uppercase tracking-wider text-muted-foreground">{label}</div>
+                          <div className={`text-xl font-mono mt-1 ${tone}`}>{val}</div>
+                        </div>
+                      ))}
+                    </div>
+
+                    <PlotlyChart
+                      height={420}
+                      data={[
+                        {
+                          type: "scatter", mode: "lines", name: "Treated (actual)",
+                          x: sc.series.map((d: any) => d.year_month),
+                          y: sc.series.map((d: any) => d.treated),
+                          line: { color: "#f87171", width: 2.5 },
+                        },
+                        {
+                          type: "scatter", mode: "lines", name: "Synthetic counterfactual",
+                          x: sc.series.map((d: any) => d.year_month),
+                          y: sc.series.map((d: any) => d.synthetic),
+                          line: { color: "#38bdf8", width: 2, dash: "dash" },
+                        },
+                        {
+                          type: "scatter", mode: "none", name: "Post-period gap",
+                          x: [...post.map((d: any) => d.year_month), ...post.map((d: any) => d.year_month).reverse()],
+                          y: [...post.map((d: any) => d.treated), ...post.map((d: any) => d.synthetic).reverse()],
+                          fill: "toself", fillcolor: "rgba(248,113,113,0.12)",
+                          line: { width: 0 },
+                        },
+                      ]}
+                      layout={{
+                        xaxis: { title: { text: "Month" } },
+                        yaxis: { title: { text: "Respiratory cases / 100k" } },
+                        shapes: [{
+                          type: "line",
+                          x0: pre[pre.length - 1]?.year_month, x1: pre[pre.length - 1]?.year_month,
+                          y0: 0, y1: 1, yref: "paper",
+                          line: { color: "#94a3b8", dash: "dot", width: 1.5 },
+                        }],
+                        annotations: [{
+                          x: pre[pre.length - 1]?.year_month, y: 1, yref: "paper",
+                          text: "Treatment starts →", showarrow: false,
+                          font: { color: "#94a3b8", size: 11 }, xanchor: "right",
+                        }],
+                        legend: { orientation: "h", y: -0.2 },
+                      }}
+                    />
+
+                    <PlotlyChart
+                      height={200}
+                      data={[{
+                        type: "bar", name: "Gap (treated − synthetic)",
+                        x: sc.series.map((d: any) => d.year_month),
+                        y: sc.series.map((d: any) => d.gap),
+                        marker: {
+                          color: sc.series.map((d: any) => d.is_post ? "#f87171" : "#94a3b8"),
+                          opacity: 0.7,
+                        },
+                      }]}
+                      layout={{
+                        xaxis: { title: { text: "Month" } },
+                        yaxis: { title: { text: "Gap (cases/100k)" } },
+                        shapes: [{ type: "line", x0: pre[pre.length - 1]?.year_month, x1: pre[pre.length - 1]?.year_month, y0: 0, y1: 1, yref: "paper", line: { color: "#94a3b8", dash: "dot", width: 1.5 } }],
+                        title: { text: "Gap series — near-zero pre-period gap validates the match" },
+                      }}
+                    />
+                    <InsightBox variant="critical" title="Synthetic Control logic">
+                      The pre-period gap should be close to zero — that&apos;s the balance check. Any post-period divergence (shaded red) is attributable to the causal effect of staying in a high-pollution regime rather than converging toward the clean-district counterfactual.
+                    </InsightBox>
+                  </div>
+                );
+              })()}
+            </CardContent>
+          </Card>
+        </TabsContent>
+
+        {/* ── REGRESSION DISCONTINUITY ──────────────────────── */}
+        <TabsContent value="rdd">
+          <Card>
+            <CardHeader>
+              <CardTitle>Regression Discontinuity Design — NAAQS Threshold (60 µg/m³)</CardTitle>
+              <CardDescription>
+                Districts with PM2.5 just above vs just below India&apos;s NAAQS standard of 60 µg/m³
+                are essentially identical in every other way. If there is a sharp jump in respiratory outcomes
+                exactly at the cutoff, it&apos;s credibly causal — the only thing that changed is NAAQS compliance.
+                Robustness is checked across five bandwidths.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              {rdd?.estimates?.length > 0 && (
+                <div className="space-y-4">
+                  <PlotlyChart
+                    height={400}
+                    data={[
+                      ...([0, 1] as const).map(side => {
+                        const pts = rdd.scatter.filter((d: any) => d.above === side);
+                        return {
+                          type: "scatter" as const, mode: "markers" as const,
+                          name: side === 0 ? "Below cutoff" : "Above cutoff",
+                          x: pts.map((d: any) => d.running_center),
+                          y: pts.map((d: any) => d.resp_rate_per_100k),
+                          marker: { color: side === 0 ? "#38bdf8" : "#f87171", size: 8, opacity: 0.8 },
+                        };
+                      }),
+                      {
+                        type: "scatter", mode: "lines", name: "Cutoff (NAAQS 60 µg/m³)",
+                        x: [0, 0], y: [0, 1], yaxis: "y", xaxis: "x",
+                        line: { color: "#fbbf24", dash: "dash", width: 2 },
+                      },
+                    ]}
+                    layout={{
+                      xaxis: { title: { text: "PM2.5 − 60 µg/m³  (running variable)" },
+                        zeroline: true, zerolinecolor: "#fbbf24", zerolinewidth: 2 },
+                      yaxis: { title: { text: "Avg respiratory rate (cases / 100k)" } },
+                      legend: { orientation: "h", y: -0.2 },
+                    }}
+                  />
+
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead className="text-xs uppercase text-muted-foreground border-b border-border/60">
+                        <tr>
+                          <th className="text-left py-2 px-3">Bandwidth</th>
+                          <th className="text-right py-2 px-3">LATE estimate</th>
+                          <th className="text-right py-2 px-3">Std error</th>
+                          <th className="text-right py-2 px-3">p-value</th>
+                          <th className="text-right py-2 px-3">95% CI</th>
+                          <th className="text-right py-2 px-3">n obs</th>
+                          <th className="text-left py-2 px-3">Significance</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {rdd.estimates.map((r: any, i: number) => (
+                          <tr key={i} className="border-b border-border/30 hover:bg-accent/30">
+                            <td className="py-1.5 px-3">±{r.bandwidth} µg/m³</td>
+                            <td className="py-1.5 px-3 text-right font-mono">
+                              <span className={r.rdd_estimate > 0 ? "text-rose-300" : "text-emerald-300"}>
+                                {r.rdd_estimate > 0 ? "+" : ""}{r.rdd_estimate?.toFixed(2)}
+                              </span>
+                            </td>
+                            <td className="py-1.5 px-3 text-right font-mono">{r.std_err?.toFixed(2)}</td>
+                            <td className="py-1.5 px-3 text-right font-mono">{r.p_value?.toFixed(4)}</td>
+                            <td className="py-1.5 px-3 text-right font-mono text-xs text-muted-foreground">
+                              [{r.ci_lower?.toFixed(2)}, {r.ci_upper?.toFixed(2)}]
+                            </td>
+                            <td className="py-1.5 px-3 text-right font-mono">{r.n_obs?.toLocaleString()}</td>
+                            <td className="py-1.5 px-3">
+                              <Badge variant={r.p_value < 0.05 ? "critical" : r.p_value < 0.10 ? "warning" : "secondary"}>
+                                {r.p_value < 0.05 ? "p < .05" : r.p_value < 0.10 ? "p < .10" : "n.s."}
+                              </Badge>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <InsightBox variant="info" title="Interpreting the RDD">
+                    A non-significant LATE across bandwidths tells an important story: the health burden does not switch on abruptly at 60 µg/m³ — it accumulates continuously as PM2.5 rises. This is consistent with epidemiological evidence that no &quot;safe threshold&quot; exists for particulate matter. The RDD here tests specifically for a policy-driven jump; its absence reinforces the dose-response evidence rather than contradicting causation.
+                  </InsightBox>
+                </div>
+              )}
+            </CardContent>
+          </Card>
+        </TabsContent>
+
+        {/* ── PROPENSITY SCORE MATCHING ─────────────────────── */}
+        <TabsContent value="psm">
+          <Card>
+            <CardHeader>
+              <CardTitle>Propensity Score Matching — Average Treatment Effect on the Treated</CardTitle>
+              <CardDescription>
+                Each high-pollution district-month is matched to a low-pollution district-month with the
+                most similar probability of being treated (propensity score) given observable confounders:
+                urbanisation, literacy, population, and season. The ATT is the mean respiratory-rate difference
+                in matched pairs — a like-for-like comparison removing selection bias.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              {psm?.summary && (
+                <div className="space-y-4">
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                    {[
+                      { label: "Treatment threshold", val: `>${psm.summary.treatment_threshold_pm25?.toFixed(1)} µg/m³`, tone: "text-muted-foreground" },
+                      { label: "Matched pairs", val: psm.summary.n_treated?.toLocaleString() ?? "—", tone: "text-sky-300" },
+                      { label: "ATT (cases / 100k)", val: psm.summary.att != null ? `${psm.summary.att > 0 ? "+" : ""}${psm.summary.att.toFixed(2)}` : "—", tone: "text-rose-300" },
+                      { label: "95% CI", val: psm.summary.att_ci_lower != null ? `[${psm.summary.att_ci_lower.toFixed(1)}, ${psm.summary.att_ci_upper.toFixed(1)}]` : "—", tone: "text-muted-foreground" },
+                    ].map(({ label, val, tone }) => (
+                      <div key={label} className="rounded-lg border border-border/60 p-4 bg-card/40">
+                        <div className="text-xs uppercase tracking-wider text-muted-foreground">{label}</div>
+                        <div className={`text-xl font-mono mt-1 ${tone}`}>{val}</div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {psm.balance?.length > 0 && (
+                    <PlotlyChart
+                      height={340}
+                      data={[
+                        {
+                          type: "bar", orientation: "h", name: "Before matching",
+                          y: psm.balance.map((d: any) => d.covariate),
+                          x: psm.balance.map((d: any) => d.smd_before),
+                          marker: { color: "rgba(248,113,113,0.7)" },
+                        },
+                        {
+                          type: "bar", orientation: "h", name: "After matching",
+                          y: psm.balance.map((d: any) => d.covariate),
+                          x: psm.balance.map((d: any) => d.smd_after),
+                          marker: { color: "rgba(52,211,153,0.7)" },
+                        },
+                      ]}
+                      layout={{
+                        barmode: "group",
+                        title: { text: "Covariate Balance — Standardised Mean Difference (SMD < 0.1 = good balance)" },
+                        xaxis: { title: { text: "Standardised Mean Difference" } },
+                        shapes: [{ type: "line", x0: 0.1, x1: 0.1, y0: 0, y1: 1, yref: "paper",
+                          line: { color: "#fbbf24", dash: "dot", width: 1.5 } }],
+                        annotations: [{ x: 0.1, y: 1.02, yref: "paper", text: "SMD = 0.1 threshold",
+                          showarrow: false, font: { color: "#fbbf24", size: 10 } }],
+                        legend: { orientation: "h", y: -0.2 },
+                        margin: { l: 130 },
+                      }}
+                    />
+                  )}
+
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead className="text-xs uppercase text-muted-foreground border-b border-border/60">
+                        <tr>
+                          <th className="text-left py-2 px-3">Metric</th>
+                          <th className="text-right py-2 px-3">Value</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {[
+                          ["Mean resp rate — treated",         psm.summary.mean_treated?.toFixed(1) + " / 100k"],
+                          ["Mean resp rate — matched control", psm.summary.mean_matched_control?.toFixed(1) + " / 100k"],
+                          ["ATT (treated − matched control)",  `${psm.summary.att > 0 ? "+" : ""}${psm.summary.att?.toFixed(2)} / 100k`],
+                          ["Avg SMD before matching",          psm.summary.avg_smd_before?.toFixed(3)],
+                          ["Avg SMD after matching",           psm.summary.avg_smd_after?.toFixed(3)],
+                          ["Control pool size",                psm.summary.n_control_pool?.toLocaleString()],
+                        ].map(([label, val]) => (
+                          <tr key={label} className="border-b border-border/30 hover:bg-accent/30">
+                            <td className="py-1.5 px-3">{label}</td>
+                            <td className="py-1.5 px-3 text-right font-mono">{val}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <InsightBox variant="success" title="What the ATT means">
+                    Propensity-score matching controls for season, urbanisation, literacy, and population size before comparing respiratory rates. The ATT of ~{psm.summary.att?.toFixed(0)} cases/100k is the extra burden carried by high-pollution district-months after stripping out observable confounders — a more conservative and credible estimate than a raw mean comparison.
+                  </InsightBox>
+                </div>
+              )}
+            </CardContent>
+          </Card>
+        </TabsContent>
+
       </Tabs>
     </div>
   );

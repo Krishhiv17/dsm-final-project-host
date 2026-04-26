@@ -50,16 +50,37 @@ def spatial_autocorr():
 def knowledge_graph(relationship: Optional[str] = None, limit: int = Query(500, le=5000)):
     d = all_data()
     kg = d["knowledge_graph"]
+    nodes = d["graph_nodes"]
     if kg is None:
         return {"counts": [], "triples": []}
     counts = kg["relationship"].value_counts().reset_index()
     counts.columns = ["relationship", "count"]
+
     df = kg
     if relationship:
         df = df[df["relationship"] == relationship]
+
+    # Sample across all relationship types so the table isn't dominated by one
+    if relationship is None:
+        per_rel = max(1, limit // max(1, df["relationship"].nunique()))
+        df = (df.groupby("relationship", group_keys=False)
+              .apply(lambda g: g.head(per_rel))
+              .reset_index(drop=True))
+
+    df = df.head(limit).copy()
+
+    # Resolve district names for source/target IDs
+    if nodes is not None and "district_id" in nodes.columns:
+        name_map = dict(zip(nodes["district_id"], nodes["district_name"]))
+        state_map = dict(zip(nodes["district_id"], nodes["state"]))
+        df["subject"] = df["source_id"].map(name_map).fillna(df["source_id"].astype(str))
+        df["object"]  = df["target_id"].map(name_map).fillna(df["target_id"].astype(str))
+        df["subject_state"] = df["source_id"].map(state_map)
+        df["object_state"]  = df["target_id"].map(state_map)
+
     return {
         "counts":  df_to_records(counts),
-        "triples": df_to_records(df.head(limit)),
+        "triples": df_to_records(df),
     }
 
 
