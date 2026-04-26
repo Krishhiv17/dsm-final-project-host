@@ -87,22 +87,7 @@ export default function BlogPage() {
 
   return (
     <div className="relative">
-      {/* Sticky TOC — only on very wide screens */}
-      <nav
-        className="hidden 2xl:block fixed top-24 text-[11px] leading-relaxed space-y-1 w-44"
-        style={{ left: "calc(50% + 30rem + 16px)" }}
-      >
-        <div className="text-[10px] uppercase tracking-wider text-muted-foreground mb-2 font-semibold">
-          Contents
-        </div>
-        {TOC_ITEMS.map(([id, label], i) => (
-          <a key={id} href={`#${id}`}
-            className="flex items-start gap-1.5 text-muted-foreground hover:text-foreground transition-colors py-0.5">
-            <span className="text-primary/50 font-mono shrink-0">{String(i+1).padStart(2,"0")}</span>
-            <span className="truncate">{label}</span>
-          </a>
-        ))}
-      </nav>
+      
 
       <article className="space-y-16 max-w-4xl mx-auto pb-24">
 
