@@ -82,3 +82,34 @@ def attributable():
 @router.get("/var-forecast")
 def var_forecast():
     return df_to_records(all_data()["var_forecast"])
+
+
+@router.get("/synthetic-control")
+def synthetic_control():
+    """Treated district trajectory vs synthetic counterfactual + gap series."""
+    d = all_data()
+    series = df_to_records(d["synthetic_control"])
+    meta   = df_to_records(d["synthetic_ctrl_meta"])
+    return {"series": series, "meta": meta[0] if meta else {}}
+
+
+@router.get("/rdd")
+def rdd():
+    """RDD estimates at multiple bandwidths + binned scatter near the NAAQS cutoff."""
+    d = all_data()
+    return {
+        "estimates": df_to_records(d["rdd_results"]),
+        "scatter":   df_to_records(d["rdd_scatter"]),
+    }
+
+
+@router.get("/psm")
+def psm():
+    """Propensity-score-matched ATT + covariate balance table."""
+    d = all_data()
+    summary = df_to_records(d["psm_summary"])
+    balance = df_to_records(d["psm_balance"])
+    return {
+        "summary": summary[0] if summary else {},
+        "balance": balance,
+    }
