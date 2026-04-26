@@ -280,9 +280,9 @@ def correlation_analysis(air_quality, health, districts):
     }).reset_index().round(2)
 
     merged = aq_agg.merge(health, on=["district_id", "year_month"])
-    merged = merged.merge(districts[["district_id", "state", "population",
-                                      "urban_percentage", "literacy_rate"]],
-                          on="district_id")
+    # Avoid duplicate 'state' columns from health and districts
+    dist_cols = ["district_id", "state", "population", "urban_percentage", "literacy_rate"]
+    merged = merged.merge(districts[dist_cols], on=["district_id", "state"])
 
     # ── Correlation Heatmap ─────────────────────────────────────
     corr_cols = ["pm25", "pm10", "no2", "so2", "aqi",
@@ -312,9 +312,14 @@ def correlation_analysis(air_quality, health, districts):
         ("pm25", "diarrhoea_cases"),
     ]
     for c1, c2 in key_pairs:
-        r, p = stats.pearsonr(merged[c1].dropna(), merged[c2].dropna())
-        sig = "***" if p < 0.001 else "**" if p < 0.01 else "*" if p < 0.05 else "ns"
-        print(f"    {c1:>6} ↔ {c2:<25} r={r:.4f}  p={p:.2e}  {sig}")
+        # Drop NaNs from both simultaneously to ensure same length
+        temp = merged[[c1, c2]].dropna()
+        if len(temp) > 1:
+            r, p = stats.pearsonr(temp[c1], temp[c2])
+            sig = "***" if p < 0.001 else "**" if p < 0.01 else "*" if p < 0.05 else "ns"
+            print(f"    {c1:>6} ↔ {c2:<25} r={r:.4f}  p={p:.2e}  {sig}")
+        else:
+            print(f"    {c1:>6} ↔ {c2:<25} Insufficient overlapping data")
 
     # ── Scatter plots ───────────────────────────────────────────
     fig, axes = plt.subplots(2, 2, figsize=FIGSIZE)
@@ -326,12 +331,19 @@ def correlation_analysis(air_quality, health, districts):
     ]
 
     for (x, y, title), ax in zip(scatter_pairs, axes.flat):
+        # Drop NaNs
+        temp = merged[[x, y]].dropna()
+        if len(temp) < 2:
+            ax.text(0.5, 0.5, "Insufficient Data", ha="center", va="center")
+            ax.set_title(title)
+            continue
+            
         # Sample for readability
-        sample = merged.sample(min(2000, len(merged)))
+        sample = temp.sample(min(2000, len(temp)))
         ax.scatter(sample[x], sample[y], alpha=0.3, s=10, c="#3498db")
         # Regression line
-        slope, intercept, r, p, se = stats.linregress(merged[x].dropna(), merged[y].dropna())
-        x_range = np.linspace(merged[x].min(), merged[x].max(), 100)
+        slope, intercept, r, p, se = stats.linregress(temp[x], temp[y])
+        x_range = np.linspace(temp[x].min(), temp[x].max(), 100)
         ax.plot(x_range, slope * x_range + intercept, color="red", linewidth=2,
                 label=f"r={r:.3f}, p={p:.2e}")
         ax.set_title(title, fontsize=11, fontweight="bold")
@@ -416,10 +428,17 @@ def temporal_analysis(air_quality, health, districts):
     ax = axes[0]
     months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
               "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-    ax.plot(months, seasonal_aq["pm25"].values, "o-", color="#e74c3c",
-            linewidth=2, markersize=6, label="PM2.5")
-    ax.plot(months, seasonal_aq["no2"].values, "s-", color="#3498db",
-            linewidth=2, markersize=6, label="NO₂")
+    
+    # Reindex to ensure 12 months
+    seasonal_aq = seasonal_aq.reindex(range(1, 13))
+    seasonal_h = seasonal_h.reindex(range(1, 13))
+    
+    if not seasonal_aq["pm25"].isna().all():
+        ax.plot(months, seasonal_aq["pm25"].values, "o-", color="#e74c3c",
+                linewidth=2, markersize=6, label="PM2.5")
+    if not seasonal_aq["no2"].isna().all():
+        ax.plot(months, seasonal_aq["no2"].values, "s-", color="#3498db",
+                linewidth=2, markersize=6, label="NO₂")
     ax.set_title("Air Quality — Monthly Seasonality", fontsize=13, fontweight="bold")
     ax.set_ylabel("Mean Concentration (µg/m³)")
     ax.legend()
@@ -428,10 +447,12 @@ def temporal_analysis(air_quality, health, districts):
 
     # Health seasonality
     ax = axes[1]
-    ax.plot(months, seasonal_h["respiratory_cases"].values, "o-", color="#e74c3c",
-            linewidth=2, markersize=6, label="Respiratory")
-    ax.plot(months, seasonal_h["diarrhoea_cases"].values, "s-", color="#2ecc71",
-            linewidth=2, markersize=6, label="Diarrhoea")
+    if not seasonal_h["respiratory_cases"].isna().all():
+        ax.plot(months, seasonal_h["respiratory_cases"].values, "o-", color="#e74c3c",
+                linewidth=2, markersize=6, label="Respiratory")
+    if "diarrhoea_cases" in seasonal_h.columns and not seasonal_h["diarrhoea_cases"].isna().all():
+        ax.plot(months, seasonal_h["diarrhoea_cases"].values, "s-", color="#2ecc71",
+                linewidth=2, markersize=6, label="Diarrhoea")
     ax.set_title("Health — Monthly Seasonality", fontsize=13, fontweight="bold")
     ax.set_ylabel("Mean Cases / District")
     ax.legend()

@@ -6,3 +6,4 @@ __pycache__/
 /web/node_modules
 /web/.next/
 *.tsbuildinfo
+data/raw/v1/agriyayadav_ug2023_17772146890746026.csv

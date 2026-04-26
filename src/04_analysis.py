@@ -138,35 +138,34 @@ def hypothesis_testing(merged, districts):
 
     # Group comparison
     ax = axes[0]
-    data_plot = district_avg.melt(id_vars=["district_id", "pollution_group"],
-                                   value_vars=["respiratory_cases"],
-                                   var_name="metric", value_name="cases")
-    sns.boxplot(data=district_avg, x="pollution_group", y="respiratory_cases",
-                ax=ax, palette={"High": "#e74c3c", "Low": "#2ecc71"})
-    ax.set_title(f"Respiratory Cases: High vs Low Pollution\n(t={t_stat:.2f}, p={p_val:.2e})",
-                 fontsize=12, fontweight="bold")
-    ax.set_xlabel("Pollution Group")
-    ax.set_ylabel("Mean Monthly Respiratory Cases")
+    if not high["respiratory_cases"].isna().all() and not low["respiratory_cases"].isna().all():
+        sns.boxplot(data=district_avg, x="pollution_group", y="respiratory_cases",
+                    ax=ax, palette={"High": "#e74c3c", "Low": "#2ecc71"})
+        ax.set_title(f"Respiratory Cases\n(p={p_val:.2e})", fontsize=11, fontweight="bold")
+    else:
+        ax.text(0.5, 0.5, "No Data", ha="center", va="center")
 
-    # Cardiovascular comparison
+    # Cardiovascular
     ax = axes[1]
-    t_cv, p_cv = stats.ttest_ind(high["cardiovascular_cases"], low["cardiovascular_cases"])
-    sns.boxplot(data=district_avg, x="pollution_group", y="cardiovascular_cases",
-                ax=ax, palette={"High": "#e74c3c", "Low": "#2ecc71"})
-    ax.set_title(f"Cardiovascular Cases: High vs Low\n(t={t_cv:.2f}, p={p_cv:.2e})",
-                 fontsize=12, fontweight="bold")
-    ax.set_xlabel("Pollution Group")
-    ax.set_ylabel("Mean Monthly Cardiovascular Cases")
+    if not high["cardiovascular_cases"].isna().all() and not low["cardiovascular_cases"].isna().all():
+        t_cv, p_cv = stats.ttest_ind(high["cardiovascular_cases"].dropna(), low["cardiovascular_cases"].dropna())
+        sns.boxplot(data=district_avg, x="pollution_group", y="cardiovascular_cases",
+                    ax=ax, palette={"High": "#3498db", "Low": "#2ecc71"})
+        ax.set_title(f"Cardiovascular Cases\n(p={p_cv:.2e})", fontsize=11, fontweight="bold")
+    else:
+        ax.text(0.5, 0.5, "Data Unavailable", ha="center", va="center")
+        ax.set_title("Cardiovascular (No Data)")
 
-    # Diarrhoea comparison (control)
+    # Diarrhoea
     ax = axes[2]
-    t_d, p_d = stats.ttest_ind(high["diarrhoea_cases"], low["diarrhoea_cases"])
-    sns.boxplot(data=district_avg, x="pollution_group", y="diarrhoea_cases",
-                ax=ax, palette={"High": "#e74c3c", "Low": "#2ecc71"})
-    ax.set_title(f"Diarrhoea Cases (Control): High vs Low\n(t={t_d:.2f}, p={p_d:.2e})",
-                 fontsize=12, fontweight="bold")
-    ax.set_xlabel("Pollution Group")
-    ax.set_ylabel("Mean Monthly Diarrhoea Cases")
+    if not high["diarrhoea_cases"].isna().all() and not low["diarrhoea_cases"].isna().all():
+        t_d, p_d = stats.ttest_ind(high["diarrhoea_cases"].dropna(), low["diarrhoea_cases"].dropna())
+        sns.boxplot(data=district_avg, x="pollution_group", y="diarrhoea_cases",
+                    ax=ax, palette={"High": "#f39c12", "Low": "#2ecc71"})
+        ax.set_title(f"Diarrhoea Cases\n(p={p_d:.2e})", fontsize=11, fontweight="bold")
+    else:
+        ax.text(0.5, 0.5, "Data Unavailable", ha="center", va="center")
+        ax.set_title("Diarrhoea (No Data)")
 
     plt.suptitle("Hypothesis Testing — Disease Burden by Pollution Group",
                  fontsize=14, fontweight="bold", y=1.02)
@@ -187,16 +186,34 @@ def regression_analysis(merged):
     print("  STEP 2: Regression Analysis")
     print("━" * 60)
 
-    # Prepare features
-    features = ["pm25", "pm10", "no2", "so2", "urban_percentage", "literacy_rate", "population"]
+    # Dynamically select features and targets based on available data
     target = "respiratory_cases"
-
-    df = merged[features + [target]].dropna()
-    X = df[features]
-    y = df[target]
-
+    potential_features = ["pm25", "pm10", "no2", "so2", "urban_percentage", "literacy_rate"]
+    
+    # Check if target has any data
+    if merged[target].isna().all():
+        print(f"  [ERROR] No data available for target: {target}. Skipping regression.")
+        return
+        
+    # Only keep features that have at least some data
+    features = [f for f in potential_features if f in merged.columns and not merged[f].isna().all()]
+    
+    print(f"  Target:   {target}")
+    print(f"  Features: {features}")
+    
+    # Drop rows with NaNs in the selected columns
+    train_df = merged[features + [target]].dropna()
+    
+    if len(train_df) < 20:
+        print(f"  [ERROR] Insufficient data for regression (n={len(train_df)}). Skipping.")
+        return
+        
+    X = train_df[features]
+    y = train_df[target]
+    
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
+    
+    # Scale features
     scaler = StandardScaler()
     X_train_s = scaler.fit_transform(X_train)
     X_test_s = scaler.transform(X_test)
@@ -309,10 +326,17 @@ def clustering_analysis(merged, districts):
         districts[["district_id", "district_name", "state"]], on="district_id"
     )
 
-    # Features for clustering
-    cluster_features = ["pm25", "pm10", "no2", "respiratory_cases",
-                        "cardiovascular_cases", "urban_percentage"]
+    # Features for clustering (only keep those with data)
+    potential_cluster_features = ["pm25", "pm10", "no2", "respiratory_cases",
+                                  "cardiovascular_cases", "urban_percentage"]
+    cluster_features = [f for f in potential_cluster_features if f in district_profile.columns and not district_profile[f].isna().all()]
+    
     X_cluster = district_profile[cluster_features].dropna()
+    
+    if len(X_cluster) < 5:
+        print("  [ERROR] Insufficient data for clustering. Skipping.")
+        return
+        
     scaler = StandardScaler()
     X_scaled = scaler.fit_transform(X_cluster)
 
@@ -329,7 +353,10 @@ def clustering_analysis(merged, districts):
     print(f"\n  Optimal K = {k_optimal} (elbow method)")
 
     km = KMeans(n_clusters=k_optimal, random_state=42, n_init=10)
-    district_profile["cluster"] = km.fit_predict(X_scaled)
+    # Assign clusters using the index of X_cluster to ensure alignment
+    district_profile.loc[X_cluster.index, "cluster"] = km.fit_predict(X_scaled)
+    # Fill any districts without clusters (due to NaNs) with -1
+    district_profile["cluster"] = district_profile["cluster"].fillna(-1).astype(int)
 
     # ── Cluster profiles ────────────────────────────────────────
     cluster_summary = district_profile.groupby("cluster")[cluster_features].mean().round(1)
@@ -428,43 +455,44 @@ def time_series_analysis(aq):
     national_monthly.index = national_monthly.index.to_timestamp()
 
     # Decompose
-    decomposition = seasonal_decompose(national_monthly, model="multiplicative", period=12)
+    if len(national_monthly) >= 24:
+        decomposition = seasonal_decompose(national_monthly, model="multiplicative", period=12)
+        fig, axes = plt.subplots(4, 1, figsize=(16, 12))
 
-    fig, axes = plt.subplots(4, 1, figsize=(16, 12))
+        axes[0].plot(national_monthly.index, national_monthly.values, color="#3498db", linewidth=1.5)
+        axes[0].set_title("Observed (National Avg PM2.5)", fontsize=12, fontweight="bold")
+        axes[0].set_ylabel("µg/m³")
 
-    axes[0].plot(national_monthly.index, national_monthly.values,
-                 color="#3498db", linewidth=1.5)
-    axes[0].set_title("Observed (National Avg PM2.5)", fontsize=12, fontweight="bold")
-    axes[0].set_ylabel("µg/m³")
+        axes[1].plot(decomposition.trend.index, decomposition.trend.values, color="#e74c3c", linewidth=2)
+        axes[1].set_title("Trend Component", fontsize=12, fontweight="bold")
+        axes[1].set_ylabel("µg/m³")
 
-    axes[1].plot(decomposition.trend.index, decomposition.trend.values,
-                 color="#e74c3c", linewidth=2)
-    axes[1].set_title("Trend Component", fontsize=12, fontweight="bold")
-    axes[1].set_ylabel("µg/m³")
+        axes[2].plot(decomposition.seasonal.index, decomposition.seasonal.values, color="#2ecc71", linewidth=1.5)
+        axes[2].set_title("Seasonal Component", fontsize=12, fontweight="bold")
+        axes[2].set_ylabel("Multiplier")
 
-    axes[2].plot(decomposition.seasonal.index, decomposition.seasonal.values,
-                 color="#2ecc71", linewidth=1.5)
-    axes[2].set_title("Seasonal Component", fontsize=12, fontweight="bold")
-    axes[2].set_ylabel("Multiplier")
+        axes[3].plot(decomposition.resid.index, decomposition.resid.values, color="#9b59b6", linewidth=1, alpha=0.7)
+        axes[3].set_title("Residual Component", fontsize=12, fontweight="bold")
+        axes[3].set_ylabel("Multiplier")
 
-    axes[3].plot(decomposition.resid.index, decomposition.resid.values,
-                 color="#9b59b6", linewidth=1, alpha=0.7)
-    axes[3].set_title("Residual Component", fontsize=12, fontweight="bold")
-    axes[3].set_ylabel("Multiplier")
-
-    plt.suptitle("Time-Series Decomposition — National PM2.5 (2018–2023)",
-                 fontsize=14, fontweight="bold", y=1.02)
-    plt.tight_layout()
-    plt.savefig(FIG_DIR / "13_time_series_decomposition.png", dpi=DPI, bbox_inches="tight")
-    plt.close()
-    print("  → Saved: 13_time_series_decomposition.png")
+        plt.suptitle("Time-Series Decomposition — National PM2.5", fontsize=14, fontweight="bold", y=1.02)
+        plt.tight_layout()
+        plt.savefig(FIG_DIR / "13_time_series_decomposition.png", dpi=DPI, bbox_inches="tight")
+        plt.close()
+        print("  → Saved: 13_time_series_decomposition.png")
+    else:
+        print(f"  [SKIP] Not enough observations for decomposition (n={len(national_monthly)})")
 
     # Key insight
-    trend = decomposition.trend.dropna()
-    print(f"\n  Trend: PM2.5 {'increased' if trend.iloc[-1] > trend.iloc[0] else 'decreased'} "
-          f"from {trend.iloc[0]:.1f} to {trend.iloc[-1]:.1f} µg/m³ over 2018-2023")
-    print(f"  Seasonal peak ratio: {decomposition.seasonal.max():.2f}x "
-          f"(winter) / {decomposition.seasonal.min():.2f}x (monsoon)")
+    if len(national_monthly) >= 24:
+        trend = decomposition.trend.dropna()
+        if len(trend) > 2:
+            growth = (trend.iloc[-1] / trend.iloc[0] - 1) * 100
+            print(f"  Overall Pollution Trend: {growth:+.1f}% over the period")
+        print(f"  Trend: PM2.5 {'increased' if trend.iloc[-1] > trend.iloc[0] else 'decreased'} "
+              f"from {trend.iloc[0]:.1f} to {trend.iloc[-1]:.1f} µg/m³ over 2018-2023")
+        print(f"  Seasonal peak ratio: {decomposition.seasonal.max():.2f}x "
+              f"(winter) / {decomposition.seasonal.min():.2f}x (monsoon)")
 
 
 # ═══════════════════════════════════════════════════════════════════
@@ -474,15 +502,18 @@ def predictive_modeling(merged):
     """Build Random Forest and Gradient Boosting models."""
     print("\n" + "━" * 60)
     print("  STEP 5: Predictive Modeling (Random Forest & Gradient Boosting)")
-    print("━" * 60)
-
-    features = ["pm25", "pm10", "no2", "so2", "urban_percentage",
-                "literacy_rate", "population"]
+    # ── Prepare Data ────────────────────────────────────────────
     target = "respiratory_cases"
-
-    df = merged[features + [target]].dropna()
-    X = df[features]
-    y = df[target]
+    potential_feat = ["pm25", "pm10", "no2", "so2", "urban_percentage", "literacy_rate", "population"]
+    features = [f for f in potential_feat if f in merged.columns and not merged[f].isna().all()]
+    
+    train_df = merged[features + [target]].dropna()
+    if len(train_df) < 20:
+        print("  [ERROR] Insufficient data for predictive modeling. Skipping.")
+        return
+        
+    X = train_df[features]
+    y = train_df[target]
 
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
