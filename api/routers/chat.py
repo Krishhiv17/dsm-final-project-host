@@ -10,9 +10,11 @@ from pydantic import BaseModel
 import pandas as pd
 
 try:
-    from groq import Groq
+    from groq import Groq, RateLimitError as GroqRateLimitError, APIError as GroqAPIError
 except ImportError:
     Groq = None  # type: ignore
+    GroqRateLimitError = Exception  # type: ignore
+    GroqAPIError = Exception  # type: ignore
 
 router = APIRouter(prefix="/chat", tags=["chat"])
 
@@ -182,11 +184,19 @@ def chat_message(req: ChatRequest):
     queries_log: list[str] = []
 
     for _ in range(4):
-        resp = client.chat.completions.create(
-            model=model,
-            messages=[{"role": "system", "content": SYSTEM_PROMPT}] + loop_messages,
-            max_tokens=1024,
-        )
+        try:
+            resp = client.chat.completions.create(
+                model=model,
+                messages=[{"role": "system", "content": SYSTEM_PROMPT}] + loop_messages,
+                max_tokens=1024,
+            )
+        except GroqRateLimitError:
+            return ChatResponse(
+                reply="The AI assistant has reached its daily query limit (100k tokens/day on the free tier). Please try again tomorrow.",
+                queries=[],
+            )
+        except GroqAPIError as e:
+            return ChatResponse(reply=f"AI service error: {e}", queries=[])
         text = resp.choices[0].message.content or ""
         sql_blocks = _extract_sql(text)
 
@@ -223,11 +233,19 @@ def chat_message(req: ChatRequest):
             ),
         })
 
-    final = client.chat.completions.create(
-        model=model,
-        messages=[{"role": "system", "content": SYSTEM_PROMPT}] + loop_messages,
-        max_tokens=2048,
-    )
+    try:
+        final = client.chat.completions.create(
+            model=model,
+            messages=[{"role": "system", "content": SYSTEM_PROMPT}] + loop_messages,
+            max_tokens=2048,
+        )
+    except GroqRateLimitError:
+        return ChatResponse(
+            reply="The AI assistant has reached its daily query limit (100k tokens/day on the free tier). Please try again tomorrow.",
+            queries=queries_log,
+        )
+    except GroqAPIError as e:
+        return ChatResponse(reply=f"AI service error: {e}", queries=queries_log)
     reply = final.choices[0].message.content or ""
 
     return ChatResponse(reply=reply, queries=queries_log)
