@@ -34,7 +34,7 @@ database via SQL queries.
 - **Coverage:** 150 districts, 15 states (Delhi, Maharashtra, UP, Bihar, West Bengal,
   Tamil Nadu, Rajasthan, Karnataka, Gujarat, MP, Andhra Pradesh, Telangana, Kerala,
   Punjab, Haryana)
-- **NAAQS standards:** PM2.5 ≤ 60 µg/m³, PM10 ≤ 100 µg/m³, NO₂ ≤ 80 µg/m³, SO₂ ≤ 80 µg/m³
+- **NAAQS standards:** PM2.5 ≤ 40 µg/m³, PM10 ≤ 100 µg/m³, NO₂ ≤ 80 µg/m³, SO₂ ≤ 80 µg/m³
 - **Key finding:** National PM2.5 has been flat (~59 µg/m³) from 2018–2023 — no improvement
   despite GRAP, BS-VI vehicles, odd-even schemes, crop-burning bans
 - **Seasonal pattern:** Winter (Nov-Feb) shows 2-3× higher PM2.5 than monsoon (Jul-Sep)

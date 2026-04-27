@@ -471,9 +471,9 @@ export default function CausalPage() {
         <TabsContent value="rdd">
           <Card>
             <CardHeader>
-              <CardTitle>Regression Discontinuity Design — NAAQS Threshold (60 µg/m³)</CardTitle>
+              <CardTitle>Regression Discontinuity Design — NAAQS Threshold (40 µg/m³)</CardTitle>
               <CardDescription>
-                Districts with PM2.5 just above vs just below India&apos;s NAAQS standard of 60 µg/m³
+                Districts with PM2.5 just above vs just below India&apos;s NAAQS standard of 40 µg/m³
                 are essentially identical in every other way. If there is a sharp jump in respiratory outcomes
                 exactly at the cutoff, it&apos;s credibly causal — the only thing that changed is NAAQS compliance.
                 Robustness is checked across five bandwidths.

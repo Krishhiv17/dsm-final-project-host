@@ -186,7 +186,7 @@ export default function BlogPage() {
           <Big
             stat={kpis?.avg_pm25 ? String(kpis.avg_pm25) : "—"}
             unit="µg/m³ — average PM2.5 across all districts and all days"
-            caption="The WHO annual guideline is 5 µg/m³. India's own NAAQS standard is 60 µg/m³ (annual average). The national mean is approximately 12× the WHO limit."
+            caption="The WHO annual guideline is 5 µg/m³. India's own NAAQS standard is 40 µg/m³ (annual average). The national mean is approximately 12× the WHO limit."
           />
 
           <Para>
@@ -454,7 +454,7 @@ export default function BlogPage() {
                     xaxis: {
                       title: { text: "Average PM2.5 (µg/m³)" },
                       shapes: [
-                        { type: "line", x0: 60, x1: 60, y0: -0.5, y1: states.length - 0.5,
+                        { type: "line", x0: 40, x1: 40, y0: -0.5, y1: states.length - 0.5,
                           line: { color: "#fbbf24", width: 1.5, dash: "dot" } },
                         { type: "line", x0: 5, x1: 5, y0: -0.5, y1: states.length - 0.5,
                           line: { color: "#34d399", width: 1.5, dash: "dot" } },
@@ -464,7 +464,7 @@ export default function BlogPage() {
                   }}
                 />
                 <div className="flex flex-wrap gap-2 mt-2 justify-center text-xs text-muted-foreground">
-                  <span className="flex items-center gap-1"><span className="w-3 h-2 inline-block bg-amber-400/70 rounded-sm" /> NAAQS (60 µg/m³)</span>
+                  <span className="flex items-center gap-1"><span className="w-3 h-2 inline-block bg-amber-400/70 rounded-sm" /> NAAQS (40 µg/m³)</span>
                   <span className="flex items-center gap-1"><span className="w-3 h-2 inline-block bg-emerald-400/70 rounded-sm" /> WHO (5 µg/m³)</span>
                 </div>
               </CardContent>
@@ -472,7 +472,7 @@ export default function BlogPage() {
           )}
 
           <Para>
-            The red bars exceed 60 µg/m³ — the NAAQS guideline for annual PM2.5. Every Indo-Gangetic
+            The red bars exceed 40 µg/m³ — the NAAQS guideline for annual PM2.5. Every Indo-Gangetic
             Plain state sits in this zone. The reasons are partly topographic: the Plain is flanked by
             the Himalayas to the north, limiting vertical dispersion and trapping emissions at
             breathing level. Partly industrial: high coal combustion, brick kilns, vehicular density.
@@ -645,7 +645,7 @@ export default function BlogPage() {
             {epiNAAQS && (
               <div className="rounded-xl border border-rose-500/30 bg-rose-500/5 p-5 space-y-1.5 text-sm">
                 <div className="text-xs uppercase tracking-wider text-muted-foreground mb-2">
-                  PM2.5 above NAAQS (60 µg/m³)
+                  PM2.5 above NAAQS (40 µg/m³)
                 </div>
                 <div className="flex justify-between">
                   <span className="text-muted-foreground">Relative risk</span>
