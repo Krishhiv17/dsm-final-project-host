@@ -13,7 +13,7 @@ const SUGGESTIONS = [
   "Which districts have both high pollution and high respiratory burden?",
   "Show the year-by-year PM2.5 trend from 2018 to 2023.",
   "What are the key causal findings of this project?",
-  "Which districts have the highest cardiovascular case burden?",
+  "Which districts have the highest respiratory case burden?",
   "What policy changes would reduce respiratory disease the most?",
 ];
 

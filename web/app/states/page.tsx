@@ -100,8 +100,6 @@ export default function StatesPage() {
                   <th className="text-right py-2 px-3">NO₂</th>
                   <th className="text-right py-2 px-3">SO₂</th>
                   <th className="text-right py-2 px-3">Respiratory</th>
-                  <th className="text-right py-2 px-3">Cardio</th>
-                  <th className="text-right py-2 px-3">Diarrhoea</th>
                 </tr>
               </thead>
               <tbody>
@@ -121,8 +119,6 @@ export default function StatesPage() {
                       <td className="py-2 px-3 text-right text-muted-foreground">{s.avg_no2?.toFixed(1)}</td>
                       <td className="py-2 px-3 text-right text-muted-foreground">{s.avg_so2?.toFixed(1)}</td>
                       <td className="py-2 px-3 text-right">{formatNumber(s.total_respiratory)}</td>
-                      <td className="py-2 px-3 text-right">{formatNumber(s.total_cardiovascular)}</td>
-                      <td className="py-2 px-3 text-right">{formatNumber(s.total_diarrhoea)}</td>
                     </tr>
                   );
                 })}

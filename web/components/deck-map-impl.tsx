@@ -173,6 +173,9 @@ export default function DeckMapImpl({
         }
         return [...pollutionColor((d.resp_rate_mean || 50) * 0.5), 220] as any;
       },
+      updateTriggers: {
+        getFillColor: colorBy,
+      },
       getLineColor: [255, 255, 255, 200],
       lineWidthMinPixels: 0.5,
       stroked: true,

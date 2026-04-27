@@ -502,7 +502,7 @@ export default function CausalPage() {
                       },
                     ]}
                     layout={{
-                      xaxis: { title: { text: "PM2.5 − 60 µg/m³  (running variable)" },
+                      xaxis: { title: { text: "PM2.5 − 40 µg/m³  (running variable)" },
                         zeroline: true, zerolinecolor: "#fbbf24", zerolinewidth: 2 },
                       yaxis: { title: { text: "Avg respiratory rate (cases / 100k)" } },
                       legend: { orientation: "h", y: -0.2 },
@@ -549,7 +549,7 @@ export default function CausalPage() {
                   </div>
 
                   <InsightBox variant="info" title="Interpreting the RDD">
-                    A non-significant LATE across bandwidths tells an important story: the health burden does not switch on abruptly at 60 µg/m³ — it accumulates continuously as PM2.5 rises. This is consistent with epidemiological evidence that no &quot;safe threshold&quot; exists for particulate matter. The RDD here tests specifically for a policy-driven jump; its absence reinforces the dose-response evidence rather than contradicting causation.
+                    A non-significant LATE across bandwidths tells an important story: the health burden does not switch on abruptly at 40 µg/m³ — it accumulates continuously as PM2.5 rises. This is consistent with epidemiological evidence that no &quot;safe threshold&quot; exists for particulate matter. The RDD here tests specifically for a policy-driven jump; its absence reinforces the dose-response evidence rather than contradicting causation.
                   </InsightBox>
                 </div>
               )}

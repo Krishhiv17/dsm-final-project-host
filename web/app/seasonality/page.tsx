@@ -68,14 +68,6 @@ export default function SeasonalityPage() {
                     y: data.health.map((d: any) => d.respiratory_cases),
                     line: { width: 3, color: "#38bdf8" }, marker: { size: 9 },
                     fill: "tozeroy", fillcolor: "rgba(56,189,248,0.08)" },
-                  { type: "scatter", mode: "lines+markers", name: "Cardiovascular",
-                    x: data.health.map((d: any) => d.year),
-                    y: data.health.map((d: any) => d.cardiovascular_cases),
-                    line: { width: 3, color: "#f472b6" }, marker: { size: 9 } },
-                  { type: "scatter", mode: "lines+markers", name: "Diarrhoea",
-                    x: data.health.map((d: any) => d.year),
-                    y: data.health.map((d: any) => d.diarrhoea_cases),
-                    line: { width: 3, color: "#34d399" }, marker: { size: 9 } },
                 ]}
                 layout={{
                   xaxis: { title: { text: "Year" }, dtick: 1 },

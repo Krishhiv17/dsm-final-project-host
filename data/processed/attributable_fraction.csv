@@ -1,8 +1,6 @@
 metric,value
-Relative Risk,1.4728
-PAF (%),7.05
-PAF CI lower (%),-1.92
-PAF CI upper (%),17.0
-Rate Exposed,36.23
-Rate Unexposed,24.6
-Prevalence Exposed (%),16.05
+Relative Risk,2.26
+PAF (%),32.8
+Rate Exposed,94.4
+Rate Unexposed,41.8
+Prevalence Exposed (%),38.9

@@ -17,12 +17,10 @@ const ALL_VARS = [
   { value: "urban_percentage",     label: "Urban %" },
   { value: "literacy_rate",        label: "Literacy %" },
   { value: "population",           label: "Population" },
-  { value: "respiratory_cases",    label: "Respiratory cases"    },
-  { value: "cardiovascular_cases", label: "Cardiovascular cases" },
-  { value: "diarrhoea_cases",      label: "Diarrhoea cases"      },
+  { value: "respiratory_cases",    label: "Respiratory cases" },
 ];
-const X_VARS = ALL_VARS.filter(v => !["respiratory_cases","cardiovascular_cases","diarrhoea_cases"].includes(v.value));
-const Y_VARS = ALL_VARS.filter(v => ["respiratory_cases","cardiovascular_cases","diarrhoea_cases"].includes(v.value));
+const X_VARS = ALL_VARS.filter(v => v.value !== "respiratory_cases");
+const Y_VARS = ALL_VARS.filter(v => v.value === "respiratory_cases");
 
 const STATE_COLORS = [
   "#38bdf8", "#34d399", "#fbbf24", "#f87171", "#a78bfa",

@@ -1,6 +1,7 @@
 """Disease propagation graph endpoints."""
 from fastapi import APIRouter, Query
 from typing import Optional
+import pandas as pd
 from ..services.data_loader import all_data, df_to_records
 
 router = APIRouter(prefix="/graph", tags=["graph"])
@@ -63,9 +64,9 @@ def knowledge_graph(relationship: Optional[str] = None, limit: int = Query(500, 
     # Sample across all relationship types so the table isn't dominated by one
     if relationship is None:
         per_rel = max(1, limit // max(1, df["relationship"].nunique()))
-        df = (df.groupby("relationship", group_keys=False)
-              .apply(lambda g: g.head(per_rel))
-              .reset_index(drop=True))
+        df = pd.concat(
+            [grp.head(per_rel) for _, grp in df.groupby("relationship")]
+        ).reset_index(drop=True)
 
     df = df.head(limit).copy()
 
