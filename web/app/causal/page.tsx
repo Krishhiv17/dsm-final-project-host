@@ -250,7 +250,7 @@ export default function CausalPage() {
                       },
                     ]}
                     layout={{
-                      xaxis: { title: { text: "PM2.5 reduction scenario" } },
+                      xaxis: { title: { text: "PM2.5 reduction scenario" }, type: "category" },
                       yaxis: { title: { text: "Total cases averted (across full panel)" } },
                     }}
                   />
