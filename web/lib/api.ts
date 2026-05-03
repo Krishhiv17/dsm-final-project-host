@@ -104,6 +104,12 @@ export async function getEpiMetrics()        { return fetchJSON<any[]>("/advance
 export async function getPartialCorrelation(){ return fetchJSON<any>("/advanced/partial-correlation"); }
 export async function getSpatialLag()        { return fetchJSON<any[]>("/advanced/spatial-lag"); }
 
+// ── Pollution Sensitivity ────────────────────────────────────────
+export async function getSensitivityCoefficients() { return fetchJSON<any[]>("/sensitivity/coefficients"); }
+export async function getClusterSensitivitySummary(){ return fetchJSON<any[]>("/sensitivity/cluster-summary"); }
+export async function getClusterDoseResponse()     { return fetchJSON<any[]>("/sensitivity/cluster-dose-response"); }
+export async function getSensitivityInteraction()  { return fetchJSON<any[]>("/sensitivity/interaction"); }
+
 // ── Chat ─────────────────────────────────────────────────────────────
 export interface ChatMessage { role: "user" | "assistant"; content: string; }
 export async function sendChatMessage(messages: ChatMessage[]) {

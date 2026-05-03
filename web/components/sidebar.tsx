@@ -3,7 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
   LayoutDashboard, Map, LineChart, GitGraph, Activity, Layers,
-  Microscope, Wind, Sparkles, Network, FlaskConical, BookOpen, Bot
+  Microscope, Wind, Sparkles, Network, FlaskConical, BookOpen, Bot, AlertTriangle
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -18,6 +18,7 @@ const NAV = [
   { href: "/graph",       icon: Network,         label: "Disease Graph"     },
   { href: "/causal",      icon: FlaskConical,    label: "Causal Inference"  },
   { href: "/advanced",    icon: Microscope,      label: "Advanced Analytics"},
+  { href: "/sensitivity", icon: AlertTriangle,   label: "Pollution Sensitivity"},
   { href: "/blog",        icon: BookOpen,        label: "The Story"         },
   { href: "/chat",        icon: Bot,             label: "AI Assistant"      },
 ];

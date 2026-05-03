@@ -1,0 +1,5 @@
+cluster,cluster_label,n_districts,pm25_slope,pm25_se,pm25_p,r2,significant,mean_excess_cases,median_excess_cases,mean_excess_pct,mean_pm25,mean_resp,sensitivity_ratio
+0,At Risk,58,-0.265,4.068,0.9482,0.0083,False,-160.0,-234.0,-19.7,65.2,571.5,-0.04
+1,Critical — High Pollution,15,4.462,6.979,0.5347,0.0469,False,-288.0,-484.2,-27.3,110.3,708.0,0.67
+2,Moderate,59,8.284,4.66,0.0809,0.0669,False,-123.8,-181.5,-25.4,36.4,374.6,1.244
+3,Critical — High Disease Burden,18,-8.494,14.225,0.5593,0.0961,False,1161.4,1084.6,161.5,70.4,1944.2,-1.276

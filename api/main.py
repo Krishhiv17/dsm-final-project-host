@@ -9,7 +9,7 @@ load_dotenv(Path(__file__).resolve().parent.parent / ".env")
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from .routers import overview, timeseries, correlations, clusters, graph, causal, advanced, predict, chat
+from .routers import overview, timeseries, correlations, clusters, graph, causal, advanced, predict, chat, sensitivity
 
 app = FastAPI(
     title="Air Quality & Public Health API",
@@ -60,3 +60,4 @@ app.include_router(causal.router)
 app.include_router(advanced.router)
 app.include_router(predict.router)
 app.include_router(chat.router)
+app.include_router(sensitivity.router)

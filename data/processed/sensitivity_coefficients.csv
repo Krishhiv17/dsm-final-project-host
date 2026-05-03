@@ -1,0 +1,151 @@
+district_id,district_name,state,cluster,cluster_label,pm25,respiratory_cases,predicted_national,residual,excess_pct
+1,Central Delhi,Delhi,1,Critical — High Pollution,136.721,1291.667,1307.247,-15.58,-1.192
+2,East Delhi,Delhi,1,Critical — High Pollution,99.252,1134.361,1012.666,121.696,12.017
+3,New Delhi,Delhi,1,Critical — High Pollution,153.062,590.264,1337.489,-747.225,-55.868
+4,North Delhi,Delhi,1,Critical — High Pollution,107.185,407.472,891.625,-484.153,-54.3
+5,South Delhi,Delhi,1,Critical — High Pollution,106.748,363.486,888.052,-524.566,-59.069
+6,West Delhi,Delhi,1,Critical — High Pollution,115.587,152.639,932.768,-780.13,-83.636
+7,North East Delhi,Delhi,1,Critical — High Pollution,125.332,536.708,1003.284,-466.576,-46.505
+8,North West Delhi,Delhi,1,Critical — High Pollution,118.191,1857.625,958.647,898.978,93.776
+9,South West Delhi,Delhi,1,Critical — High Pollution,122.598,827.333,997.276,-169.943,-17.041
+10,Shahdara,Delhi,1,Critical — High Pollution,109.994,1097.444,919.101,178.343,19.404
+11,Mumbai,Maharashtra,0,At Risk,58.081,140.25,580.382,-440.132,-75.835
+12,Pune,Maharashtra,0,At Risk,49.819,796.861,527.807,269.054,50.976
+13,Nagpur,Maharashtra,2,Moderate,42.297,120.833,463.219,-342.386,-73.914
+14,Thane,Maharashtra,2,Moderate,43.637,196.986,492.669,-295.683,-60.017
+15,Nashik,Maharashtra,0,At Risk,58.019,231.792,561.647,-329.855,-58.73
+16,Aurangabad,Maharashtra,0,At Risk,57.912,735.583,586.517,149.066,25.415
+17,Solapur,Maharashtra,2,Moderate,42.05,491.528,717.265,-225.738,-31.472
+18,Kolhapur,Maharashtra,0,At Risk,52.689,285.514,690.74,-405.226,-58.665
+19,Amravati,Maharashtra,0,At Risk,47.72,378.931,769.698,-390.767,-50.769
+20,Nanded,Maharashtra,0,At Risk,55.25,738.917,760.151,-21.234,-2.793
+21,Lucknow,Uttar Pradesh,0,At Risk,86.378,85.5,955.625,-870.125,-91.053
+22,Kanpur Nagar,Uttar Pradesh,3,Critical — High Disease Burden,87.426,1482.597,1029.439,453.158,44.02
+23,Agra,Uttar Pradesh,3,Critical — High Disease Burden,94.579,2388.681,1037.947,1350.733,130.135
+24,Varanasi,Uttar Pradesh,0,At Risk,82.332,485.5,952.266,-466.766,-49.016
+25,Allahabad,Uttar Pradesh,1,Critical — High Pollution,105.928,449.694,1117.014,-667.319,-59.741
+26,Ghaziabad,Uttar Pradesh,0,At Risk,87.133,763.028,997.475,-234.447,-23.504
+27,Noida,Uttar Pradesh,0,At Risk,84.653,503.222,951.182,-447.96,-47.095
+28,Meerut,Uttar Pradesh,0,At Risk,87.286,870.806,973.514,-102.708,-10.55
+29,Bareilly,Uttar Pradesh,0,At Risk,70.541,622.236,901.45,-279.214,-30.974
+30,Gorakhpur,Uttar Pradesh,3,Critical — High Disease Burden,79.897,2017.125,916.443,1100.682,120.104
+31,Patna,Bihar,0,At Risk,81.838,666.236,906.99,-240.754,-26.544
+32,Gaya,Bihar,0,At Risk,86.663,528.139,1040.674,-512.535,-49.25
+33,Muzaffarpur,Bihar,3,Critical — High Disease Burden,76.404,1539.458,853.497,685.961,80.371
+34,Bhagalpur,Bihar,3,Critical — High Disease Burden,95.729,1849.264,1103.568,745.696,67.571
+35,Darbhanga,Bihar,1,Critical — High Pollution,104.466,300.111,1111.957,-811.846,-73.011
+36,Purnia,Bihar,3,Critical — High Disease Burden,85.323,1304.764,968.919,335.845,34.662
+37,Begusarai,Bihar,0,At Risk,84.826,281.569,972.234,-690.665,-71.039
+38,Munger,Bihar,0,At Risk,78.192,570.458,1176.998,-606.54,-51.533
+39,Saran,Bihar,0,At Risk,78.049,1186.847,922.405,264.442,28.669
+40,Vaishali,Bihar,3,Critical — High Disease Burden,83.445,4925.889,961.064,3964.825,412.545
+41,Kolkata,West Bengal,1,Critical — High Pollution,83.99,163.042,928.127,-765.086,-82.433
+42,Howrah,West Bengal,0,At Risk,47.505,1317.889,727.292,590.597,81.205
+43,North 24 Parganas,West Bengal,3,Critical — High Disease Burden,73.109,2032.944,734.914,1298.03,176.623
+44,South 24 Parganas,West Bengal,0,At Risk,51.027,229.403,564.964,-335.561,-59.395
+45,Hooghly,West Bengal,0,At Risk,65.665,994.75,700.631,294.119,41.979
+46,Bardhaman,West Bengal,0,At Risk,58.422,511.042,660.512,-149.47,-22.629
+47,Nadia,West Bengal,0,At Risk,71.846,439.153,700.113,-260.96,-37.274
+48,Murshidabad,West Bengal,0,At Risk,65.913,746.778,726.093,20.685,2.849
+49,Malda,West Bengal,0,At Risk,53.9,768.681,640.698,127.983,19.976
+50,Darjeeling,West Bengal,0,At Risk,67.928,399.167,709.515,-310.348,-43.741
+51,Chennai,Tamil Nadu,2,Moderate,39.595,362.472,533.094,-170.621,-32.006
+52,Coimbatore,Tamil Nadu,2,Moderate,36.341,471.028,475.753,-4.725,-0.993
+53,Madurai,Tamil Nadu,2,Moderate,37.275,300.278,481.804,-181.526,-37.676
+54,Tiruchirappalli,Tamil Nadu,2,Moderate,34.335,1097.167,557.516,539.65,96.795
+55,Salem,Tamil Nadu,2,Moderate,26.044,329.708,424.657,-94.949,-22.359
+56,Tirunelveli,Tamil Nadu,2,Moderate,29.441,759.403,439.507,319.896,72.785
+57,Erode,Tamil Nadu,2,Moderate,37.314,379.847,514.867,-135.019,-26.224
+58,Vellore,Tamil Nadu,2,Moderate,37.881,511.375,508.295,3.08,0.606
+59,Thoothukudi,Tamil Nadu,2,Moderate,30.949,134.111,456.043,-321.932,-70.592
+60,Thanjavur,Tamil Nadu,2,Moderate,34.568,160.792,458.53,-297.738,-64.933
+61,Jaipur,Rajasthan,1,Critical — High Pollution,89.264,343.917,833.952,-490.035,-58.761
+62,Jodhpur,Rajasthan,0,At Risk,58.014,530.014,671.664,-141.65,-21.089
+63,Udaipur,Rajasthan,0,At Risk,55.254,483.903,611.724,-127.821,-20.895
+64,Kota,Rajasthan,0,At Risk,60.571,1069.431,648.462,420.969,64.918
+65,Ajmer,Rajasthan,2,Moderate,51.02,298.306,587.787,-289.481,-49.249
+66,Bikaner,Rajasthan,3,Critical — High Disease Burden,62.61,1915.625,750.434,1165.191,155.269
+67,Bhilwara,Rajasthan,3,Critical — High Disease Burden,70.792,2010.361,725.338,1285.023,177.162
+68,Alwar,Rajasthan,3,Critical — High Disease Burden,55.175,1943.153,586.831,1356.322,231.126
+69,Sikar,Rajasthan,3,Critical — High Disease Burden,61.832,1344.708,671.849,672.859,100.15
+70,Pali,Rajasthan,3,Critical — High Disease Burden,49.791,2071.083,593.843,1477.241,248.76
+71,Bengaluru Urban,Karnataka,0,At Risk,47.58,233.111,557.42,-324.309,-58.18
+72,Mysuru,Karnataka,2,Moderate,34.02,818.861,526.157,292.704,55.63
+73,Mangaluru,Karnataka,2,Moderate,42.364,708.208,516.82,191.388,37.032
+74,Hubballi-Dharwad,Karnataka,2,Moderate,41.797,294.917,531.887,-236.971,-44.553
+75,Belagavi,Karnataka,2,Moderate,36.327,1003.472,682.05,321.423,47.126
+76,Kalaburagi,Karnataka,2,Moderate,39.796,290.944,566.125,-275.18,-48.608
+77,Ballari,Karnataka,2,Moderate,29.614,232.347,401.049,-168.702,-42.065
+78,Davangere,Karnataka,2,Moderate,37.55,221.778,520.893,-299.116,-57.424
+79,Shivamogga,Karnataka,2,Moderate,43.065,606.153,494.013,112.14,22.7
+80,Tumakuru,Karnataka,2,Moderate,31.215,170.403,426.781,-256.378,-60.073
+81,Ahmedabad,Gujarat,1,Critical — High Pollution,75.629,1104.417,701.446,402.971,57.449
+82,Surat,Gujarat,0,At Risk,58.14,275.333,589.052,-313.719,-53.258
+83,Vadodara,Gujarat,2,Moderate,44.601,691.514,521.974,169.54,32.481
+84,Rajkot,Gujarat,0,At Risk,56.647,253.319,848.784,-595.465,-70.155
+85,Bhavnagar,Gujarat,0,At Risk,60.288,189.347,581.896,-392.548,-67.46
+86,Jamnagar,Gujarat,0,At Risk,56.725,147.819,602.806,-454.986,-75.478
+87,Junagadh,Gujarat,2,Moderate,42.668,420.875,529.446,-108.571,-20.507
+88,Gandhinagar,Gujarat,3,Critical — High Disease Burden,42.262,1579.569,511.054,1068.516,209.081
+89,Anand,Gujarat,2,Moderate,45.279,562.028,500.299,61.728,12.338
+90,Kutch,Gujarat,2,Moderate,46.459,457.833,538.204,-80.371,-14.933
+91,Bhopal,Madhya Pradesh,0,At Risk,58.14,135.111,639.505,-504.394,-78.873
+92,Indore,Madhya Pradesh,0,At Risk,51.356,1227.458,562.776,664.682,118.108
+93,Jabalpur,Madhya Pradesh,2,Moderate,45.307,926.222,480.758,445.464,92.659
+94,Gwalior,Madhya Pradesh,2,Moderate,49.393,433.611,564.136,-130.525,-23.137
+95,Ujjain,Madhya Pradesh,2,Moderate,47.877,605.361,518.024,87.337,16.86
+96,Sagar,Madhya Pradesh,0,At Risk,59.79,219.278,610.813,-391.535,-64.101
+97,Dewas,Madhya Pradesh,0,At Risk,73.101,466.444,673.674,-207.23,-30.761
+98,Satna,Madhya Pradesh,0,At Risk,56.553,623.583,542.613,80.971,14.922
+99,Rewa,Madhya Pradesh,2,Moderate,43.804,866.444,466.479,399.965,85.741
+100,Ratlam,Madhya Pradesh,0,At Risk,55.582,933.944,566.211,367.733,64.946
+101,Visakhapatnam,Andhra Pradesh,2,Moderate,27.424,47.903,379.974,-332.071,-87.393
+102,Vijayawada,Andhra Pradesh,2,Moderate,28.732,371.542,464.96,-93.419,-20.092
+103,Guntur,Andhra Pradesh,2,Moderate,32.008,94.806,487.212,-392.406,-80.541
+104,Nellore,Andhra Pradesh,2,Moderate,36.402,218.083,435.569,-217.486,-49.931
+105,Kurnool,Andhra Pradesh,2,Moderate,37.981,238.375,467.533,-229.158,-49.014
+106,Kakinada,Andhra Pradesh,2,Moderate,29.08,272.472,444.866,-172.393,-38.752
+107,Tirupati,Andhra Pradesh,2,Moderate,35.407,190.764,492.106,-301.342,-61.235
+108,Rajahmundry,Andhra Pradesh,2,Moderate,34.815,403.25,480.208,-76.958,-16.026
+109,Kadapa,Andhra Pradesh,2,Moderate,33.084,326.722,487.102,-160.38,-32.925
+110,Anantapur,Andhra Pradesh,2,Moderate,33.859,935.181,486.628,448.552,92.176
+111,Hyderabad,Telangana,0,At Risk,49.511,250.958,600.187,-349.228,-58.187
+112,Warangal,Telangana,2,Moderate,36.724,678.153,557.268,120.885,21.692
+113,Nizamabad,Telangana,2,Moderate,40.081,127.764,499.514,-371.75,-74.422
+114,Karimnagar,Telangana,2,Moderate,36.506,59.361,553.903,-494.542,-89.283
+115,Khammam,Telangana,2,Moderate,33.168,81.944,480.087,-398.142,-82.931
+116,Mahbubnagar,Telangana,0,At Risk,49.47,382.75,551.237,-168.487,-30.565
+117,Nalgonda,Telangana,2,Moderate,40.644,444.792,545.35,-100.558,-18.439
+118,Adilabad,Telangana,2,Moderate,40.272,239.931,570.976,-331.046,-57.979
+119,Medak,Telangana,2,Moderate,40.858,211.736,500.149,-288.413,-57.665
+120,Rangareddy,Telangana,2,Moderate,41.492,274.556,532.695,-258.139,-48.459
+121,Thiruvananthapuram,Kerala,2,Moderate,30.079,109.458,468.246,-358.787,-76.624
+122,Kochi,Kerala,2,Moderate,20.409,114.681,398.6,-283.919,-71.229
+123,Kozhikode,Kerala,2,Moderate,25.693,160.181,448.567,-288.386,-64.291
+124,Thrissur,Kerala,2,Moderate,27.879,35.556,426.681,-391.126,-91.667
+125,Kollam,Kerala,3,Critical — High Disease Burden,23.788,2323.931,427.664,1896.267,443.401
+126,Kannur,Kerala,2,Moderate,25.493,27.014,418.759,-391.746,-93.549
+127,Alappuzha,Kerala,2,Moderate,22.348,114.333,424.237,-309.904,-73.05
+128,Palakkad,Kerala,2,Moderate,30.404,396.431,549.204,-152.774,-27.817
+129,Malappuram,Kerala,2,Moderate,27.927,215.361,416.046,-200.685,-48.236
+130,Kottayam,Kerala,2,Moderate,21.094,729.833,361.507,368.326,101.886
+131,Ludhiana,Punjab,0,At Risk,54.987,1130.097,595.578,534.52,89.748
+132,Amritsar,Punjab,0,At Risk,74.432,571.569,805.144,-233.574,-29.01
+133,Jalandhar,Punjab,0,At Risk,70.832,330.861,733.786,-402.925,-54.91
+134,Patiala,Punjab,0,At Risk,63.264,938.014,681.758,256.255,37.587
+135,Bathinda,Punjab,0,At Risk,77.069,326.736,1000.858,-674.122,-67.354
+136,Mohali,Punjab,0,At Risk,57.682,629.097,671.866,-42.769,-6.366
+137,Hoshiarpur,Punjab,0,At Risk,60.897,318.583,698.894,-380.311,-54.416
+138,Pathankot,Punjab,2,Moderate,54.55,57.028,731.896,-674.869,-92.208
+139,Moga,Punjab,0,At Risk,68.317,843.333,712.074,131.259,18.433
+140,Firozpur,Punjab,0,At Risk,78.804,146.708,802.233,-655.525,-81.713
+141,Gurugram,Haryana,3,Critical — High Disease Burden,77.875,1396.958,734.411,662.548,90.215
+142,Faridabad,Haryana,0,At Risk,67.285,1056.014,802.149,253.865,31.648
+143,Panipat,Haryana,0,At Risk,83.604,931.028,872.914,58.114,6.657
+144,Ambala,Haryana,0,At Risk,65.447,685.194,757.885,-72.69,-9.591
+145,Karnal,Haryana,3,Critical — High Disease Burden,80.651,1540.306,785.841,754.464,96.007
+146,Hisar,Haryana,0,At Risk,73.554,949.847,718.702,231.145,32.161
+147,Rohtak,Haryana,0,At Risk,73.393,806.514,754.55,51.964,6.887
+148,Sonipat,Haryana,3,Critical — High Disease Burden,66.219,1329.208,697.343,631.865,90.61
+149,Yamunanagar,Haryana,0,At Risk,67.309,136.111,612.274,-476.163,-77.77
+150,Bhiwani,Haryana,0,At Risk,69.984,647.764,691.286,-43.522,-6.296

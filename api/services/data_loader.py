@@ -75,6 +75,11 @@ def all_data() -> dict:
         "epi":              _read("epi_metrics.csv"),
         "partial_corr":     _read("partial_corr.csv"),
         "spatial_lag":      _read("spatial_lag_results.csv"),
+        # Pollution sensitivity
+        "sensitivity_coefficients":     _read("sensitivity_coefficients.csv"),
+        "cluster_sensitivity_summary":  _read("cluster_sensitivity_summary.csv"),
+        "cluster_dose_response":        _read("cluster_dose_response.csv"),
+        "sensitivity_interaction":      _read("sensitivity_interaction.csv"),
     }
 
 
